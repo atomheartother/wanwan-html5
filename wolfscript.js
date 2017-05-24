@@ -6,6 +6,11 @@ var anim = document.getElementById("wolfGirl");
 var box1 = document.getElementById("topBox");
 var box2 = document.getElementById("botBox");
 
+// Wan texts
+var wanLeft = document.getElementById("wanLeft");
+var wanRight = document.getElementById("wanRight");
+var wanCenter = document.getElementById("wanCenter");
+
 // Audio
 var wanwan =  new Audio('wanwan.ogg');
 
@@ -25,21 +30,51 @@ var shake = function(duration) {
     anim.style.animationTimingFunction = "steps(10, end)";
 }
 
+var goLeft = function(duration) {
+    wanRight.style.left = `${document.body.clientWidth * 5 / 100 + anim.clientWidth}px`;
+    wanRight.style.display = "inline";
+
+    wanRight.style.animationName = "rightText";
+    wanRight.style.WebKitAnimationDuration = duration;
+    wanRight.style.animationDuration  = duration;
+}
+
+var fromBRight = function(duration) {
+    wanLeft.style.right = `${document.body.clientWidth * 2 / 100 + anim.clientWidth}px`;
+    wanLeft.style.display = "inline";
+
+    wanLeft.style.animationName = "leftText";
+    wanLeft.style.WebKitAnimationDuration = duration;
+    wanLeft.style.animationDuration  = duration;
+}
+
+var topRight = function (duration) {
+    wanCenter.style.display = "inline";
+    wanCenter.style.animationName = "stretchyWan";
+    wanCenter.style.WebKitAnimationDuration = duration;
+    wanCenter.style.animationDuration  = duration;
+}
+
 var animHandler = function () {
     const durationValues = ["500ms", "250ms", "125ms"];
 
     anim.style.WebKitAnimationTimingFunction = "ease";
     anim.style.animationTimingFunction = "ease";
 
-    funcs = [null,null, null,
+    wanLeft.style.display = "none";
+    wanRight.style.display = "none";
+    wanCenter.style.display = "none";
+
+    funcs = ['goLeft', 'fromBRight', 'topRight',
              null, 'blackBoxes', null,
-             'shake', null, null,
-             'blackBoxes', null,
-             null, null, null,
-             null, null, null,
-             null, null, null,
+             'shake', null, 'goLeft',
+             'blackBoxes', 'fromBRight', 'topRight',
+             null, null, 'goLeft',
+             'fromBRight', null, null,
+             null, 'goLeft', 'fromBRight',
              null, null, null,
              null, null];
+
     animations = ["goLeft", "fromBRight", "topRight",
                   "backFlip", "fullScreen", "frontFlip",
                   "shake", "frontFlip", "goLeft",

@@ -17,6 +17,7 @@ body {
     flex: 1;
     align-items: center;
 }
+
 #playButton p {
     color: red;
     background-color: white;
@@ -28,13 +29,41 @@ body {
     cursor: pointer;
 }
 
+/* Wan text is invisible by default */
+.wan_text {
+    display: none;
+    position: absolute;
+    height: 15%;
+    width: auto;
+    transform: rotate(-25deg);
+    z-index: 2;
+}
+
+/*The stretchy wan is just an empty div with wan as its background image!*/
+#wanCenter {
+    display: none;
+
+    background: url(wan_text.png) no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+
+    position: absolute;
+
+    left: 15%;
+    top: 45%;
+    height: 15%;
+    width: 60%;
+}
+
 .box {
     background-color: black;
     position: absolute;
     left: 0;
     height: 40%;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
 }
 
 #topBox {
@@ -51,7 +80,7 @@ body {
     animation-duration: 500ms;
 }
 
-#wolfGirl img {
+#wolfImg {
     display: block;
     height: 100%;
     width: auto;
@@ -72,6 +101,21 @@ Go left, first animation
     }
 }
 
+@keyframes rightText {
+    0% {
+        bottom: 40%;
+        opacity: 1;
+    }
+    50% {
+        bottom: 49%;
+        opacity: 0.7;
+    }
+    100% {
+        bottom: 50%;
+        opacity: 0;
+    }
+}
+
 @keyframes fromBRight {
     0% {
         transform: scaleX(-1);
@@ -83,6 +127,26 @@ Go left, first animation
         transform: scaleX(-1);
         right: 10%;
         bottom: 0%;
+    }
+}
+@keyframes leftText {
+    0% {
+        transform: rotate(35deg);
+        bottom: 40%;
+        opacity: 1;
+        height: 5%;
+    }
+    50% {
+        bottom: 40%;
+        transform: rotate(35deg);
+        opacity: 0.7;
+        height: 14%;
+    }
+    100% {
+        bottom: 40%;
+        transform: rotate(35deg);
+        opacity: 0;
+        height: 15%;
     }
 }
 
@@ -108,6 +172,20 @@ Go left, first animation
 
         right: 15%;
         top: -20%;
+    }
+}
+
+@keyframes stretchyWan {
+    0% {
+        height: 15%;
+    }
+
+    50% {
+        height: 40%;
+    }
+
+    100% {
+        height: 40%;
     }
 }
 
