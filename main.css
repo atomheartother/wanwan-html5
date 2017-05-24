@@ -1,0 +1,345 @@
+body {
+    overflow: hidden;
+}
+
+/* Only displayed when their browser sucks */
+#playButton {
+    position:absolute;
+    display: none;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-weight: bold;
+    z-index: 10;
+    flex: 1;
+    align-items: center;
+}
+#playButton p {
+    color: red;
+    background-color: white;
+    border: 4px solid red;
+    margin-top: 50%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 2%;
+    cursor: pointer;
+}
+
+.box {
+    background-color: black;
+    position: absolute;
+    left: 0;
+    height: 40%;
+    width: 100%;
+    z-index: 2;
+}
+
+#topBox {
+    top: -100%;
+}
+
+#botBox {
+    bottom: -100%;
+}
+#wolfGirl {
+    position: absolute;
+    height: 60%;
+    -webkit-animation-duration: 500ms;
+    animation-duration: 500ms;
+}
+
+#wolfGirl img {
+    display: block;
+    height: 100%;
+    width: auto;
+}
+
+/*
+Go left, first animation
+*/
+@keyframes goLeft {
+    0% {
+        left: 5%;
+        bottom: -1%;
+    }
+    20% { bottom: 0;}
+    100% {
+        left: 10%;
+        bottom: -2%;
+    }
+}
+
+@keyframes fromBRight {
+    0% {
+        transform: scaleX(-1);
+        right:  0;
+        bottom: -15%;
+    }
+
+    100% {
+        transform: scaleX(-1);
+        right: 10%;
+        bottom: 0%;
+    }
+}
+
+@keyframes topRight {
+    0% {
+        -webkit-transform: rotate(-30deg) scaleX(-1);
+        transform: rotate(-30deg) scaleX(-1);
+
+        right:  -10%;
+        top: -20%;
+    }
+
+    90% {
+        -webkit-transform: rotate(-30deg) scaleX(-1);
+        transform: rotate(-30deg) scaleX(-1);
+
+        right: 15%;
+        top: -20%;
+    }
+    100% {
+        -webkit-transform: rotate(-30deg) scaleX(-1);
+        transform: rotate(-30deg) scaleX(-1);
+
+        right: 15%;
+        top: -20%;
+    }
+}
+
+@keyframes backFlip {
+    0% {
+        -webkit-transform: scaleX(1) scaleY(-1);
+        transform: scaleX(1) scaleY(-1);
+
+        left: 80%;
+        top: 0;
+    }
+
+    50% {
+        -webkit-transform: scaleX(-1) scaleY(-1);
+        transform: scaleX(-1) scaleY(-1);
+        height: 120%;
+        left: 0;
+        top: -10%;
+    }
+    100% {
+        -webkit-transform: scaleX(-1) scaleY(-1);
+        transform: scaleX(-1) scaleY(-1);
+        height: 120%;
+        left: 0;
+        top: -10%;
+    }
+}
+
+@keyframes fullScreen {
+    0% {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        height: 100%;
+        right: 50%;
+    }
+
+   30% {
+       -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        height: 100%;
+        right: 5%;
+    }
+
+    100% {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        height: 100%;
+        right: 0;
+    }
+}
+
+@keyframes boxTop {
+    0% {
+        top: -40%;
+    }
+    80% {
+        top: 0;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes boxBot {
+    0% {
+        bottom: -40%;
+    }
+    80% {
+        bottom: -10%;
+    }
+    100% {
+        bottom: -10%;
+    }
+}
+
+@keyframes frontFlip {
+    0% {
+        bottom: 0;
+        left: 0;
+        height: 150%;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
+
+    50% {
+        bottom: 0;
+        left: 20%;
+        height: 60%;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(1);
+    }
+
+    100% {
+        bottom: 0;
+        left: 20%;
+        height: 60%;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(1);
+    }
+}
+
+@keyframes frontFlipAborted {
+    0% {
+        bottom: 0;
+        left: 0;
+        height: 150%;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
+
+    100% {
+        bottom: 0;
+        left: 20%;
+        height: 60%;
+        -webkit-transform: scaleX(0);
+    }
+}
+
+/* Lots of keyfrems */
+@keyframes shake2 {
+    0% {
+        height: 75%;
+        bottom: -10%;
+        left: 5%;
+    }
+    10% {
+        height: 75%;
+        bottom: -7%;
+        left: 7%;
+    }
+    20% {
+        height: 75%;
+        bottom: -8%;
+        left: 3%;
+    }
+    30% {
+        height: 75%;
+        bottom: -5%;
+        left: 4%;
+    }
+    40% {
+        height: 75%;
+        bottom: -2%;
+        left: 6%;
+    }
+    50% {
+        height: 75%;
+        bottom: -6%;
+        left: 2%;
+    }
+    60% {
+        height: 75%;
+        bottom: 0;
+        left: 5%;
+    }
+    70% {
+        height: 75%;
+        bottom: -4%;
+        left: 7%;
+    }
+    80% {
+        height: 75%;
+        bottom: -2%;
+        left: 3%;
+    }
+    90% {
+        height: 75%;
+        bottom: -8%;
+        left: 7%;
+    }
+    100% {
+        height: 75%;
+        bottom: -4%;
+        left: 5%;
+    }
+}
+/* Lots of keyfrems */
+@keyframes shake {
+    0% {
+        height: 75%;
+        bottom: -10%;
+        left: 5%;
+    }
+    10% {
+        height: 75%;
+        bottom: -7%;
+        left: 7%;
+    }
+    20% {
+        height: 75%;
+        bottom: -8%;
+        left: 3%;
+    }
+    30% {
+        height: 75%;
+        bottom: -5%;
+        left: 4%;
+    }
+    40% {
+        height: 75%;
+        bottom: -2%;
+        left: 6%;
+    }
+    50% {
+        height: 75%;
+        bottom: -6%;
+        left: 2%;
+    }
+    60% {
+        height: 75%;
+        bottom: 0;
+        left: 5%;
+    }
+    70% {
+        height: 75%;
+        bottom: -4%;
+        left: 7%;
+    }
+    80% {
+        height: 75%;
+        bottom: -2%;
+        left: 3%;
+    }
+    90% {
+        height: 75%;
+        bottom: -8%;
+        left: 7%;
+    }
+    100% {
+        height: 75%;
+        bottom: -4%;
+        left: 5%;
+    }
+}
