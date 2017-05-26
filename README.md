@@ -1,5 +1,8 @@
 # wanwan-html5
-HTML5 version of the flash animation "wanwan.moe"
+HTML5 version of the flash animation "WAN WAN INTENSIFIES.sfw". CSS animations controlled by Javascript.
+
+# Why?
+Wan not?
 
 # Features
 - Wolf girl
