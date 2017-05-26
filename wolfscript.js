@@ -58,6 +58,9 @@ var topRight = function (duration) {
 var animHandler = function () {
     const durationValues = ["500ms", "250ms", "125ms"];
 
+    box1.style.animationName = "";
+    box2.style.animationName = "";
+
     anim.style.WebKitAnimationTimingFunction = "ease";
     anim.style.animationTimingFunction = "ease";
 
@@ -65,7 +68,7 @@ var animHandler = function () {
     wanRight.style.display = "none";
     wanCenter.style.display = "none";
 
-    funcs = ['goLeft', 'fromBRight', 'topRight',
+    const funcs = ['goLeft', 'fromBRight', 'topRight',
              null, 'blackBoxes', null,
              'shake', null, 'goLeft',
              'blackBoxes', 'fromBRight', 'topRight',
@@ -75,7 +78,7 @@ var animHandler = function () {
              null, null, null,
              null, null];
 
-    animations = ["goLeft", "fromBRight", "topRight",
+    const animations = ["goLeft", "fromBRight", "topRight",
                   "backFlip", "fullScreen", "frontFlip",
                   "shake", "frontFlip", "goLeft",
                   "fullScreen", "fromBRight", 'topRight',
@@ -84,7 +87,7 @@ var animHandler = function () {
                   "frontFlip", "goLeft", "fromBRight",
                   "frontFlipAborted", "backFlip", "frontFlip",
                   "shake", "shake2"];
-    durations = [0, 0, 0,
+    const durations = [0, 0, 0,
                  0, 0, 0,
                  0, 0, 1,
                  1, 1, 1,
@@ -133,8 +136,6 @@ window.onload = function () {
         animHandler();
     }, false);
     wanwan.addEventListener("ended", function() {
-        box1.style.animationName = "";
-        box2.style.animationName = "";
         this.currentTime = 0;
         this.play();
     }, false);
