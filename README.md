@@ -11,7 +11,7 @@ Wan not?
 - Wan~
 - Mobile support, including browsers unable to autoplay audio (Chrome for Android for example)
 - No awoo :c
-- 
+
 # Todo
 - Nightcore mode for fast wolf girl (that's easy just have to do it)
 - Gapless audio loop so wolf girl can wan better (that's actually kind of hard for sync reasons)
