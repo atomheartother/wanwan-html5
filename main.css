@@ -29,6 +29,16 @@ body {
     cursor: pointer;
 }
 
+/* Buttons for girls and about */
+#footer-info {
+    position:absolute;
+    bottom:0;
+    right: 0;
+    padding: 4px;
+    opacity: 0.3;
+    z-index: 15;
+}
+
 /* Wan text is invisible by default */
 .wan_text {
     display: none;
@@ -420,12 +430,4 @@ Go left, first animation
         bottom: -4%;
         left: 5%;
     }
-}
-
-#footer-info {
-    position:absolute;
-    bottom:0;
-    right: 0;
-    padding: 4px;
-    opacity: 0.3;
 }
