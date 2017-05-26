@@ -3,6 +3,7 @@ var aIndex = 0;
 
 // Get wolfgirl elem and listen for animation end
 var anim = document.getElementById("wolfGirl");
+var img = document.getElementById("wolfImg");
 var box1 = document.getElementById("topBox");
 var box2 = document.getElementById("botBox");
 
@@ -120,6 +121,18 @@ var boxAnimHandler = function () {
 function userSaidPlay() {
     document.getElementById("playButton").style.display = "none";
     wanwan.play();
+}
+
+function wolfMomiji() {
+    img.src = "girls/momiji.png";
+}
+
+function wolfHolo() {
+    img.src = "girls/holo.png";
+}
+
+function wolfKaren() {
+    img.src = "girls/karen.png";
 }
 
 window.onload = function () {
