@@ -35,8 +35,22 @@ body {
     bottom:0;
     right: 0;
     padding: 4px;
-    opacity: 0.3;
+    opacity: 0.6;
     z-index: 15;
+}
+
+#footer-info a {
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: black;
+    border: 2px solid #555555;
+    padding: 2px;
+    text-decoration: none;
+}
+
+#footer-info a:hover {
+    background-color: #555555;
+    color: white;
 }
 
 /* Wan text is invisible by default */
