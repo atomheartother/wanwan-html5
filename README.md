@@ -16,6 +16,7 @@ Wan not?
 - Nightcore mode for fast wolf girl (that's easy just have to do it)
 - Gapless audio loop so wolf girl can wan better (that's actually kind of hard for sync reasons)
 - Mobile portrait mode fix for vertical wolfgirl (Shooould be easy)
+- Actual menu so we can have a LOT of wolf girls, a volume slider...
 - Awoo maybe.
 
 Have a suggestion, a complaint, a compatibility issue with your browser? Drop an issue on here or email me at atomheartother@gmail.com
