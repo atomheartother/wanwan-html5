@@ -13,7 +13,7 @@ var wanRight = document.getElementById("wanRight");
 var wanCenter = document.getElementById("wanCenter");
 
 // Audio
-var wanwan =  new Audio('wanwan.ogg');
+var wanwan =  new Audio('res/wanwan.ogg');
 
 var blackBoxes = function(duration) {
     box1.style.animationName = "boxTop";

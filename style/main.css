@@ -1,0 +1,111 @@
+body {
+    overflow: hidden;
+}
+
+/* Only displayed when their browser sucks */
+#playButton {
+    position:absolute;
+    display: none;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-weight: bold;
+    z-index: 10;
+    flex: 1;
+    align-items: center;
+}
+
+#playButton p {
+    color: red;
+    background-color: white;
+    border: 4px solid red;
+    margin-top: 50%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 2%;
+    cursor: pointer;
+}
+
+/* Buttons for girls and about */
+#footer-info {
+    position:absolute;
+    bottom:0;
+    right: 0;
+    padding: 4px;
+    opacity: 0.6;
+    z-index: 15;
+}
+
+#footer-info a {
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: black;
+    border: 2px solid #555555;
+    padding: 2px;
+    text-decoration: none;
+}
+
+#footer-info a:hover {
+    background-color: #555555;
+    color: white;
+}
+
+/* Wan text is invisible by default */
+.wan_text {
+    display: none;
+    position: absolute;
+    height: 15%;
+    width: auto;
+    transform: rotate(-25deg);
+    z-index: 2;
+}
+
+/*The stretchy wan is just an empty div with wan as its background image!*/
+#wanCenter {
+    display: none;
+
+    background: url(/res/wan_text.png) no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+
+    position: absolute;
+
+    left: 15%;
+    top: 45%;
+    height: 15%;
+    width: 60%;
+}
+
+.box {
+    background-color: black;
+    position: absolute;
+    left: 0;
+    height: 40%;
+    width: 100%;
+    z-index: 3;
+}
+
+#topBox {
+    top: -100%;
+}
+
+#botBox {
+    bottom: -100%;
+}
+#wolfGirl {
+    position: absolute;
+    height: 60%;
+    -webkit-animation-duration: 500ms;
+    animation-duration: 500ms;
+}
+
+#wolfImg {
+    display: block;
+    height: 100%;
+    width: auto;
+}
