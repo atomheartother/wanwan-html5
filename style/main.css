@@ -63,6 +63,13 @@ body {
     z-index: 2;
 }
 
+@media screen and (max-width: 480px) {
+    .wan_text {
+        height: auto;
+        width: 40%;
+    }
+}
+
 /*The stretchy wan is just an empty div with wan as its background image!*/
 #wanCenter {
     display: none;
@@ -108,4 +115,16 @@ body {
     display: block;
     height: 100%;
     width: auto;
+}
+
+@media screen and (max-width: 480px) {
+    #wolfGirl {
+        height: auto;
+        width: 60%;
+    }
+
+    #wolfImg {
+        height: auto;
+        width: 100%;
+    }
 }
