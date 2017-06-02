@@ -159,3 +159,10 @@ window.onload = function () {
         document.getElementById("playButton").style.display = "block";
     }
 }
+
+// Prevent spacebar from scrolling down
+window.onkeydown = function(e) {
+    if (e.keyCode == 32 && e.target == document.body) {
+        e.preventDefault();
+    }
+};
