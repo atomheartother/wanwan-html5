@@ -145,9 +145,6 @@ function wolfKaren() {
 }
 
 window.onload = function () {
-    aIndex = 0;
-    animHandler();
-
     anim.addEventListener("webkitAnimationEnd", animHandler, false);
     anim.addEventListener("MSAnimationEnd", animHandler, false);
     anim.addEventListener("animationend", animHandler, false);
@@ -156,8 +153,11 @@ window.onload = function () {
     box1.addEventListener("MSAnimationEnd", boxAnimHandler, false);
     box1.addEventListener("animationend", boxAnimHandler, false);
 
+    aIndex = 0;
+    animHandler();
     wanwan.play();
     // If their browser sucks, we display the play button.
+    // Might be obsolete
     if (wanwan.paused)
     {
         document.getElementById("playButton").style.display = "block";
