@@ -74,7 +74,9 @@ body {
 #wanCenter {
     display: none;
 
-    background: url(/res/wan_text.png) no-repeat center center;
+
+    background: url(../res/wan_text.png) no-repeat center center;
+    background-image: url(../res/wan_text.svg), none;
     -webkit-background-size: 100% 100%;
     -moz-background-size: 100% 100%;
     -o-background-size: 100% 100%;
