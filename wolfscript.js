@@ -13,7 +13,16 @@ var wanRight = document.getElementById("wanRight");
 var wanCenter = document.getElementById("wanCenter");
 
 // Audio
-var wanwan =  new Audio('res/wanwan.ogg');
+var wanwan =  new Howl({
+    src: ['res/wanwan.ogg'],
+    autoplay: false,
+    loop: true,
+    volume: 0.8,
+    onend: function() {
+        aIndex = 0;
+        animHandler();
+    }
+});
 
 var blackBoxes = function(duration) {
     box1.style.animationName = "boxTop";
@@ -136,22 +145,17 @@ function wolfKaren() {
 }
 
 window.onload = function () {
+    aIndex = 0;
+    animHandler();
+
     anim.addEventListener("webkitAnimationEnd", animHandler, false);
     anim.addEventListener("MSAnimationEnd", animHandler, false);
     anim.addEventListener("animationend", animHandler, false);
 
-    box1.addEventListener("animationend", boxAnimHandler, false);
     box1.addEventListener("wekbkitAnimationEnd", boxAnimHandler, false);
     box1.addEventListener("MSAnimationEnd", boxAnimHandler, false);
+    box1.addEventListener("animationend", boxAnimHandler, false);
 
-    wanwan.addEventListener("play", function() {
-        aIndex = 0;
-        animHandler();
-    }, false);
-    wanwan.addEventListener("ended", function() {
-        this.currentTime = 0;
-        this.play();
-    }, false);
     wanwan.play();
     // If their browser sucks, we display the play button.
     if (wanwan.paused)
