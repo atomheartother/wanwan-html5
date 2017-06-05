@@ -17,7 +17,7 @@ Wan not?
 - ~~Mobile portrait fix (shoooould be easy)~~
 - ~~Gapless audio loop so wolf girl can wan better (that's actually kind of hard for sync reasons)~~
 - Actual menu so we can have a LOT of wolf girls, a volume slider...
-- Vector graphics to remove half of the site's weight (Already done on text, need to do the girls)
+- ~~Vector graphics~~
 - Awoo maybe.
 
 # Philosophy
