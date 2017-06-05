@@ -18,10 +18,10 @@ var wanwan =  new Howl({
     autoplay: false,
     loop: true,
     volume: 0.8,
-    onend: function() {
+    onplay : function() {
         aIndex = 0;
         animHandler();
-    }
+    },
 });
 
 var blackBoxes = function(duration) {
@@ -153,8 +153,6 @@ window.onload = function () {
     box1.addEventListener("MSAnimationEnd", boxAnimHandler, false);
     box1.addEventListener("animationend", boxAnimHandler, false);
 
-    aIndex = 0;
-    animHandler();
     wanwan.play();
     // If their browser sucks, we display the play button.
     // Might be obsolete
