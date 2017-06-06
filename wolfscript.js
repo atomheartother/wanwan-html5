@@ -130,6 +130,20 @@ function wolfKaren() {
     img.src = "girls/karen.png";
 }
 
+function loadWolf(character) {
+    switch(character) {
+        case '#holo':
+            wolfHolo();
+        break;
+        case '#karen':
+            wolfKaren();
+        break;
+        case '#momiji':
+            wolfMomiji();
+        break;
+    }
+}
+
 // Audio
 var wanwan =  new Howl({
     src: ['res/wanwan.ogg', 'res/wanwan.mp3'],
@@ -158,6 +172,12 @@ window.onload = function () {
     box1.addEventListener("wekbkitAnimationEnd", boxAnimHandler, false);
     box1.addEventListener("MSAnimationEnd", boxAnimHandler, false);
     box1.addEventListener("animationend", boxAnimHandler, false);
+
+    loadWolf(location.hash);
+}
+
+window.onhashchange = function() {
+    loadWolf(location.hash);
 }
 
 // Prevent spacebar from scrolling down
