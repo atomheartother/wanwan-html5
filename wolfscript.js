@@ -1,3 +1,10 @@
+// List of girls and whether they're svg or not
+var girls = {
+    "Momiji" : true,
+    "Holo" : false,
+    "Karen" : false
+};
+
 // Animation index, keeps track of which CSS animation we're at
 var aIndex = 0;
 
@@ -115,20 +122,34 @@ var boxAnimHandler = function () {
     box2.style.animationName = "";
 }
 
-function userSaidPlay() {
+function changeGirl(name) {
+    // If the girl has an svg file
+    if (girls[name] === true) {
+        console.log("Has SVG");
+        img.src = "girls/" + name + ".svg";
+        img.onerror = function() {
+            img.src = "girls/" + name + ".png";
+        }
+    }
+    else {
+        console.log("No SVG");
+        img.src = "girls/" + name + ".png";
+    }
 }
 
-function wolfMomiji() {
-    img.src = "girls/momiji.svg";
+function checkHash() {
+    var newHash = location.hash.substring(1);
+
+    for (var name in girls) {
+        if (newHash === name) {
+            changeGirl(newHash);
+            return ;
+        }
+    }
+    changeGirl("Momiji");
 }
 
-function wolfHolo() {
-    img.src = "girls/holo.png";
-}
-
-function wolfKaren() {
-    img.src = "girls/karen.png";
-}
+window.addEventListener("hashchange", checkHash);
 
 // Audio
 var wanwan =  new Howl({
@@ -142,10 +163,6 @@ var wanwan =  new Howl({
         animHandler();
     },
     onloaderror: function() {
-        // document.getElementById("playButton").style.display = "block";
-        // document.getElementById("playButton").addEventListener('click', function() {
-        //     wanwan.play();
-        // });
         alert("I can't play on your browser, sorry! :c Please go to About and contact my maker about this.");
     },
 });
@@ -158,6 +175,8 @@ window.onload = function () {
     box1.addEventListener("wekbkitAnimationEnd", boxAnimHandler, false);
     box1.addEventListener("MSAnimationEnd", boxAnimHandler, false);
     box1.addEventListener("animationend", boxAnimHandler, false);
+
+    checkHash();
 }
 
 // Prevent spacebar from scrolling down
