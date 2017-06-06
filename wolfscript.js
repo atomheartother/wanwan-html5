@@ -12,18 +12,6 @@ var wanLeft = document.getElementById("wanLeft");
 var wanRight = document.getElementById("wanRight");
 var wanCenter = document.getElementById("wanCenter");
 
-// Audio
-var wanwan =  new Howl({
-    src: ['res/wanwan.ogg'],
-    autoplay: false,
-    loop: true,
-    volume: 0.8,
-    onplay : function() {
-        aIndex = 0;
-        animHandler();
-    },
-});
-
 var blackBoxes = function(duration) {
     box1.style.animationName = "boxTop";
     box2.style.animationName = "boxBot";
@@ -128,12 +116,10 @@ var boxAnimHandler = function () {
 }
 
 function userSaidPlay() {
-    document.getElementById("playButton").style.display = "none";
-    wanwan.play();
 }
 
 function wolfMomiji() {
-    img.src = "girls/momiji.png";
+    img.src = "girls/momiji.svg";
 }
 
 function wolfHolo() {
@@ -144,6 +130,26 @@ function wolfKaren() {
     img.src = "girls/karen.png";
 }
 
+// Audio
+var wanwan =  new Howl({
+    src: ['res/wanwan.ogg', 'res/wanwan.mp3'],
+    format: ['webm', 'mp3'],
+    autoplay: true,
+    loop: true,
+    volume: 0.8,
+    onplay : function() {
+        aIndex = 0;
+        animHandler();
+    },
+    onloaderror: function() {
+        // document.getElementById("playButton").style.display = "block";
+        // document.getElementById("playButton").addEventListener('click', function() {
+        //     wanwan.play();
+        // });
+        alert("I can't play on your browser, sorry! :c Please go to About and contact my maker about this.");
+    },
+});
+
 window.onload = function () {
     anim.addEventListener("webkitAnimationEnd", animHandler, false);
     anim.addEventListener("MSAnimationEnd", animHandler, false);
@@ -152,14 +158,6 @@ window.onload = function () {
     box1.addEventListener("wekbkitAnimationEnd", boxAnimHandler, false);
     box1.addEventListener("MSAnimationEnd", boxAnimHandler, false);
     box1.addEventListener("animationend", boxAnimHandler, false);
-
-    wanwan.play();
-    // If their browser sucks, we display the play button.
-    // Might be obsolete
-    if (wanwan.paused)
-    {
-        document.getElementById("playButton").style.display = "block";
-    }
 }
 
 // Prevent spacebar from scrolling down
