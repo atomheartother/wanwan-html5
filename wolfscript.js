@@ -1,9 +1,19 @@
-// List of girls and whether they're svg or not
-var girls = {
-    "Momiji" : true,
-    "Holo" : false,
-    "Karen" : false
+//Parse remote json file to get all the data we need and store it in this:
+var wolves;
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "girls/index.json", true);
+xhr.onload = function (e) {
+        wolves = JSON.parse(xhr.responseText);
 };
+xhr.onerror = function(e) {
+    alert(`Something went wrong loading wolf data, sorry! :c
+Try again. If this persists, go to About and contact me about it.`);
+};
+xhr.send(null);
+
+// Music volume
+var volume = 0.5;
 
 // Animation index, keeps track of which CSS animation we're at
 var aIndex = 0;
@@ -18,6 +28,70 @@ var box2 = document.getElementById("botBox");
 var wanLeft = document.getElementById("wanLeft");
 var wanRight = document.getElementById("wanRight");
 var wanCenter = document.getElementById("wanCenter");
+
+function changeGirl(name) {
+    // If the girl has an svg file
+    if (wolves[name].svg === true) {
+        img.src = "girls/" + name + ".svg";
+        img.onerror = function() {
+            img.src = "girls/" + name + ".png";
+        }
+    }
+    else {
+        img.src = "girls/" + name + ".png";
+    }
+}
+
+function checkHash() {
+    var newHash = location.hash.substring(1);
+
+    console.log(wolves);
+    for (var name in wolves) {
+        if (newHash.toUpperCase() === name.toUpperCase()) {
+            changeGirl(name);
+            return ;
+        }
+    }
+    // If no valid hash was found, Momiji is default
+    changeGirl("Momiji");
+}
+
+window.addEventListener("hashchange", checkHash);
+
+// Audio
+var wanwan =  new Howl({
+    src: ['res/wanwan.ogg', 'res/wanwan.mp3'],
+    format: ['webm', 'mp3'],
+    autoplay: true,
+    loop: true,
+    volume: volume,
+    onplay : function() {
+        aIndex = 0;
+        animHandler();
+    },
+    onloaderror: function() {
+        alert("I can't play on your browser, sorry! :c Please go to About and contact my maker about this.");
+    },
+});
+
+window.onload = function () {
+    anim.addEventListener("webkitAnimationEnd", animHandler, false);
+    anim.addEventListener("MSAnimationEnd", animHandler, false);
+    anim.addEventListener("animationend", animHandler, false);
+
+    box1.addEventListener("wekbkitAnimationEnd", boxAnimHandler, false);
+    box1.addEventListener("MSAnimationEnd", boxAnimHandler, false);
+    box1.addEventListener("animationend", boxAnimHandler, false);
+
+    checkHash();
+}
+
+// Prevent spacebar from scrolling down
+window.onkeydown = function(e) {
+    if (e.keyCode == 32 && e.target == document.body) {
+        e.preventDefault();
+    }
+};
 
 var blackBoxes = function(duration) {
     box1.style.animationName = "boxTop";
@@ -121,65 +195,3 @@ var boxAnimHandler = function () {
     box1.style.animationName = "";
     box2.style.animationName = "";
 }
-
-function changeGirl(name) {
-    // If the girl has an svg file
-    if (girls[name] === true) {
-        img.src = "girls/" + name + ".svg";
-        img.onerror = function() {
-            img.src = "girls/" + name + ".png";
-        }
-    }
-    else {
-        img.src = "girls/" + name + ".png";
-    }
-}
-
-function checkHash() {
-    var newHash = location.hash.substring(1);
-
-    for (var name in girls) {
-        if (newHash.toUpperCase() === name.toUpperCase()) {
-            changeGirl(name);
-            return ;
-        }
-    }
-    changeGirl("Momiji");
-}
-
-window.addEventListener("hashchange", checkHash);
-
-// Audio
-var wanwan =  new Howl({
-    src: ['res/wanwan.ogg', 'res/wanwan.mp3'],
-    format: ['webm', 'mp3'],
-    autoplay: true,
-    loop: true,
-    volume: 0.8,
-    onplay : function() {
-        aIndex = 0;
-        animHandler();
-    },
-    onloaderror: function() {
-        alert("I can't play on your browser, sorry! :c Please go to About and contact my maker about this.");
-    },
-});
-
-window.onload = function () {
-    anim.addEventListener("webkitAnimationEnd", animHandler, false);
-    anim.addEventListener("MSAnimationEnd", animHandler, false);
-    anim.addEventListener("animationend", animHandler, false);
-
-    box1.addEventListener("wekbkitAnimationEnd", boxAnimHandler, false);
-    box1.addEventListener("MSAnimationEnd", boxAnimHandler, false);
-    box1.addEventListener("animationend", boxAnimHandler, false);
-
-    checkHash();
-}
-
-// Prevent spacebar from scrolling down
-window.onkeydown = function(e) {
-    if (e.keyCode == 32 && e.target == document.body) {
-        e.preventDefault();
-    }
-};

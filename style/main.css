@@ -47,7 +47,6 @@ body {
 #wanCenter {
     display: none;
 
-
     background: url(../res/wan_text.png) no-repeat center center;
     background-image: url(../res/wan_text.svg), none;
     -webkit-background-size: 100% 100%;
@@ -84,6 +83,13 @@ body {
     height: 60%;
     -webkit-animation-duration: 500ms;
     animation-duration: 500ms;
+
+    /* 3d animation for smoother animations */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 #wolfImg {
