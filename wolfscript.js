@@ -1,19 +1,3 @@
-//Parse remote json file to get all the data we need and store it in this:
-var wolves = {
-    "Momiji" : {
-        "svg" : true,
-        "tags" : ["Touhou", "Awoo~"]
-    },
-    "Holo" : {
-        "svg" : false,
-        "tags" : ["Spice and Wolf", "Ookami to Koushinryou"]
-    },
-    "Karen" : {
-        "svg" : false,
-        "tags" : ["Kiniro Mosaic", "Karen Kujou", "Ookami to Koushinryou"]
-    }
-};
-
 // Music volume
 var volume = 0.5;
 
