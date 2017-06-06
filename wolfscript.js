@@ -1,16 +1,18 @@
 //Parse remote json file to get all the data we need and store it in this:
-var wolves;
-
-var xhr = new XMLHttpRequest();
-xhr.open("GET", "girls/index.json", true);
-xhr.onload = function (e) {
-        wolves = JSON.parse(xhr.responseText);
+var wolves = {
+    "Momiji" : {
+        "svg" : true,
+        "tags" : ["Touhou", "Awoo~"]
+    },
+    "Holo" : {
+        "svg" : false,
+        "tags" : ["Spice and Wolf", "Ookami to Koushinryou"]
+    },
+    "Karen" : {
+        "svg" : false,
+        "tags" : ["Kiniro Mosaic", "Karen Kujou", "Ookami to Koushinryou"]
+    }
 };
-xhr.onerror = function(e) {
-    alert(`Something went wrong loading wolf data, sorry! :c
-Try again. If this persists, go to About and contact me about it.`);
-};
-xhr.send(null);
 
 // Music volume
 var volume = 0.5;
@@ -45,13 +47,12 @@ function changeGirl(name) {
 function checkHash() {
     var newHash = location.hash.substring(1);
 
-    console.log(wolves);
-    for (var name in wolves) {
-        if (newHash.toUpperCase() === name.toUpperCase()) {
-            changeGirl(name);
-            return ;
+        for (var name in wolves) {
+            if (newHash.toUpperCase() === name.toUpperCase()) {
+                changeGirl(name);
+                return ;
+            }
         }
-    }
     // If no valid hash was found, Momiji is default
     changeGirl("Momiji");
 }
