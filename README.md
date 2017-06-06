@@ -18,7 +18,8 @@ Wan not?
 - ~~Gapless audio loop so wolf girl can wan better (that's actually kind of hard for sync reasons)~~
 - Actual menu so we can have a LOT of wolf girls, a volume slider...
 - ~~Vector graphics~~
-- Use url parameters for girls instead of function calls
+- ~~Use url parameters for girls instead of function calls~~
+- Let people use custom url for wolf girl image
 - Awoo maybe.
 
 # Philosophy
