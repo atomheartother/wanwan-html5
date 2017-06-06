@@ -2,33 +2,6 @@ body {
     overflow: hidden;
 }
 
-/* Only displayed when their browser sucks */
-#playButton {
-    position:absolute;
-    display: none;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.7);
-    text-align: center;
-    font-weight: bold;
-    z-index: 10;
-    flex: 1;
-    align-items: center;
-}
-
-#playButton p {
-    color: red;
-    background-color: white;
-    border: 4px solid red;
-    margin-top: 50%;
-    margin-left: 20%;
-    margin-right: 20%;
-    padding: 2%;
-    cursor: pointer;
-}
-
 /* Buttons for girls and about */
 #footer-info {
     position:absolute;
