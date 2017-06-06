@@ -125,14 +125,12 @@ var boxAnimHandler = function () {
 function changeGirl(name) {
     // If the girl has an svg file
     if (girls[name] === true) {
-        console.log("Has SVG");
         img.src = "girls/" + name + ".svg";
         img.onerror = function() {
             img.src = "girls/" + name + ".png";
         }
     }
     else {
-        console.log("No SVG");
         img.src = "girls/" + name + ".png";
     }
 }
