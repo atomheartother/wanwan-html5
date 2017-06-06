@@ -141,8 +141,8 @@ function checkHash() {
     var newHash = location.hash.substring(1);
 
     for (var name in girls) {
-        if (newHash === name) {
-            changeGirl(newHash);
+        if (newHash.toUpperCase() === name.toUpperCase()) {
+            changeGirl(name);
             return ;
         }
     }
