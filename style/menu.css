@@ -1,0 +1,118 @@
+/* We really want this to display properly so people with bad browsers can reach the about page! */
+#menuContainer {
+    position: absolute;
+    top:2%;
+    left: 2%;
+
+    width: 50%;
+    height: auto;
+    opacity: 0.3;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    z-index: 20;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    padding: 10px;
+    box-shadow: 2px 2px 3px #777;
+}
+
+.hidden {
+    display: none;
+}
+
+.flexbox {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+#menuTop {
+    width: 100%;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+
+#menuContainer:hover {
+    opacity: 1;
+}
+
+#menuContainer table {
+    display: table;
+    width: 100%;
+}
+
+#menuContainer table thead, #menuContainer table tbody {
+    float: left;
+    width: 100%;
+}
+#menuContainer table tbody {
+    overflow: auto;
+    height: 20%;
+    height: 200px;
+}
+#menuContainer table tr {
+    width: 100%;
+    display: table;
+    text-align: left;
+    background-color: white;
+}
+
+#menuContainer table th, #menuContainer table td {
+    text-align: left;
+    padding: 4px;
+    /* Change this value if we add another column! Needs to be (100 / columns)% */
+    width: 50%;
+}
+
+#menuContainer table tr:nth-child(odd) {
+    background-color: #FFD1D6;
+}
+
+#wolfTable tr:hover {
+    background-color: #EB5757!important;
+    color:white!important;
+}
+
+/* Overrides the rule above for the head */
+#menuContainer table thead tr {
+    background-color: #E63939!important;
+    color: white;
+}
+
+#wolfSearch {
+    align-self: flex-end;
+    margin-bottom: 10px;
+    width: 40%;
+    padding: 10px 10px 10px 42px;
+    background-image: url('../res/search-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border: 3px solid #ddd;
+    border-radius: 15px;
+}
+
+#wolfSearch:focus {
+    border-color: #F26D7A;
+}
