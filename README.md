@@ -1,4 +1,4 @@
-![Wan~](https://wanwan-html5.moe/girls/momiji.png)
+![Wan~](https://wanwan-html5.moe/girls/Momiji.png)
 
 # wanwan-html5
 This is an HTML5 version of the flash animation "WAN WAN INTENSIFIES.sfw". CSS animations controlled by Javascript for very fluid wolf girl.
