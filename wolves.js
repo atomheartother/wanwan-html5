@@ -1,4 +1,12 @@
 const wolves = {
+    "DJSona" : {
+        "svg" : false,
+        "tags" : ["League of Legends", "DJ Sona"]
+    },
+    "Eli" : {
+        "svg" : false,
+        "tags" : ["Ayase Eli", "Love Live! School Idol Project"]
+    },
     "Holo" : {
         "svg" : false,
         "tags" : ["Spice and Wolf", "Ookami to Koushinryou"]
@@ -10,6 +18,14 @@ const wolves = {
     "Madoka" : {
         "svg" : false,
         "tags" : ["Puella Magi Madoka Magica", "Meguca", "Madoka Kaname"]
+    },
+    "Maki" : {
+        "svg" : false,
+        "tags" : ["Nishikino Maki", "Love Live! School Idol Project"]
+    },
+    "Link" : {
+        "svg" : false,
+        "tags" : ["The Legend of Zelda"]
     },
     "Marisa" : {
         "svg" : false,
@@ -27,12 +43,24 @@ const wolves = {
         "svg" : false,
         "tags" : ["Undertale", "Afufu~"]
     },
+    "Nozomi" : {
+        "svg" : false,
+        "tags" : ["Toujou Nozomi", "Love Live! School Idol Project"]
+    },
     "Papyrus" : {
         "svg" : false,
         "tags" : ["Undertale", "Nyeh nyeh nyeh"]
     },
+    "Rin" : {
+        "svg" : false,
+        "tags" : ["Hoshizora Rin", "Love Live! School Idol Project"]
+    },
     "Ryuko" : {
         "svg" : false,
         "tags" : ["Kill La Kill", "Ryuko Matoi"]
+    },
+    "Tomoko" : {
+        "svg" : false,
+        "tags" : ["WataMote", "Watashi ga Motenai no wa Dou Kangaetemo Omaera ga Warui!"]
     },
 };
