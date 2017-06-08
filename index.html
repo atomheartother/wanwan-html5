@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style/main.css">
         <link rel="stylesheet" href="style/animations.css">
+        <link rel="stylesheet" href="style/menu.css">
         <link rel="icon" type="image/png" href="/res/icons/favicon-16x16.png" sizes="16x16">
         <link rel="icon" type="image/png" href="/res/icons/favicon-32x32.png" sizes="32x32">
     </head>
@@ -19,17 +20,34 @@
         <img src="res/wanRight.svg" onerror="this.src='res/wanRight.png'" class="wan_text" id="wanRight">
         <div id="wanCenter"></div>
         <div id="footer-info">
-            <!-- The link name should match the filename without extension -->
-            <a href="#Momiji">Momiji</a>
-            <a href="#Holo">Holo</a>
-            <a href="#Karen">Karen</a>
+            <!-- Leaving About here for now so people can report menu bugs -->
             <a target="_blank" href="https://github.com/atomheartother/wanwan-html5">About</a>
         </div>
         <div id="botBox" class="box"></div>
+
+        <!-- Menu -->
+        <div id="menuButton" onclick="showMenu()"></div>
+        <div id="menuContainer" class="menu-hidden">
+            <div class="menuRow">
+                <div id="menuQuit" onclick="hideMenu()"></div>
+                <input type="text" placeholder="Search... ex: Momiji" id="wolfSearch" onkeyup="filterFunction()">
+            </div>
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Tags</th>
+                </tr>
+                </thead>
+                <tbody id="wolfTable">
+                </tbody>
+            </table>
+        </div>
+
     </body>
     <!-- We use howler.js for the gapless audio loop -->
     <script src="lib/howler.core.min.js"></script>
-    <!-- wolves.js contains all the wolf data, in a separate file for code neatness -->
     <script src="wolves.js"></script>
+    <script src="menu.js"></script>
     <script src="wolfscript.js"></script>
 </html>
