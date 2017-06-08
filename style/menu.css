@@ -147,3 +147,15 @@
 #menuQuit:hover {
     opacity: 1;
 }
+
+@media screen and (max-width: 480px) {
+    #menuContainer {
+        left: 0;
+        width: 90%;
+        opacity: 0.7;
+    }
+
+    #wolfSearch {
+        width: 70%
+    }
+}

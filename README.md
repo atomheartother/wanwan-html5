@@ -16,9 +16,11 @@ Wan not?
 - Nightcore mode for fast wolf girl (that's easy just have to do it)
 - ~~Mobile portrait fix (shoooould be easy)~~
 - ~~Gapless audio loop so wolf girl can wan better (that's actually kind of hard for sync reasons)~~
-- Actual menu so we can have a LOT of wolf girls, a volume slider... <- CURRENTLY WORKING ON THIS
+- ~~Actual menu so we can have a LOT of wolf girls, a volume slider...~~
 - ~~Vector graphics~~
 - ~~Use url parameters for girls instead of function calls~~
+- Better search
+- Volume slider
 - Let people use custom url for wolf girl image
 - Awoo maybe.
 
