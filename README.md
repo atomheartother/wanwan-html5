@@ -19,6 +19,7 @@ Wan not?
 - ~~Actual menu so we can have a LOT of wolf girls, a volume slider...~~
 - ~~Vector graphics~~
 - ~~Use url parameters for girls instead of function calls~~
+- Loading bar instead of Momiji
 - Better search
 - Volume slider
 - Let people use custom url for wolf girl image
@@ -31,7 +32,7 @@ Currently, the only library I use is the awesome [howler.js](https://howlerjs.co
 # Credit
 I try to find the artists whose art I use, if you made one of these faces and want credit, contact me about it!
 
-- Link and DJSona are by [Kirbmaster](http://kirbmaster.deviantart.com/)
+- Link, DJSona, Papi, Tracer, Tamamo, D.Va, Kanna, Bayonetta, Miia: [Kirbmaster](http://kirbmaster.deviantart.com/)
 
 # Contact
 Have a suggestion, a complaint, a compatibility issue with your browser? Drop an issue on here or email me at atomheartother@gmail.com
