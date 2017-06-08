@@ -1,5 +1,20 @@
+var menu = document.getElementById("menuContainer");
 var tableBody = document.getElementById("wolfTable");
-var input = document.getElementById("wolfSearch");
+var searchInput = document.getElementById("wolfSearch");
+var menuButton = document.getElementById("menuButton");
+var menu_isup = false;
+
+function  hideMenu() {
+    menu.className = "menu-hidden";
+    menuButton.style.display = "";
+    menu_isup = false;
+}
+
+function showMenu() {
+    menu.className = "menu-flexbox";
+    menuButton.style.display = "none";
+    menu_isup = true;
+}
 
 function shouldFilter(filter, name) {
     if (name.toUpperCase().indexOf(filter) >= 0)
@@ -17,7 +32,7 @@ function filterFunction() {
     var list = tableBody.getElementsByTagName('tr');
 
     for (var i=0; i<list.length; i++) {
-        if (shouldFilter(input.value.toUpperCase(), list[i].getElementsByTagName('td')[0].innerHTML))
+        if (shouldFilter(searchInput.value.toUpperCase(), list[i].getElementsByTagName('td')[0].innerHTML))
             list[i].style.display = "none";
         else
             list[i].style.display = "";
@@ -45,6 +60,5 @@ function fillRow(tr, name) {
 for (name in wolves) {
     var tr = document.createElement('tr');
     fillRow(tr, name);
-    console.log(tr);
     tableBody.append(tr);
 }
