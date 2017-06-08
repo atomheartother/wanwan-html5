@@ -73,8 +73,13 @@ window.onload = function () {
 
 // Prevent spacebar from scrolling down
 window.onkeydown = function(e) {
+    // Disable spacebar scroll
     if (e.keyCode == 32 && e.target == document.body) {
         e.preventDefault();
+    }
+    // Use ESC to leave menu
+    if (e.keyCode == 27 && e.target == document.body && menu_isup == true) {
+        hideMenu();
     }
 };
 

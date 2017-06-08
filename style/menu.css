@@ -1,8 +1,7 @@
-/* We really want this to display properly so people with bad browsers can reach the about page! */
 #menuContainer {
     position: absolute;
-    top:2%;
-    left: 2%;
+    top:10px;
+    left: 10px;
 
     width: 50%;
     height: auto;
@@ -10,9 +9,6 @@
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
     justify-content: flex-start;
@@ -31,28 +27,19 @@
     box-shadow: 2px 2px 3px #777;
 }
 
-.hidden {
-    display: none;
-}
-
-.flexbox {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-}
-
-#menuTop {
-    width: 100%;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-}
-
-
 #menuContainer:hover {
     opacity: 1;
+}
+
+.menu-hidden {
+    display: none;
+    opacity: 0;
+}
+
+.menu-flexbox {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 }
 
 #menuContainer table {
@@ -87,6 +74,10 @@
     background-color: #FFD1D6;
 }
 
+#wolfTable {
+    cursor: pointer;
+}
+
 #wolfTable tr:hover {
     background-color: #EB5757!important;
     color:white!important;
@@ -98,8 +89,16 @@
     color: white;
 }
 
+.menuRow {
+    width: 100%;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
 #wolfSearch {
-    align-self: flex-end;
     margin-bottom: 10px;
     width: 40%;
     padding: 10px 10px 10px 42px;
@@ -115,4 +114,36 @@
 
 #wolfSearch:focus {
     border-color: #F26D7A;
+}
+
+#menuButton {
+    cursor: pointer;
+    opacity: 0.3;
+    position:absolute;
+    top: 20px;
+    left: 20px;
+    width: 32px;
+    height: 32px;
+    background-image: url('../res/menu-icon.png');
+    z-index: 19;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+#menuButton:hover {
+    opacity: 1;
+}
+
+#menuQuit {
+    cursor: pointer;
+    opacity: 0.5;
+    width: 32px;
+    height: 32px;
+    background-image: url('../res/quit-icon.png');
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+#menuQuit:hover {
+    opacity: 1;
 }
