@@ -7,9 +7,10 @@ This is an HTML5 version of the flash animation "WAN WAN INTENSIFIES.sfw". CSS a
 Wan not?
 
 # Features
-- Wolf girls
 - Wan~
-- Mobile support, including browsers unable to autoplay audio (Chrome for Android for example)
+- Wolf girls
+- Dozens of wanning wolves, a search bar
+- Mobile support
 - No awoo :c
 
 # Todo
@@ -26,7 +27,8 @@ Wan not?
 - Awoo maybe.
 
 # Philosophy
-I hate bloated pages and believe in pure html/css/js to run a vast majority of website. Most web pages have absolutely no excuse for being over 1MB, including huge libraries for no other purpose than t make the programmer's life easier on a few function calls. This project will always be as small as I can make it.
+I hate bloated pages and believe in pure html/css/js to run a vast majority of website. Most web pages have absolutely no excuse for being over 1MB, including huge libraries for no other purpose than t make the programmer's life easier on a few function calls. This project will always be as small as I can make it. No jquery, too, pure html/js/css.
+
 Currently, the only library I use is the awesome [howler.js](https://howlerjs.com/), for the gapless audio loop, and do so out of absolute necessity.
 
 # Credit
