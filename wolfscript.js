@@ -1,16 +1,82 @@
 // Music volume
 var volume = 0.5;
 
-// Animation index, keeps track of which CSS animation we're at
+// This keeps track of which animation we're playing
+var currentAnimation;
+// Animation index, keeps track of which index we're at.
 var aIndex = 0;
 
-// Get wolfgirl elem and listen for animation end
+// The durationValues tab is so we don't have to re-write times every time
+const durationValues = ["500ms", "250ms", "125ms"];
+
+// The animations variable contains animation instructions, and allows us to add more animations in the future
+var animations = {
+    "original" : [
+        {"name" : "goLeft", "func" : "goLeft", "duration": 0},
+        {"name" : "fromBRight",  "func" : "fromBRight",  "duration": 0},
+        {"name" : "topRight",  "func" : "topRight",  "duration": 0},
+        {"name" : "backFlip",  "func" : null,  "duration": 0},
+        {"name" : "fullScreen",  "func" : "blackBoxes",  "duration": 0},
+        {"name" : "frontFlip",  "func" : null,  "duration": 0},
+        {"name" : "shake",  "func" : "shake",  "duration": 0},
+        {"name" : "frontFlip",  "func" : null,  "duration": 0},
+        {"name" : "goLeft",  "func" : "goLeft",  "duration": 1},
+        {"name" : "fullScreen",  "func" : "blackBoxes",  "duration": 1},
+        {"name" : "fromBRight",  "func" : "fromBRight",  "duration": 1},
+        {"name" : "topRight",  "func" : "topRight",  "duration": 1},
+        {"name" : "frontFlipAborted",  "func" : null,  "duration": 1},
+        {"name" : "frontFlip",  "func" : null,  "duration": 1},
+        {"name" : "goLeft",  "func" : "goLeft",  "duration": 1},
+        {"name" : "fromBRight",  "func" : "fromBRight",  "duration": 1},
+        {"name" : "frontFlip",  "func" : null,  "duration": 1},
+        {"name" : "backFlip",  "func" : null,  "duration": 1},
+        {"name" : "frontFlip",  "func" : null,  "duration": 1},
+        {"name" : "goLeft",  "func" : "goLeft",  "duration": 1},
+        {"name" : "fromBRight",  "func" : "fromBRight",  "duration": 2},
+        {"name" : "frontFlipAborted",  "func" : null,  "duration": 2},
+        {"name" : "backFlip",  "func" : null,  "duration": 2},
+        {"name" : "frontFlip",  "func" : null,  "duration": 2},
+        {"name" : "shake",  "func" : "shake",  "duration": 2},
+        {"name" : "shake2",  "func" : "shake",  "duration": 2},
+    ],
+    "nightcore" : [
+        {"name" : "shake",  "func" : "shake",  "duration": 2},
+        {"name" : "shake2",  "func" : "shake",  "duration": 2},
+    ],
+};
+
+var animHandler = function () {
+    // Reset box styles
+    box1.style.display = "none";
+    box2.style.display = "none";
+    box1.style.animationName = "";
+    box2.style.animationName = "";
+
+    anim.style.WebKitAnimationTimingFunction = "ease";
+    anim.style.animationTimingFunction = "ease";
+
+    wanLeft.style.display = "none";
+    wanRight.style.display = "none";
+    wanCenter.style.display = "none";
+
+    var cur = animations[currentAnimation][aIndex];
+    if (cur.func != null)
+        window[cur.func](durationValues[cur.duration]);
+    anim.style.WebKitAnimationDuration = durationValues[cur.duration];
+    anim.style.animationDuration = durationValues[cur.duration];
+    anim.style.WebkitAnimationName = cur.name;
+    anim.style.animationName = cur.name;
+    if (aIndex != animations[currentAnimation].length - 1)
+        aIndex++;
+    else
+        aIndex--;
+}
+
 var anim = document.getElementById("wolfGirl");
 var img = document.getElementById("wolfImg");
 var box1 = document.getElementById("topBox");
 var box2 = document.getElementById("botBox");
 
-// Wan texts
 var wanLeft = document.getElementById("wanLeft");
 var wanRight = document.getElementById("wanRight");
 var wanCenter = document.getElementById("wanCenter");
@@ -64,6 +130,7 @@ var wanwan =  new Howl({
     loop: true,
     volume: volume,
     onplay : function() {
+        document.getElementById('loadingScreen').style.display = "none";
         aIndex = 0;
         animHandler();
     },
@@ -78,6 +145,19 @@ window.onkeydown = function(e) {
         hideMenu();
     }
 };
+
+function toggleNightcore() {
+    aIndex = 0;
+    if (currentAnimation === "nightcore") {
+        currentAnimation = "original";
+        wanwan.rate(1);
+    } else {
+        currentAnimation = "nightcore";
+        wanwan.rate(1.55);
+    }
+    wanwan.seek(0);
+    animHandler();
+}
 
 var blackBoxes = function(duration) {
     box1.style.display = "inline";
@@ -122,65 +202,6 @@ var topRight = function (duration) {
     wanCenter.style.animationDuration  = duration;
 }
 
-var animHandler = function () {
-    const durationValues = ["500ms", "250ms", "125ms"];
-
-    box1.style.display = "none";
-    box2.style.display = "none";
-    box1.style.animationName = "";
-    box2.style.animationName = "";
-
-    anim.style.WebKitAnimationTimingFunction = "ease";
-    anim.style.animationTimingFunction = "ease";
-
-    wanLeft.style.display = "none";
-    wanRight.style.display = "none";
-    wanCenter.style.display = "none";
-
-    const funcs = ['goLeft', 'fromBRight', 'topRight',
-             null, 'blackBoxes', null,
-             'shake', null, 'goLeft',
-             'blackBoxes', 'fromBRight', 'topRight',
-             null, null, 'goLeft',
-             'fromBRight', null, null,
-             null, 'goLeft', 'fromBRight',
-             null, null, null,
-             null, null];
-
-    const animations = ["goLeft", "fromBRight", "topRight",
-                  "backFlip", "fullScreen", "frontFlip",
-                  "shake", "frontFlip", "goLeft",
-                  "fullScreen", "fromBRight", 'topRight',
-                  "frontFlipAborted", "frontFlip", "goLeft",
-                  "fromBRight", "frontFlip", "backFlip",
-                  "frontFlip", "goLeft", "fromBRight",
-                  "frontFlipAborted", "backFlip", "frontFlip",
-                  "shake", "shake2"];
-    const durations = [0, 0, 0,
-                 0, 0, 0,
-                 0, 0, 1,
-                 1, 1, 1,
-                 1, 1, 1,
-                 1, 1, 1,
-                 1, 1, 2,
-                 2, 2, 2,
-                 2, 2];
-
-    if (funcs[aIndex] != null)
-        window[funcs[aIndex]](durationValues[durations[aIndex]]);
-    if (animations[aIndex] != null)
-    {
-        anim.style.WebKitAnimationDuration = durationValues[durations[aIndex]];
-        anim.style.animationDuration = durationValues[durations[aIndex]];
-        anim.style.WebkitAnimationName = animations[aIndex];
-        anim.style.animationName = animations[aIndex];
-        if (aIndex != animations.length - 1)
-            aIndex++;
-        else
-            aIndex--;
-    }
-}
-
 var boxAnimHandler = function () {
     box1.style.animationName = "";
     box2.style.animationName = "";
@@ -194,7 +215,8 @@ window.onload = function () {
     box1.addEventListener("wekbkitAnimationEnd", boxAnimHandler, false);
     box1.addEventListener("MSAnimationEnd", boxAnimHandler, false);
     box1.addEventListener("animationend", boxAnimHandler, false);
+
+    currentAnimation = "original";
     wanwan.play();
-    document.getElementById('loadingScreen').style.display = "none";
 }
 
