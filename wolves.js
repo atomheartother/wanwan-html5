@@ -19,6 +19,14 @@ const wolves = {
         "svg" : false,
         "tags" : ["Spice and Wolf", "Ookami to Koushinryou"]
     },
+    "Izuna": {
+        "svg": false,
+        "tags": ["Izuna Hatsuse", "No Game No Life"]
+    },
+    "Jibril": {
+        "svg": false,
+        "tags": ["No Game No Life"]
+    },
     "Kanna" : {
         "svg" : false,
         "tags" : ["Dragon Maid", "Kanna Kamui", "Kobayashi-san Chi no Maid Dragon"]
@@ -35,9 +43,17 @@ const wolves = {
         "svg" : false,
         "tags" : ["Nishikino Maki", "Love Live! School Idol Project"]
     },
+    "Mimi" : {
+        "svg" : false,
+        "tags" : ["Mimi Pearlbaton", "Re:Zero kara Hajimeru Isekai Seikatsu"]
+    },
     "Link" : {
         "svg" : false,
         "tags" : ["The Legend of Zelda"]
+    },
+    "Liliruca" : {
+        "svg" : false,
+        "tags" : ["Liliruca Arde", "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka", "Is It Wrong to Try to Pick Up Girls in a Dungeon?"]
     },
     "Marisa" : {
         "svg" : false,
