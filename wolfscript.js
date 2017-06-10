@@ -80,6 +80,8 @@ window.onkeydown = function(e) {
 };
 
 var blackBoxes = function(duration) {
+    box1.style.display = "inline";
+    box2.style.display = "inline";
     box1.style.animationName = "boxTop";
     box2.style.animationName = "boxBot";
 
@@ -123,6 +125,8 @@ var topRight = function (duration) {
 var animHandler = function () {
     const durationValues = ["500ms", "250ms", "125ms"];
 
+    box1.style.display = "none";
+    box2.style.display = "none";
     box1.style.animationName = "";
     box2.style.animationName = "";
 
