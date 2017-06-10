@@ -79,6 +79,10 @@ const wolves = {
         "svg" : false,
         "tags" : ["Kill La Kill", "Ryuko Matoi"]
     },
+    "Satsuki" : {
+        "svg" : false,
+        "tags" : ["Kill La Kill", "Satsuki Kiryuin"]
+    },
     "Tamamo" : {
         "svg" : false,
         "tags" : ["Tamamo Ball", "Monster Girl Quest"]

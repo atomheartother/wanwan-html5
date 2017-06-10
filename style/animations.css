@@ -228,31 +228,25 @@
 /* Black bars */
 @keyframes boxTop {
     0% {
-        display: inline;
         top: -40%;
     }
     80% {
-        display: inline;
         top: 0;
     }
 
     100% {
-        display: inline;
         top: 0;
     }
 }
 
 @keyframes boxBot {
     0% {
-        display: inline;
         bottom: -40%;
     }
     80% {
-        display: inline;
         bottom: -10%;
     }
     100% {
-        display: inline;
         bottom: -10%;
     }
 }
