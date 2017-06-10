@@ -37,6 +37,17 @@ function checkHash() {
                 return ;
             }
         }
+    // Check if it could be a custom URL
+    if (newHash.substring(0, 5) === "curl=")
+    {
+        img.src = newHash.substring(5);
+        // If it fails. display momiji
+        img.onerror = function() {
+            changeGirl("Momiji");
+        }
+        return ;
+    }
+
     // If no valid hash was found, Momiji is default
     changeGirl("Momiji");
 }
