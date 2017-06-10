@@ -35,18 +35,6 @@ const wolves = {
         "svg" : false,
         "tags" : ["Kiniro Mosaic", "Karen Kujou", "Ookami to Koushinryou"]
     },
-    "Madoka" : {
-        "svg" : false,
-        "tags" : ["Puella Magi Madoka Magica", "Meguca", "Madoka Kaname"]
-    },
-    "Maki" : {
-        "svg" : false,
-        "tags" : ["Nishikino Maki", "Love Live! School Idol Project"]
-    },
-    "Mimi" : {
-        "svg" : false,
-        "tags" : ["Mimi Pearlbaton", "Re:Zero kara Hajimeru Isekai Seikatsu"]
-    },
     "Link" : {
         "svg" : false,
         "tags" : ["The Legend of Zelda"]
@@ -54,6 +42,14 @@ const wolves = {
     "Liliruca" : {
         "svg" : false,
         "tags" : ["Liliruca Arde", "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka", "Is It Wrong to Try to Pick Up Girls in a Dungeon?"]
+    },
+    "Madoka" : {
+        "svg" : false,
+        "tags" : ["Puella Magi Madoka Magica", "Meguca", "Madoka Kaname"]
+    },
+    "Maki" : {
+        "svg" : false,
+        "tags" : ["Nishikino Maki", "Love Live! School Idol Project"]
     },
     "Marisa" : {
         "svg" : false,
@@ -66,6 +62,10 @@ const wolves = {
     "Miia" : {
         "svg" : false,
         "tags" : ["Monster Musume", "Snake Girl"]
+    },
+    "Mimi" : {
+        "svg" : false,
+        "tags" : ["Mimi Pearlbaton", "Re:Zero kara Hajimeru Isekai Seikatsu"]
     },
     "Momiji" : {
         "svg" : true,
