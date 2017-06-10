@@ -36,6 +36,7 @@ Currently, the only library I use is the awesome [howler.js](https://howlerjs.co
 I try to find the artists whose art I use, if you made one of these faces and want credit, contact me about it!
 
 - Link, DJSona, Papi, Tracer, Tamamo, D.Va, Kanna, Bayonetta, Miia: [Kirbmaster](http://kirbmaster.deviantart.com/)
+- Ryuko, Satsuki: Tetra (Couldn't find their contact info/website)
 
 # Contact
 Have a suggestion, a complaint, a compatibility issue with your browser? Drop an issue on here or email me at atomheartother@gmail.com
