@@ -26,16 +26,12 @@
         <img src="res/wanLeft.svg" onerror="this.src='res/wanLeft.png'" class="wan_text" id="wanLeft">
         <img src="res/wanRight.svg" onerror="this.src='res/wanRight.png'" class="wan_text" id="wanRight">
         <div id="wanCenter"></div>
-        <div id="footer-info">
-            <!-- Leaving About here for now so people can report menu bugs -->
-            <a target="_blank" href="https://github.com/atomheartother/wanwan-html5">About</a>
-        </div>
         <div id="botBox" class="box"></div>
 
         <!-- Menu -->
         <div id="menuButton" onclick="showMenu()"></div>
         <div id="menuContainer" class="menu-hidden">
-            <div class="menuRow">
+            <div class="menuHeader">
                 <div id="menuQuit" onclick="hideMenu()"></div>
                 <input type="text" placeholder="Search... ex: Momiji" id="wolfSearch" onkeyup="filterFunction()">
             </div>
@@ -53,6 +49,10 @@
             <div id="customUrlContainer">
                 <input type="text" placeholder="https://my-waifu.io/best-girl.png" id="customUrl">
                 <div class="submitButton" onclick="customGirl()">Submit</div>
+            </div>
+            <div class="menuRow">
+                <div class="submitButton" onclick="toggleNightcore()">Nightcore</div>
+                <a class="submitButton" target="_blank" href="https://github.com/atomheartother/wanwan-html5">About</a>
             </div>
         </div>
 

@@ -88,13 +88,22 @@
     color: white;
 }
 
-.menuRow {
+.menuHeader {
     width: 100%;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
     -webkit-justify-content: space-between;
     justify-content: space-between;
+}
+
+.menuRow {
+    width: 100%;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
 }
 
 #wolfSearch {
@@ -158,6 +167,7 @@
     -ms-flex-pack: center;
     justify-content: center;
     width: 100%;
+    margin-bottom: 10px;
 }
 
 #customUrl {
@@ -176,11 +186,13 @@
 }
 
 .submitButton {
+    text-decoration: none;
     padding: 10px;
     color: white;
     font-weight: bold;
     background-color: #F26D7A;
     cursor: pointer;
+    border-radius: 3px;
 }
 
 .submitButton:hover {
