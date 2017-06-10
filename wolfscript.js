@@ -41,13 +41,15 @@ function checkHash() {
     changeGirl("Momiji");
 }
 
+checkHash();
+
 window.addEventListener("hashchange", checkHash);
 
 // Audio
 var wanwan =  new Howl({
     src: ['res/wanwan.ogg', 'res/wanwan.mp3'],
     format: ['webm', 'mp3'],
-    autoplay: true,
+    autoplay: false,
     loop: true,
     volume: volume,
     onplay : function() {
@@ -59,24 +61,7 @@ var wanwan =  new Howl({
     },
 });
 
-window.onload = function () {
-    anim.addEventListener("webkitAnimationEnd", animHandler, false);
-    anim.addEventListener("MSAnimationEnd", animHandler, false);
-    anim.addEventListener("animationend", animHandler, false);
-
-    box1.addEventListener("wekbkitAnimationEnd", boxAnimHandler, false);
-    box1.addEventListener("MSAnimationEnd", boxAnimHandler, false);
-    box1.addEventListener("animationend", boxAnimHandler, false);
-
-    checkHash();
-}
-
-// Prevent spacebar from scrolling down
 window.onkeydown = function(e) {
-    // Disable spacebar scroll
-    if (e.keyCode == 32 && e.target == document.body) {
-        e.preventDefault();
-    }
     // Use ESC to leave menu
     if (e.keyCode == 27 && e.target == document.body && menu_isup == true) {
         hideMenu();
@@ -185,3 +170,16 @@ var boxAnimHandler = function () {
     box1.style.animationName = "";
     box2.style.animationName = "";
 }
+
+window.onload = function () {
+    anim.addEventListener("webkitAnimationEnd", animHandler, false);
+    anim.addEventListener("MSAnimationEnd", animHandler, false);
+    anim.addEventListener("animationend", animHandler, false);
+
+    box1.addEventListener("wekbkitAnimationEnd", boxAnimHandler, false);
+    box1.addEventListener("MSAnimationEnd", boxAnimHandler, false);
+    box1.addEventListener("animationend", boxAnimHandler, false);
+    wanwan.play();
+    document.getElementById('loadingScreen').style.display = "none";
+}
+
