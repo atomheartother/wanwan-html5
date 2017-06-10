@@ -2,7 +2,6 @@
     position: absolute;
     top:10px;
     left: 10px;
-
     width: 50%;
     height: auto;
     opacity: 0.3;
@@ -146,6 +145,46 @@
 
 #menuQuit:hover {
     opacity: 1;
+}
+
+#customUrlContainer {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#customUrl {
+    width: 70%;
+    margin-right: 15px;
+    padding: 10px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border: 3px solid #ddd;
+    border-radius: 15px;
+}
+
+#customUrl:focus {
+    border-color: #F26D7A;
+}
+
+.submitButton {
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    background-color: #F26D7A;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background-color: #EB5757;
 }
 
 @media screen and (max-width: 480px) {

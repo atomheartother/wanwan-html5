@@ -39,6 +39,10 @@ function filterFunction() {
     }
 }
 
+function customGirl() {
+    window.location.hash = "curl=" + document.getElementById("customUrl").value;
+}
+
 function fillRow(tr, name) {
     // Set callback on click
     tr.onclick = function() {

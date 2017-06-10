@@ -8,8 +8,9 @@ Wan not?
 
 # Features
 - Wan~
-- Wolf girls
-- Dozens of wanning wolves, a search bar
+- Wolf girls!
+- Dozens of wanning wolves, with search!
+- Use any image you want and send it to friends!
 - Mobile support
 - No awoo :c
 
@@ -20,10 +21,10 @@ Wan not?
 - ~~Actual menu so we can have a LOT of wolf girls, a volume slider...~~
 - ~~Vector graphics~~
 - ~~Use url parameters for girls instead of function calls~~
-- Loading bar instead of Momiji
+- ~~Loading bar instead of Momiji~~
 - Better search
 - Volume slider
-- Let people use custom url for wolf girl image
+- ~~Let people use custom url for wolf girl image~~
 - Awoo maybe.
 
 # Philosophy
