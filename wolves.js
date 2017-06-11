@@ -15,9 +15,17 @@ const wolves = {
         "svg" : false,
         "tags" : ["Ayase Eli", "Love Live! School Idol Project"]
     },
+    "Hanayo" : {
+        "svg" : false,
+        "tags" : ["Koizumi Hanayo", "Love Live! School Idol Project"]
+    },
     "Holo" : {
         "svg" : false,
         "tags" : ["Spice and Wolf", "Ookami to Koushinryou"]
+    },
+    "Honoka" : {
+        "svg" : false,
+        "tags" : ["Kousaka Honoka", "Love Live! School Idol Project"]
     },
     "Izuna": {
         "svg": false,
@@ -34,6 +42,10 @@ const wolves = {
     "Karen" : {
         "svg" : false,
         "tags" : ["Kiniro Mosaic", "Karen Kujou", "Ookami to Koushinryou"]
+    },
+    "Kotori" : {
+        "svg" : false,
+        "tags" : ["Minami Kotori", "Love Live! School Idol Project"]
     },
     "Link" : {
         "svg" : false,
@@ -110,5 +122,9 @@ const wolves = {
     "Tracer" : {
         "svg" : false,
         "tags" : ["Overwatch", "Lena Oxton"]
+    },
+    "Umi" : {
+        "svg" : false,
+        "tags" : ["Sonoda Umi", "Love Live! School Idol Project"]
     },
 };
