@@ -24,7 +24,7 @@ Wan not?
 - ~~Loading bar instead of Momiji~~
 - Better search
 - Volume slider
-- Vectors for all girls: 1/29 done
+- Vectors for all girls: 2/29 done
 - ~~Let people use custom url for wolf girl image~~
 - Awoo maybe.
 

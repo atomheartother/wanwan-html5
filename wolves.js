@@ -72,7 +72,7 @@ const wolves = {
         "tags" : ["Touhou", "Awoo~"]
     },
     "Muffet" : {
-        "svg" : false,
+        "svg" : true,
         "tags" : ["Undertale", "Afufu~"]
     },
     "Nozomi" : {
