@@ -47,6 +47,10 @@ const wolves = {
         "svg" : false,
         "tags" : ["Minami Kotori", "Love Live! School Idol Project"]
     },
+    "Kyouko" : {
+        "svg" : false,
+        "tags" : ["Touhou", "Kyouko Kasodani"]
+    },
     "Link" : {
         "svg" : false,
         "tags" : ["The Legend of Zelda"]
@@ -86,6 +90,10 @@ const wolves = {
     "Muffet" : {
         "svg" : true,
         "tags" : ["Undertale", "Afufu~"]
+    },
+    "Nico" : {
+        "svg" : false,
+        "tags" : ["Yazawa Nico", "Love Live! School Idol Project"]
     },
     "Nozomi" : {
         "svg" : false,
