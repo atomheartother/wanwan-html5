@@ -23,7 +23,7 @@ Wan not?
 - ~~Use url parameters for girls instead of function calls~~
 - ~~Loading bar instead of Momiji~~
 - Better search
-- Volume slider
+- ~~Volume slider~~
 - Vectors for all girls: 2/29 done
 - ~~Let people use custom url for wolf girl image~~
 - Awoo maybe.

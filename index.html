@@ -33,7 +33,7 @@
         <div id="menuContainer" class="menu-hidden">
             <div class="menuHeader">
                 <div id="menuQuit" onclick="hideMenu()"></div>
-                <input type="text" placeholder="Search... ex: Momiji" id="wolfSearch" onkeyup="filterFunction()">
+                <input type="text" placeholder="Search... ex: Momiji" id="wolfSearch" onkeyup="filterFunction()"/>
             </div>
             <table>
                 <thead>
@@ -47,11 +47,14 @@
             </table>
             <p>Or use a custom image URL:</p>
             <div id="customUrlContainer">
-                <input type="text" placeholder="https://my-waifu.io/best-girl.png" id="customUrl">
+                <input type="text" placeholder="https://my-waifu.io/best-girl.png" id="customUrl"/>
                 <div class="submitButton" onclick="customGirl()">Submit</div>
             </div>
             <div class="menuRow">
                 <div class="submitButton" onclick="toggleNightcore()">Nightcore</div>
+                <div class="volumeContainer">
+                    <input type="range" id="volSlider" min="0" max="1" step="0.05" oninput="volumeChange(this.value)" onchange="volumeChange(this.value)" />
+                </div>
                 <a class="submitButton" target="_blank" href="https://github.com/atomheartother/wanwan-html5">About</a>
             </div>
         </div>

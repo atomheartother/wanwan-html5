@@ -1,6 +1,3 @@
-// Music volume
-var volume = 0.5;
-
 // This keeps track of which animation we're playing
 var currentAnimation;
 // Animation index, keeps track of which index we're at.
@@ -122,13 +119,17 @@ checkHash();
 
 window.addEventListener("hashchange", checkHash);
 
+function volumeChange(newvol) {
+    wanwan.volume(newvol);
+}
+
 // Audio
 var wanwan =  new Howl({
     src: ['res/wanwan.ogg', 'res/wanwan.mp3'],
     format: ['webm', 'mp3'],
     autoplay: false,
     loop: true,
-    volume: volume,
+    volume: parseFloat(document.getElementById("volSlider").value),
     onplay : function() {
         document.getElementById('loadingScreen').style.display = "none";
         aIndex = 0;
