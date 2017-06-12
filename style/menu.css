@@ -199,6 +199,11 @@
     background-color: #EB5757;
 }
 
+.volumeContainer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 @media screen and (max-width: 480px) {
     #menuContainer {
         left: 0;
