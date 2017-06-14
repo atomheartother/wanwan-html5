@@ -1,4 +1,8 @@
 const wolves = {
+    "Ahri" : {
+        "svg" : false,
+        "tags" : ["League of Legends", "Ahri"]
+    },
     "Bayonetta" : {
         "svg" : false,
         "tags" : ["Bayonetta", "Cereza"]
