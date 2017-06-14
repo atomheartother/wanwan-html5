@@ -30,12 +30,18 @@ function shouldFilter(filter, name) {
 
 function filterFunction() {
     var list = tableBody.getElementsByTagName('tr');
-
+    var words = searchInput.value.toUpperCase().split(" ");
     for (var i=0; i<list.length; i++) {
-        if (shouldFilter(searchInput.value.toUpperCase(), list[i].getElementsByTagName('td')[0].innerHTML))
-            list[i].style.display = "none";
-        else
-            list[i].style.display = "";
+        for (var j=0; j<words.length; j++)
+        {
+            if (shouldFilter(words[j], list[i].getElementsByTagName('td')[0].innerHTML))
+            {
+                list[i].style.display = "none";
+                break ;
+            }
+            else if (j == words.length - 1)
+                list[i].style.display = "";
+        }
     }
 }
 
