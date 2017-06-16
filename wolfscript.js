@@ -141,9 +141,18 @@ var wanwan =  new Howl({
 });
 
 window.onkeydown = function(e) {
-    // Use ESC to leave menu
-    if (e.keyCode == 27 && e.target == document.body && menu_isup == true) {
-        hideMenu();
+    if (e.keyCode == 27) {
+        // leave menu
+        if (e.target == document.body && menu_isup == true)
+            hideMenu();
+        // unfocus input text
+        else if (document.activeElement.id == 'customUrl' ||
+                 document.activeElement.id == 'wolfSearch')
+            document.activeElement.blur();
+    }
+    // Enter to submit URL
+    else if (e.keyCode == 13 && document.activeElement.id == 'customUrl') {
+        customGirl();
     }
 };
 
