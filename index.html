@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>Wan!~</title>
-        <meta name=”description” content=”WAN WAN INTENSIFIES - html5 version of wanwan.moe”>
+        <meta name="description" content="WAN WAN INTENSIFIES - html5 version of wanwan.moe">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style/main.css">
@@ -21,10 +22,10 @@
 
         <div id="topBox" class="box"></div>
         <div id="wolfGirl">
-            <img alt="Awoo~" id="wolfImg" />
+            <img alt="Awoo~" id="wolfImg" src="girls/Momiji.svg">
         </div>
-        <img src="res/wanLeft.svg" onerror="this.src='res/wanLeft.png'" class="wan_text" id="wanLeft">
-        <img src="res/wanRight.svg" onerror="this.src='res/wanRight.png'" class="wan_text" id="wanRight">
+        <img src="res/wanLeft.svg" onerror="this.src='res/wanLeft.png'" class="wan_text" id="wanLeft" alt>
+        <img src="res/wanRight.svg" onerror="this.src='res/wanRight.png'" class="wan_text" id="wanRight" alt>
         <div id="wanCenter"></div>
         <div id="botBox" class="box"></div>
 
@@ -53,16 +54,16 @@
             <div class="menuRow">
                 <div class="submitButton" onclick="toggleNightcore()">Nightcore</div>
                 <div class="volumeContainer">
-                    <input type="range" id="volSlider" min="0" max="1" step="0.05" oninput="volumeChange(this.value)" onchange="volumeChange(this.value)" />
+                    <input type="range" id="volSlider" min="0" max="1" step="0.05" oninput="volumeChange(this.value)" onchange="volumeChange(this.value)">
                 </div>
                 <a class="submitButton" target="_blank" href="https://github.com/atomheartother/wanwan-html5">About</a>
             </div>
         </div>
 
+        <!-- We use howler.js for the gapless audio loop -->
+        <script src="lib/howler.core.min.js"></script>
+        <script src="wolves.js"></script>
+        <script src="menu.js"></script>
+        <script src="wolfscript.js"></script>
     </body>
-    <!-- We use howler.js for the gapless audio loop -->
-    <script src="lib/howler.core.min.js"></script>
-    <script src="wolves.js"></script>
-    <script src="menu.js"></script>
-    <script src="wolfscript.js"></script>
 </html>
