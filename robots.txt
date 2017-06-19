@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://wanwan-html5.moe/sitemap.xml
