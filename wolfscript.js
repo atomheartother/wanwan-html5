@@ -6,67 +6,62 @@ var aIndex = 0;
 // The durationValues tab is so we don't have to re-write times every time
 const durationValues = ["500ms", "250ms", "125ms"];
 
+// post holds a function to execute after an animation has ended and before the next one starts
+var post = null;
+
 // The animations variable contains animation instructions, and allows us to add more animations in the future
 var animations = {
     "original" : [
-        {"name" : "goLeft", "func" : "goLeft", "duration": 0},
-        {"name" : "fromBRight",  "func" : "fromBRight",  "duration": 0},
-        {"name" : "topRight",  "func" : "topRight",  "duration": 0},
-        {"name" : "backFlip",  "func" : null,  "duration": 0},
-        {"name" : "fullScreen",  "func" : "blackBoxes",  "duration": 0},
-        {"name" : "frontFlip",  "func" : null,  "duration": 0},
-        {"name" : "shake",  "func" : "shake",  "duration": 0},
-        {"name" : "frontFlip",  "func" : null,  "duration": 0},
-        {"name" : "goLeft",  "func" : "goLeft",  "duration": 1},
-        {"name" : "fullScreen",  "func" : "blackBoxes",  "duration": 1},
-        {"name" : "fromBRight",  "func" : "fromBRight",  "duration": 1},
-        {"name" : "topRight",  "func" : "topRight",  "duration": 1},
-        {"name" : "frontFlipAborted",  "func" : null,  "duration": 1},
-        {"name" : "frontFlip",  "func" : null,  "duration": 1},
-        {"name" : "goLeft",  "func" : "goLeft",  "duration": 1},
-        {"name" : "fromBRight",  "func" : "fromBRight",  "duration": 1},
-        {"name" : "frontFlip",  "func" : null,  "duration": 1},
-        {"name" : "backFlip",  "func" : null,  "duration": 1},
-        {"name" : "frontFlip",  "func" : null,  "duration": 1},
-        {"name" : "goLeft",  "func" : "goLeft",  "duration": 1},
-        {"name" : "fromBRight",  "func" : "fromBRight",  "duration": 2},
-        {"name" : "frontFlipAborted",  "func" : null,  "duration": 2},
-        {"name" : "backFlip",  "func" : null,  "duration": 2},
-        {"name" : "frontFlip",  "func" : null,  "duration": 2},
-        {"name" : "shake",  "func" : "shake",  "duration": 2},
-        {"name" : "shake2",  "func" : "shake",  "duration": 2},
-    ],
-    "nightcore" : [
-        {"name" : "shake",  "func" : "shake",  "duration": 2},
-        {"name" : "shake2",  "func" : "shake",  "duration": 2},
-    ],
+    {"name" : "goLeft", "func" : "goLeft", "duration": 0},
+    {"name" : "fromBRight", "func" : "fromBRight", "duration": 0},
+    {"name" : "topRight", "func" : "topRight", "duration": 0},
+    {"name" : "backFlip", "duration": 0},
+    {"name" : "fullScreen", "func" : "blackBoxes", "duration": 0},
+    {"name" : "frontFlip", "duration": 0},
+    {"name" : "shake", "func" : "shake", "duration": 0},
+    {"name" : "frontFlip", "duration": 0},
+    {"name" : "goLeft", "func" : "goLeft", "duration": 1},
+    {"name" : "fullScreen", "func" : "blackBoxes", "duration": 1},
+    {"name" : "fromBRight", "func" : "fromBRight", "duration": 1},
+    {"name" : "topRight", "func" : "topRight", "duration": 1},
+    {"name" : "frontFlipAborted", "duration": 1},
+    {"name" : "frontFlip", "duration": 1},
+    {"name" : "goLeft", "func" : "goLeft", "duration": 1},
+    {"name" : "fromBRight", "func" : "fromBRight", "duration": 1},
+    {"name" : "frontFlip", "duration": 1},
+    {"name" : "backFlip", "duration": 1},
+    {"name" : "frontFlip", "duration": 1},
+    {"name" : "goLeft", "func" : "goLeft", "duration": 1},
+    {"name" : "fromBRight", "func" : "fromBRight", "duration": 2},
+    {"name" : "frontFlipAborted", "duration": 2},
+    {"name" : "backFlip", "duration": 2},
+    {"name" : "frontFlip", "duration": 2},
+    {"name" : "shake", "func" : "shake", "duration": 2},
+  ],
+  "nightcore" : [
+    {"name" : "shake", "func" : "shake", "duration": 2},
+  ],
 };
 
 var animHandler = function () {
-    // Reset box styles
-    box1.style.display = "none";
-    box2.style.display = "none";
-    box1.style.animationName = "";
-    box2.style.animationName = "";
-
-    anim.style.WebKitAnimationTimingFunction = "ease";
-    anim.style.animationTimingFunction = "ease";
-
-    wanLeft.style.display = "none";
-    wanRight.style.display = "none";
-    wanCenter.style.display = "none";
+    if (post != null)
+    {
+        post();
+        post = null;
+    }
 
     var cur = animations[currentAnimation][aIndex];
-    if (cur.func != null)
+    if (cur.hasOwnProperty("func"))
         window[cur.func](durationValues[cur.duration]);
     anim.style.WebKitAnimationDuration = durationValues[cur.duration];
     anim.style.animationDuration = durationValues[cur.duration];
-    anim.style.WebkitAnimationName = cur.name;
+    anim.style.WebKitAnimationName = cur.name;
     anim.style.animationName = cur.name;
-    if (aIndex != animations[currentAnimation].length - 1)
-        aIndex++;
-    else
-        aIndex--;
+    aIndex++;
+    if (aIndex == animations[currentAnimation].length)
+        anim.classList.add("infiniteLoop");
+    else if (anim.classList.contains("infiniteLoop"))
+        anim.classList.remove("infiniteLoop");
 }
 
 var anim = document.getElementById("wolfGirl");
@@ -169,6 +164,13 @@ function toggleNightcore() {
     animHandler();
 }
 
+var resetBoxes = function() {
+    box1.style.display = "none";
+    box2.style.display = "none";
+    box1.style.animationName = "";
+    box2.style.animationName = "";
+}
+
 var blackBoxes = function(duration) {
     box1.style.display = "inline";
     box2.style.display = "inline";
@@ -182,9 +184,22 @@ var blackBoxes = function(duration) {
     box2.style.animationDuration  = duration;
 }
 
+var noshake = function() {
+    anim.style.WebKitAnimationTimingFunction = "ease";
+    anim.style.animationTimingFunction = "ease";
+}
+
 var shake = function(duration) {
     anim.style.WebKitAnimationTimingFunction = "steps(10, end)";
     anim.style.animationTimingFunction = "steps(10, end)";
+
+    post = noshake;
+}
+
+var noText = function() {
+    wanLeft.style.display = "none";
+    wanRight.style.display = "none";
+    wanCenter.style.display = "none";
 }
 
 var goLeft = function(duration) {
@@ -194,6 +209,8 @@ var goLeft = function(duration) {
     wanRight.style.animationName = "rightText";
     wanRight.style.WebKitAnimationDuration = duration;
     wanRight.style.animationDuration  = duration;
+
+    post = noText;
 }
 
 var fromBRight = function(duration) {
@@ -203,6 +220,7 @@ var fromBRight = function(duration) {
     wanLeft.style.animationName = "leftText";
     wanLeft.style.WebKitAnimationDuration = duration;
     wanLeft.style.animationDuration  = duration;
+    post = noText;
 }
 
 var topRight = function (duration) {
@@ -210,11 +228,7 @@ var topRight = function (duration) {
     wanCenter.style.animationName = "stretchyWan";
     wanCenter.style.WebKitAnimationDuration = duration;
     wanCenter.style.animationDuration  = duration;
-}
-
-var boxAnimHandler = function () {
-    box1.style.animationName = "";
-    box2.style.animationName = "";
+    post = noText;
 }
 
 window.onload = function () {
@@ -222,9 +236,9 @@ window.onload = function () {
     anim.addEventListener("MSAnimationEnd", animHandler, false);
     anim.addEventListener("animationend", animHandler, false);
 
-    box1.addEventListener("wekbkitAnimationEnd", boxAnimHandler, false);
-    box1.addEventListener("MSAnimationEnd", boxAnimHandler, false);
-    box1.addEventListener("animationend", boxAnimHandler, false);
+    box1.addEventListener("wekbkitAnimationEnd", resetBoxes, false);
+    box1.addEventListener("MSAnimationEnd", resetBoxes, false);
+    box1.addEventListener("animationend", resetBoxes, false);
 
     currentAnimation = "original";
     wanwan.play();
