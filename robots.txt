@@ -1,2 +1,3 @@
 User-agent: *
+Allow: /
 Sitemap: https://wanwan-html5.moe/sitemap.xml
