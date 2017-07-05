@@ -27,6 +27,7 @@ Wan not?
 - ~~Volume slider~~
 - Vectors for all girls: 2/29 done
 - ~~Let people use custom url for wolf girl image~~
+- Customize volume slider so it's consistent across platforms
 - Awoo maybe.
 
 # Philosophy
