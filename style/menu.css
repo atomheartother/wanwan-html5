@@ -204,6 +204,110 @@
     padding-bottom: 10px;
 }
 
+input[type=range].volSlider {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 5.35px 0;
+}
+input[type=range].volSlider:focus {
+  outline: none;
+}
+
+input[type=range].styledSlider {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 3.25px 0;
+}
+input[type=range].styledSlider:focus {
+  outline: none;
+}
+
+input[type=range].styledSlider {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 0.35px 0;
+}
+input[type=range].styledSlider:focus {
+  outline: none;
+}
+input[type=range].styledSlider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10.3px;
+  cursor: pointer;
+  box-shadow: 0.1px 0.1px 0.5px #000000, 0px 0px 0.1px #0d0d0d;
+  background: #fffeff;
+  border-radius: 6.6px;
+  border: 1px solid #010101;
+}
+input[type=range].styledSlider::-webkit-slider-thumb {
+  box-shadow: 0.8px 0.8px 0.8px #000031, 0px 0px 0.8px #00004b;
+  border: 1.2px solid #00001e;
+  height: 11px;
+  width: 11px;
+  border-radius: 18px;
+  background: #eb5757;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -1.35px;
+}
+input[type=range].styledSlider:focus::-webkit-slider-runnable-track {
+  background: #ffffff;
+}
+input[type=range].styledSlider::-moz-range-track {
+  width: 100%;
+  height: 10.3px;
+  cursor: pointer;
+  box-shadow: 0.1px 0.1px 0.5px #000000, 0px 0px 0.1px #0d0d0d;
+  background: #fffeff;
+  border-radius: 6.6px;
+  border: 1px solid #010101;
+}
+input[type=range].styledSlider::-moz-range-thumb {
+  box-shadow: 0.8px 0.8px 0.8px #000031, 0px 0px 0.8px #00004b;
+  border: 1.2px solid #00001e;
+  height: 11px;
+  width: 11px;
+  border-radius: 18px;
+  background: #eb5757;
+  cursor: pointer;
+}
+input[type=range].styledSlider::-ms-track {
+  width: 100%;
+  height: 10.3px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range].styledSlider::-ms-fill-lower {
+  background: #fff4ff;
+  border: 1px solid #010101;
+  border-radius: 13.2px;
+  box-shadow: 0.1px 0.1px 0.5px #000000, 0px 0px 0.1px #0d0d0d;
+}
+input[type=range].styledSlider::-ms-fill-upper {
+  background: #fffeff;
+  border: 1px solid #010101;
+  border-radius: 13.2px;
+  box-shadow: 0.1px 0.1px 0.5px #000000, 0px 0px 0.1px #0d0d0d;
+}
+input[type=range].styledSlider::-ms-thumb {
+  box-shadow: 0.8px 0.8px 0.8px #000031, 0px 0px 0.8px #00004b;
+  border: 1.2px solid #00001e;
+  height: 11px;
+  width: 11px;
+  border-radius: 18px;
+  background: #eb5757;
+  cursor: pointer;
+  height: 10.3px;
+}
+input[type=range].styledSlider:focus::-ms-fill-lower {
+  background: #fffeff;
+}
+input[type=range].styledSlider:focus::-ms-fill-upper {
+  background: #ffffff;
+}
+
 @media screen and (max-width: 480px) {
     #menuContainer {
         left: 0;

@@ -28,6 +28,8 @@ Wan not?
 - Vectors for all girls: 2/29 done
 - ~~Let people use custom url for wolf girl image~~
 - Customize volume slider so it's consistent across platforms
+- Crazier Nightcore mode
+- [Get Down Nitori](https://www.youtube.com/watch?v=FkQaQZCzjic) mode
 - Awoo maybe.
 
 # Philosophy
