@@ -17,16 +17,22 @@
 
 @keyframes rightText {
     0% {
+        left: 60vh;
         bottom: 40%;
         opacity: 1;
+        transform: rotate(-25deg);
     }
     50% {
+        left: 60vh;
         bottom: 49%;
         opacity: 0.7;
+        transform: rotate(-25deg);
     }
     100% {
+        left: 60vh;
         bottom: 50%;
         opacity: 0;
+        transform: rotate(-25deg);
     }
 }
 
@@ -46,22 +52,22 @@
 
 @keyframes leftText {
     0% {
-        transform: rotate(35deg);
+        transform: rotate(35deg) scale(0.5, 0.5);
         bottom: 40%;
+        right: 20%;
         opacity: 1;
-        height: 5%;
     }
     50% {
         bottom: 40%;
-        transform: rotate(35deg);
+        right: 30%;
+        transform: rotate(35deg) scale(1, 1);
         opacity: 0.7;
-        height: 14%;
     }
     100% {
         bottom: 40%;
-        transform: rotate(35deg);
+        right: 30%;
+        transform: rotate(35deg) scale(1, 1);
         opacity: 0;
-        height: 15%;
     }
 }
 
@@ -114,15 +120,21 @@
 
 @keyframes stretchyWan {
     0% {
-        height: 15%;
+        top: 40%;
+        left: 30%;
+        transform: scale(2, 0.5)
     }
 
     50% {
-        height: 40%;
+        top: 50%;
+        left: 30%;
+        transform: scale(2, 3);
     }
 
     100% {
-        height: 40%;
+        top: 50%;
+        left: 30%;
+        transform: scale(2, 3);
     }
 }
 

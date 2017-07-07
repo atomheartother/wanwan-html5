@@ -1,3 +1,8 @@
+@font-face {
+    font-family: BrushScript;
+    src: url("../res/BrushScript.ttf");
+}
+
 body {
     overflow: hidden;
 }
@@ -60,39 +65,21 @@ body {
 }
 
 /* Wan text is invisible by default */
-.wan_text {
+#wanText {
+    font-family: BrushScript;
     display: none;
     position: absolute;
-    height: 15%;
+    font-size: 20vh;
+    color: #4f2b2d;
     width: auto;
-    transform: rotate(-25deg);
     z-index: 2;
+    overflow: wrap;
 }
 
 @media screen and (max-width: 480px) {
-    .wan_text {
-        height: auto;
-        width: 40%;
+    #wanText {
+        font-size: 10vh;
     }
-}
-
-/*The stretchy wan is just an empty div with wan as its background image!*/
-#wanCenter {
-    display: none;
-
-    background: url(../res/wan_text.png) no-repeat center center;
-    background-image: url(../res/wan_text.svg), none;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
-
-    position: absolute;
-
-    left: 15%;
-    top: 45%;
-    height: 15%;
-    width: 60%;
 }
 
 .box {
@@ -102,7 +89,7 @@ body {
     left: 0;
     height: 40%;
     width: 100%;
-    z-index: 3;
+    z-index: 5;
 }
 
 #topBox {
@@ -112,6 +99,7 @@ body {
 #botBox {
     bottom: -100%;
 }
+
 #wolfGirl {
     position: absolute;
     height: 60%;
@@ -124,6 +112,7 @@ body {
     -ms-transform: translateZ(0);
     -o-transform: translateZ(0);
     transform: translateZ(0);
+    z-index: 1;
 }
 
 #wolfImg {

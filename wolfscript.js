@@ -69,9 +69,10 @@ var img = document.getElementById("wolfImg");
 var box1 = document.getElementById("topBox");
 var box2 = document.getElementById("botBox");
 
-var wanLeft = document.getElementById("wanLeft");
-var wanRight = document.getElementById("wanRight");
-var wanCenter = document.getElementById("wanCenter");
+// var wanLeft = document.getElementById("wanLeft");
+// var wanRight = document.getElementById("wanRight");
+// var wanCenter = document.getElementById("wanCenter");
+var wanText = document.getElementById("wanText");
 
 function changeGirl(name) {
     // If the girl has an svg file
@@ -197,37 +198,36 @@ var shake = function(duration) {
 }
 
 var noText = function() {
-    wanLeft.style.display = "none";
-    wanRight.style.display = "none";
-    wanCenter.style.display = "none";
+    wanText.style.display = "none";
 }
 
 var goLeft = function(duration) {
-    wanRight.style.left = `${document.body.clientWidth * 5 / 100 + anim.clientWidth}px`;
-    wanRight.style.display = "inline";
+    wanText.innerHTML = "WAN~";
+    wanText.style.display = "block";
 
-    wanRight.style.animationName = "rightText";
-    wanRight.style.WebKitAnimationDuration = duration;
-    wanRight.style.animationDuration  = duration;
+    wanText.style.animationName = "rightText";
+    wanText.style.WebKitAnimationDuration = duration;
+    wanText.style.animationDuration  = duration;
 
     post = noText;
 }
 
 var fromBRight = function(duration) {
-    wanLeft.style.right = `${document.body.clientWidth * 2 / 100 + anim.clientWidth}px`;
-    wanLeft.style.display = "inline";
+    wanText.innerHTML = "~ WAN";
+    wanText.style.display = "block";
 
-    wanLeft.style.animationName = "leftText";
-    wanLeft.style.WebKitAnimationDuration = duration;
-    wanLeft.style.animationDuration  = duration;
+    wanText.style.animationName = "leftText";
+    wanText.style.WebKitAnimationDuration = duration;
+    wanText.style.animationDuration  = duration;
     post = noText;
 }
 
 var topRight = function (duration) {
-    wanCenter.style.display = "inline";
-    wanCenter.style.animationName = "stretchyWan";
-    wanCenter.style.WebKitAnimationDuration = duration;
-    wanCenter.style.animationDuration  = duration;
+    wanText.innerHTML = "WAN!";
+    wanText.style.display = "block";
+    wanText.style.animationName = "stretchyWan";
+    wanText.style.WebKitAnimationDuration = duration;
+    wanText.style.animationDuration  = duration;
     post = noText;
 }
 
@@ -243,4 +243,3 @@ window.onload = function () {
     currentAnimation = "original";
     wanwan.play();
 }
-
