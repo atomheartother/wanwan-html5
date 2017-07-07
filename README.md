@@ -27,9 +27,10 @@ Wan not?
 - ~~Volume slider~~
 - Vectors for all girls: 2/29 done
 - ~~Let people use custom url for wolf girl image~~
-- Customize volume slider so it's consistent across platforms
+- ~~Customize volume slider so it's consistent across platforms~~
 - Crazier Nightcore mode
 - [Get Down Nitori](https://www.youtube.com/watch?v=FkQaQZCzjic) mode
+- Replace "Wan~" images by text so we can write different stuff (That might be impossible :c)
 - Awoo maybe.
 
 # Philosophy
