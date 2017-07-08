@@ -9,6 +9,9 @@ const durationValues = ["500ms", "250ms", "125ms"];
 // post holds a function to execute after an animation has ended and before the next one starts
 var post = null;
 
+// Holds the current girl
+var curGirl = null;
+
 // The animations variable contains animation instructions, and allows us to add more animations in the future
 var animations = {
     "original" : [
@@ -85,17 +88,18 @@ function changeGirl(name) {
     else {
         img.src = "girls/" + name + ".png";
     }
+    curGirl = wolves[name];
 }
 
 function checkHash() {
     var newHash = location.hash.substring(1);
 
-        for (var name in wolves) {
-            if (newHash.toUpperCase() === name.toUpperCase()) {
-                changeGirl(name);
-                return ;
-            }
+    for (var name in wolves) {
+        if (newHash.toUpperCase() === name.toUpperCase()) {
+            changeGirl(name);
+            return ;
         }
+    }
     // Check if it could be a custom URL
     if (newHash.substring(0, 5) === "curl=")
     {
@@ -202,7 +206,7 @@ var noText = function() {
 }
 
 var goLeft = function(duration) {
-    wanText.innerHTML = "WAN~";
+    wanText.innerHTML = curGirl.hasOwnProperty("text") ? curGirl.text[0] : "WAN~";
     wanText.style.display = "block";
 
     wanText.style.animationName = "rightText";
@@ -213,7 +217,7 @@ var goLeft = function(duration) {
 }
 
 var fromBRight = function(duration) {
-    wanText.innerHTML = "~ WAN";
+    wanText.innerHTML = curGirl.hasOwnProperty("text") ? curGirl.text[1] : "~WAN";
     wanText.style.display = "block";
 
     wanText.style.animationName = "leftText";
@@ -223,7 +227,7 @@ var fromBRight = function(duration) {
 }
 
 var topRight = function (duration) {
-    wanText.innerHTML = "WAN!";
+    wanText.innerHTML = curGirl.hasOwnProperty("text") ? curGirl.text[2] : "WAN!";
     wanText.style.display = "block";
     wanText.style.animationName = "stretchyWan";
     wanText.style.WebKitAnimationDuration = duration;
