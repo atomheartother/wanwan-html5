@@ -1,6 +1,7 @@
 @font-face {
-    font-family: BrushScript;
-    src: url("BrushScriptStd.otf");
+	  font-family: 'BrushScriptStd';
+	  src: url('./BrushScriptStd.eot');
+	  src: local('BrushScriptStd'), url('./BrushScriptStd.woff') format('woff'), url('./BrushScriptStd.ttf') format('truetype');
 }
 
 body {
@@ -66,7 +67,7 @@ body {
 
 /* Wan text is invisible by default */
 #wanText {
-    font-family: BrushScript;
+    font-family: 'BrushScriptStd';
     display: none;
     position: absolute;
     font-size: 20vh;
