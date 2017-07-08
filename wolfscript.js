@@ -75,9 +75,9 @@ var box2 = document.getElementById("botBox");
 var wanText = document.getElementById("wanText");
 
 function changeGirl(name) {
-    // If the girl has an svg file
-    if (wolves[name].svg === true) {
-        img.src = "girls/" + name + ".svg";
+    // If the girl has a non-png file
+    if (wolves[name].hasOwnProperty("altFormat")) {
+        img.src = "girls/" + name + "." + wolves[name].altFormat;
         img.onerror = function() {
             img.src = "girls/" + name + ".png";
         }
