@@ -30,7 +30,7 @@ Wan not?
 - ~~Customize volume slider so it's consistent across platforms~~
 - Crazier Nightcore mode
 - [Get Down Nitori](https://www.youtube.com/watch?v=FkQaQZCzjic) mode
-- ~~Replace "Wan~" images by text so we can write different stuff~~
+- ~~Replace wan images by text so we can write different stuff~~
 - Awoo maybe.
 
 # Philosophy
