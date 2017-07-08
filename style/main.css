@@ -67,6 +67,8 @@ body {
 
 /* Wan text is invisible by default */
 #wanText {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     font-family: 'BrushScriptStd';
     display: none;
     position: absolute;

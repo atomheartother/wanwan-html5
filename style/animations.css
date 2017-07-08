@@ -20,19 +20,19 @@
         left: 60vh;
         bottom: 40%;
         opacity: 1;
-        transform: rotate(-25deg);
+        transform: rotate(-25deg) translateZ(0);
     }
     50% {
         left: 60vh;
         bottom: 49%;
         opacity: 0.7;
-        transform: rotate(-25deg);
+        transform: rotate(-25deg) translateZ(0);
     }
     100% {
         left: 60vh;
         bottom: 50%;
         opacity: 0;
-        transform: rotate(-25deg);
+        transform: rotate(-25deg) translateZ(0);
     }
 }
 
@@ -75,7 +75,7 @@
 
 @keyframes leftText {
     0% {
-        transform: rotate(35deg) scale(0.5, 0.5);
+        transform: rotate(35deg) scale(0.5, 0.5) translateZ(0);
         bottom: 40%;
         right: 20%;
         opacity: 1;
@@ -83,20 +83,20 @@
     50% {
         bottom: 40%;
         right: 30%;
-        transform: rotate(35deg) scale(1, 1);
+        transform: rotate(35deg) scale(1, 1) translateZ(0);
         opacity: 0.7;
     }
     100% {
         bottom: 40%;
         right: 30%;
-        transform: rotate(35deg) scale(1, 1);
+        transform: rotate(35deg) scale(1, 1) translateZ(0);
         opacity: 0;
     }
 }
 @media screen and (max-width: 480px) {
     @keyframes leftText {
         0% {
-            transform: rotate(35deg) scale(0.5, 0.5);
+            transform: rotate(35deg) scale(0.5, 0.5) translateZ(0);
             bottom: 20%;
             left: 0;
             opacity: 1;
@@ -104,13 +104,13 @@
         50% {
             bottom: 20%;
             left: 0;
-            transform: rotate(35deg) scale(1, 1);
+            transform: rotate(35deg) scale(1, 1) translateZ(0);
             opacity: 0.7;
         }
         100% {
             bottom: 20%;
             left: 0;
-            transform: rotate(35deg) scale(1, 1);
+            transform: rotate(35deg) scale(1, 1) translateZ(0);
             opacity: 0;
         }
     }
@@ -118,20 +118,20 @@
 
 @keyframes topRight {
     0% {
-        transform: rotate(-30deg) scaleX(-1);
+        transform: rotate(-30deg) scaleX(-1) translateZ(0);
 
         right:  -10%;
         top: -20%;
     }
 
     90% {
-        transform: rotate(-30deg) scaleX(-1);
+        transform: rotate(-30deg) scaleX(-1) translateZ(0);
 
         right: 15%;
         top: -20%;
     }
     100% {
-        transform: rotate(-30deg) scaleX(-1);
+        transform: rotate(-30deg) scaleX(-1) translateZ(0);
 
         right: 15%;
         top: -20%;
@@ -141,20 +141,20 @@
 @media screen and (max-width: 480px) {
     @keyframes topRight {
         0% {
-            transform: rotate(-30deg) scaleX(-1);
+            transform: rotate(-30deg) scaleX(-1) translateZ(0);
 
             right:  -10%;
             top: -10%;
         }
 
         90% {
-            transform: rotate(-30deg) scaleX(-1);
+            transform: rotate(-30deg) scaleX(-1) translateZ(0);
 
             right: 15%;
             top: -10%;
         }
         100% {
-            transform: rotate(-30deg) scaleX(-1);
+            transform: rotate(-30deg) scaleX(-1) translateZ(0);
 
             right: 15%;
             top: -10%;
@@ -167,19 +167,19 @@
     0% {
         top: 40%;
         left: 30%;
-        transform: scale(2, 0.5)
+        transform: scale(2, 0.5) translateZ(0);
     }
 
     50% {
         top: 50%;
         left: 30%;
-        transform: scale(2, 3);
+        transform: scale(2, 3) translateZ(0);
     }
 
     100% {
         top: 50%;
         left: 30%;
-        transform: scale(2, 3);
+        transform: scale(2, 3) translateZ(0);
     }
 }
 
@@ -211,23 +211,20 @@
 @media screen and (max-width: 480px) {
     @keyframes backFlip {
         0% {
-            -webkit-transform: scaleX(1) scaleY(-1);
-            transform: scaleX(1) scaleY(-1);
+            transform: scaleX(1) scaleY(-1) translateZ(0);
 
             right: 0;
             top: 0;
         }
 
         50% {
-            -webkit-transform: scaleX(-1) scaleY(-1);
-            transform: scaleX(-1) scaleY(-1);
+            transform: scaleX(-1) scaleY(-1) translateZ(0);
             width: 140%;
             left: -20%;
             top: 0;
         }
         100% {
-            -webkit-transform: scaleX(-1) scaleY(-1);
-            transform: scaleX(-1) scaleY(-1);
+            transform: scaleX(-1) scaleY(-1) translateZ(0);
             width: 140%;
             left: -20%;
             top:0;
