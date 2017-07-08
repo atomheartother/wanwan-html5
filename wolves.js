@@ -1,4 +1,7 @@
 const wolves = {
+    "Asriel" : {
+        "tags" : ["Undertale", "Asriel Dreemurr"]
+    },
     "Ahri" : {
         "tags" : ["League of Legends", "Ahri"]
     },
@@ -109,5 +112,8 @@ const wolves = {
     },
     "Umi" : {
         "tags" : ["Sonoda Umi", "Love Live! School Idol Project"]
+    },
+    "Undyne" : {
+        "tags" : ["Undertale", "Undyne"]
     },
 };
