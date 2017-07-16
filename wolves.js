@@ -89,6 +89,9 @@ const wolves = {
     "Papyrus" : {
         "tags" : ["Undertale", "Nyeh nyeh nyeh"]
     },
+    "Renge" : {
+        "tags" : ["Non Non Biyori", "Renge Miyauchi", "Ren-Chon"]
+    },
     "Rin" : {
         "tags" : ["Hoshizora Rin", "Love Live! School Idol Project"]
     },
