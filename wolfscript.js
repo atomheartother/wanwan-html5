@@ -104,6 +104,7 @@ function checkHash() {
     if (newHash.substring(0, 5) === "curl=")
     {
         img.src = newHash.substring(5);
+        curGirl = null;
         // If it fails. display momiji
         img.onerror = function() {
             changeGirl("Momiji");
@@ -206,7 +207,7 @@ var noText = function() {
 }
 
 var goLeft = function(duration) {
-    wanText.innerHTML = curGirl.hasOwnProperty("text") ? curGirl.text[0] : "WAN~";
+    wanText.innerHTML = curGirl != null && curGirl.hasOwnProperty("text") ? curGirl.text[0] : "WAN~";
     wanText.style.display = "block";
 
     wanText.style.animationName = "rightText";
@@ -217,7 +218,7 @@ var goLeft = function(duration) {
 }
 
 var fromBRight = function(duration) {
-    wanText.innerHTML = curGirl.hasOwnProperty("text") ? curGirl.text[1] : "~WAN";
+    wanText.innerHTML = curGirl != null && curGirl.hasOwnProperty("text") ? curGirl.text[1] : "~WAN";
     wanText.style.display = "block";
 
     wanText.style.animationName = "leftText";
@@ -227,7 +228,7 @@ var fromBRight = function(duration) {
 }
 
 var topRight = function (duration) {
-    wanText.innerHTML = curGirl.hasOwnProperty("text") ? curGirl.text[2] : "WAN!";
+    wanText.innerHTML = curGirl != null && curGirl.hasOwnProperty("text") ? curGirl.text[2] : "WAN!";
     wanText.style.display = "block";
     wanText.style.animationName = "stretchyWan";
     wanText.style.WebKitAnimationDuration = duration;
