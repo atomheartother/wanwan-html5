@@ -6,6 +6,9 @@ var aIndex = 0;
 // The durationValues tab is so we don't have to re-write times every time
 const durationValues = ["500ms", "250ms", "125ms"];
 
+// The above but with numbers. I know, I know.
+const durationNumValues = [500, 250, 125];
+
 // post holds a function to execute after an animation has ended and before the next one starts
 var post = null;
 
@@ -248,3 +251,32 @@ window.onload = function () {
     currentAnimation = "original";
     wanwan.play();
 }
+
+// If the page was hidden, then made visible again, we need to readjust our animation counter
+// Because the browser changed the framerate while the user wasn't looking
+// All time values in ms
+document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) {
+        var time = 0;
+        var index = 0;
+        while (index < animations[currentAnimation].length) {
+            var n = animations[currentAnimation][index];
+            // Add animation timing
+            time += durationNumValues[n.duration];
+            if (time > wanwan.seek() * 1000 + 100) {
+                // This animation is the next one that should be played in the song
+                // Create a closure with the index so it's not affected by the asynchronous nature of the operation, just in caaaase
+                (function(idx) {
+                    setTimeout(function() {
+                    aIndex = idx;
+                    animHandler();
+
+                    }, time - wanwan.seek() * 1000);
+                })(index);
+                return ;
+            }
+            index++;
+        }
+        console.error("Animation offset correction failed. I really tried!");
+    }
+});
