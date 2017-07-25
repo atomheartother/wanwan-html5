@@ -31,6 +31,7 @@ Wan not?
 - Crazier Nightcore mode
 - [Get Down Nitori](https://www.youtube.com/watch?v=FkQaQZCzjic) mode
 - ~~Replace wan images by text so we can write different stuff~~
+- Fix the animation unsync when page isn't visible
 - Awoo maybe.
 
 # Philosophy
