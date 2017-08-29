@@ -77,6 +77,9 @@ const wolves = {
         "altFormat" : "svg",
         "tags" : ["Undertale", "Ahuhuhu~"]
     },
+    "Neptune" : {
+	"tags" : ["Neptune", "Hyperdimension Neptunia", "Purple Head"]
+    },
     "Nico" : {
         "tags" : ["Yazawa Nico", "Love Live! School Idol Project"]
     },
@@ -88,6 +91,12 @@ const wolves = {
     },
     "Papyrus" : {
         "tags" : ["Undertale", "Nyeh nyeh nyeh"]
+    },
+    "Reimu" : {
+	"tags" : ["Reimu Hakurei", "Touhou"]
+    },
+    "Rem" : {
+	"tags" : ["Rem", "Remu", "Re:Zero"]
     },
     "Renge" : {
         "tags" : ["Non Non Biyori", "Renge Miyauchi", "Ren-Chon"]
