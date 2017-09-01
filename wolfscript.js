@@ -18,37 +18,44 @@ var curGirl = null;
 // The animations variable contains animation instructions, and allows us to add more animations in the future
 var animations = {
     "original" : [
-    {"name" : "goLeft", "func" : "goLeft", "duration": 0},
-    {"name" : "fromBRight", "func" : "fromBRight", "duration": 0},
-    {"name" : "topRight", "func" : "topRight", "duration": 0},
-    {"name" : "backFlip", "duration": 0},
-    {"name" : "fullScreen", "func" : "blackBoxes", "duration": 0},
-    {"name" : "frontFlip", "duration": 0},
-    {"name" : "shake", "func" : "shake", "duration": 0},
-    {"name" : "frontFlip", "duration": 0},
-    {"name" : "goLeft", "func" : "goLeft", "duration": 1},
-    {"name" : "fullScreen", "func" : "blackBoxes", "duration": 1},
-    {"name" : "fromBRight", "func" : "fromBRight", "duration": 1},
-    {"name" : "topRight", "func" : "topRight", "duration": 1},
-    {"name" : "frontFlipAborted", "duration": 1},
-    {"name" : "frontFlip", "duration": 1},
-    {"name" : "goLeft", "func" : "goLeft", "duration": 1},
-    {"name" : "fromBRight", "func" : "fromBRight", "duration": 1},
-    {"name" : "frontFlip", "duration": 1},
-    {"name" : "backFlip", "duration": 1},
-    {"name" : "frontFlip", "duration": 1},
-    {"name" : "goLeft", "func" : "goLeft", "duration": 1},
-    {"name" : "fromBRight", "func" : "fromBRight", "duration": 2},
-    {"name" : "frontFlipAborted", "duration": 2},
-    {"name" : "backFlip", "duration": 2},
-    {"name" : "frontFlip", "duration": 2},
-    {"name" : "shake", "func" : "shake", "duration": 2},
+        {"name" : "goLeft", "func" : "goLeft", "duration": 0},
+        {"name" : "fromBRight", "func" : "fromBRight", "duration": 0},
+        {"name" : "topRight", "func" : "topRight", "duration": 0},
+        {"name" : "backFlip", "duration": 0},
+        {"name" : "fullScreen", "func" : "blackBoxes", "duration": 0},
+        {"name" : "frontFlip", "duration": 0},
+        {"name" : "shake", "duration": 0},
+        {"name" : "frontFlip", "duration": 0},
+        {"name" : "goLeft", "func" : "goLeft", "duration": 1},
+        {"name" : "fullScreen", "func" : "blackBoxes", "duration": 1},
+        {"name" : "fromBRight", "func" : "fromBRight", "duration": 1},
+        {"name" : "topRight", "func" : "topRight", "duration": 1},
+        {"name" : "frontFlipAborted", "duration": 1},
+        {"name" : "frontFlip", "duration": 1},
+        {"name" : "goLeft", "func" : "goLeft", "duration": 1},
+        {"name" : "fromBRight", "func" : "fromBRight", "duration": 1},
+        {"name" : "frontFlip", "duration": 1},
+        {"name" : "backFlip", "duration": 1},
+        {"name" : "frontFlip", "duration": 1},
+        {"name" : "goLeft", "func" : "goLeft", "duration": 1},
+        {"name" : "fromBRight", "func" : "fromBRight", "duration": 2},
+        {"name" : "frontFlipAborted", "duration": 2},
+        {"name" : "backFlip", "duration": 2},
+        {"name" : "frontFlip", "duration": 2},
+        {"name" : "shake", "duration": 2},
   ],
-  "nightcore" : [
-    {"name" : "shake", "func" : "shake", "duration": 2},
-  ],
+    "nightcore" : [
+        {"name" : "shake", "duration": 2},
+    ],
 };
 
+var anim = document.getElementById("wolfGirl");
+var img = document.getElementById("wolfImg");
+var box1 = document.getElementById("topBox");
+var box2 = document.getElementById("botBox");
+var wanText = document.getElementById("wanText");
+
+// Called at the end of each animation
 var animHandler = function () {
     if (post != null)
     {
@@ -70,19 +77,8 @@ var animHandler = function () {
         anim.classList.remove("infiniteLoop");
 }
 
-var anim = document.getElementById("wolfGirl");
-var img = document.getElementById("wolfImg");
-var box1 = document.getElementById("topBox");
-var box2 = document.getElementById("botBox");
-
-// var wanLeft = document.getElementById("wanLeft");
-// var wanRight = document.getElementById("wanRight");
-// var wanCenter = document.getElementById("wanCenter");
-var wanText = document.getElementById("wanText");
-
 function changeGirl(name) {
-    // If the girl has a non-png file
-    if (wolves[name].hasOwnProperty("altFormat")) {
+    if (wolves[name].hasOwnProperty("altFormat")) {    // If the girl has a non-png file
         img.src = "girls/" + name + "." + wolves[name].altFormat;
         img.onerror = function() {
             img.src = "girls/" + name + ".png";
@@ -94,6 +90,7 @@ function changeGirl(name) {
     curGirl = wolves[name];
 }
 
+// Checks the new hash's value and interpret it
 function checkHash() {
     var newHash = location.hash.substring(1);
 
@@ -119,8 +116,8 @@ function checkHash() {
     changeGirl("Momiji");
 }
 
+// Call checkHash on page load & everytime the hash changes
 checkHash();
-
 window.addEventListener("hashchange", checkHash);
 
 function volumeChange(newvol) {
@@ -145,7 +142,7 @@ var wanwan =  new Howl({
 });
 
 window.onkeydown = function(e) {
-    if (e.keyCode == 27) {
+    if (e.keyCode == 27) { // ESC
         // leave menu
         if (e.target == document.body && menu_isup == true)
             hideMenu();
@@ -161,7 +158,6 @@ window.onkeydown = function(e) {
 };
 
 function toggleNightcore() {
-    aIndex = 0;
     if (currentAnimation === "nightcore") {
         currentAnimation = "original";
         wanwan.rate(1);
@@ -170,6 +166,7 @@ function toggleNightcore() {
         wanwan.rate(1.55);
     }
     wanwan.seek(0);
+    aIndex = 0;
     animHandler();
 }
 
@@ -191,18 +188,6 @@ var blackBoxes = function(duration) {
 
     box2.style.WebKitAnimationDuration = duration;
     box2.style.animationDuration  = duration;
-}
-
-var noshake = function() {
-    anim.style.WebKitAnimationTimingFunction = "ease";
-    anim.style.animationTimingFunction = "ease";
-}
-
-var shake = function(duration) {
-    anim.style.WebKitAnimationTimingFunction = "steps(10, end)";
-    anim.style.animationTimingFunction = "steps(10, end)";
-
-    post = noshake;
 }
 
 var noText = function() {
@@ -270,7 +255,6 @@ document.addEventListener('visibilitychange', function () {
                     setTimeout(function() {
                     aIndex = idx;
                     animHandler();
-
                     }, time - wanwan.seek() * 1000);
                 })(index);
                 return ;
