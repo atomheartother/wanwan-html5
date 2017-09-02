@@ -99,42 +99,30 @@ body {
 }
 
 #topBox {
-    top: -100%;
+    top: -40%;
 }
 
 #botBox {
-    bottom: -100%;
+    bottom: -40%;
 }
 
 #wolfGirl {
     position: absolute;
-    height: 60%;
-    -webkit-animation-duration: 500ms;
-    animation-duration: 500ms;
-
-    /* 3d animation for smoother animations */
-    -webkit-transform: translateZ(0);
-    -moz-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    -o-transform: translateZ(0);
-    transform: translateZ(0);
+    display: block;
+    width: 30%;
     z-index: 1;
+    animation-timing-function: cubic-bezier(.47,.77,.43,.98);
 }
 
 #wolfImg {
     display: block;
-    height: 100%;
-    width: auto;
+    width: 100%;
+    height: auto;
 }
 
 @media screen and (max-width: 480px) {
     #wolfGirl {
         height: auto;
         width: 60%;
-    }
-
-    #wolfImg {
-        height: auto;
-        width: 100%;
     }
 }

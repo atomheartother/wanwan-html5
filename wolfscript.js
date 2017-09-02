@@ -18,27 +18,27 @@ var curGirl = null;
 // The animations variable contains animation instructions, and allows us to add more animations in the future
 var animations = {
     "original" : [
-        {"name" : "goLeft", "func" : "goLeft", "duration": 0},
-        {"name" : "fromBRight", "func" : "fromBRight", "duration": 0},
-        {"name" : "topRight", "func" : "topRight", "duration": 0},
+        {"name" : "bottomLeft", "duration": 0},
+        {"name" : "bottomRight",  "duration": 0},
+        {"name" : "topRight",  "duration": 0},
         {"name" : "backFlip", "duration": 0},
         {"name" : "fullScreen", "func" : "blackBoxes", "duration": 0},
         {"name" : "frontFlip", "duration": 0},
         {"name" : "shake", "duration": 0},
         {"name" : "frontFlip", "duration": 0},
-        {"name" : "goLeft", "func" : "goLeft", "duration": 1},
-        {"name" : "fullScreen", "func" : "blackBoxes", "duration": 1},
-        {"name" : "fromBRight", "func" : "fromBRight", "duration": 1},
-        {"name" : "topRight", "func" : "topRight", "duration": 1},
+        {"name" : "bottomLeft",  "duration": 1},
+        {"name" : "fullScreen",  "duration": 1},
+        {"name" : "bottomRight",  "duration": 1},
+        {"name" : "topRight",  "duration": 1},
         {"name" : "frontFlipAborted", "duration": 1},
         {"name" : "frontFlip", "duration": 1},
-        {"name" : "goLeft", "func" : "goLeft", "duration": 1},
-        {"name" : "fromBRight", "func" : "fromBRight", "duration": 1},
+        {"name" : "bottomLeft", "duration": 1},
+        {"name" : "bottomRight", "duration": 1},
         {"name" : "frontFlip", "duration": 1},
         {"name" : "backFlip", "duration": 1},
         {"name" : "frontFlip", "duration": 1},
-        {"name" : "goLeft", "func" : "goLeft", "duration": 1},
-        {"name" : "fromBRight", "func" : "fromBRight", "duration": 2},
+        {"name" : "bottomLeft", "duration": 1},
+        {"name" : "bottomRight", "duration": 2},
         {"name" : "frontFlipAborted", "duration": 2},
         {"name" : "backFlip", "duration": 2},
         {"name" : "frontFlip", "duration": 2},
@@ -62,16 +62,21 @@ var animHandler = function () {
         post();
         post = null;
     }
-
-    var cur = animations[currentAnimation][aIndex];
+    // if we're still on the previous animation, remove it
+    if ((aIndex != 0 && anim.classList.contains(currentAnimation[aIndex - 1].name)) ||
+        (aIndex === 0 && anim.classList.contains(currentAnimation[currentAnimation.length - 1].name)))
+    {
+        anim.classList.remove(aIndex === 0 ? currentAnimation[currentAnimation.length - 1].name
+                              : currentAnimation[aIndex - 1].name);
+    }
+    var cur = currentAnimation[aIndex];
     if (cur.hasOwnProperty("func"))
         window[cur.func](durationValues[cur.duration]);
     anim.style.WebKitAnimationDuration = durationValues[cur.duration];
     anim.style.animationDuration = durationValues[cur.duration];
-    anim.style.WebKitAnimationName = cur.name;
-    anim.style.animationName = cur.name;
+    anim.classList.add(cur.name);
     aIndex++;
-    if (aIndex == animations[currentAnimation].length)
+    if (aIndex === currentAnimation.length)
         anim.classList.add("infiniteLoop");
     else if (anim.classList.contains("infiniteLoop"))
         anim.classList.remove("infiniteLoop");
@@ -158,11 +163,11 @@ window.onkeydown = function(e) {
 };
 
 function toggleNightcore() {
-    if (currentAnimation === "nightcore") {
-        currentAnimation = "original";
+    if (currentAnimation === animations["nightcore"]) {
+        currentAnimation = animations["original"];
         wanwan.rate(1);
     } else {
-        currentAnimation = "nightcore";
+        currentAnimation = animations["nightcore"];
         wanwan.rate(1.55);
     }
     wanwan.seek(0);
@@ -233,7 +238,7 @@ window.onload = function () {
     box1.addEventListener("MSAnimationEnd", resetBoxes, false);
     box1.addEventListener("animationend", resetBoxes, false);
 
-    currentAnimation = "original";
+    currentAnimation = animations["original"];
     wanwan.play();
 }
 
@@ -244,8 +249,8 @@ document.addEventListener('visibilitychange', function () {
     if (!document.hidden) {
         var time = 0;
         var index = 0;
-        while (index < animations[currentAnimation].length) {
-            var n = animations[currentAnimation][index];
+        while (index < currentAnimation.length) {
+            var n = currentAnimation[index];
             // Add animation timing
             time += durationNumValues[n.duration];
             if (time > wanwan.seek() * 1000 + 100) {
