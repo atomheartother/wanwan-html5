@@ -1,3 +1,5 @@
+// This script is the "engine" of sorts of the website. It's fairly generic.
+
 // This keeps track of which animation we're playing
 var currentAnimation;
 // Animation index, keeps track of which index we're at.
@@ -5,82 +7,73 @@ var aIndex = 0;
 
 // The durationValues tab is so we don't have to re-write times every time
 const durationValues = ["500ms", "250ms", "125ms"];
-
-// The above but with numbers. I know, I know.
+// The above but with numbers. I know, I know, but I'm not going to parse a string every 0.5s.
 const durationNumValues = [500, 250, 125];
 
-// post holds a function to execute after an animation has ended and before the next one starts
+// Post holds a function to execute after an animation has ended and before the next one starts
+// Nothing happens if it is null
 var post = null;
 
-// Holds the current girl
+// Holds the current wolfgirl
 var curGirl = null;
 
+// Holds the current song. Must be a Howl object.
+var currentSong;
+
 // The animations variable contains animation instructions, and allows us to add more animations in the future
-var animations = {
-    "original" : [
-        {"name" : "bottomLeft", "duration": 0},
-        {"name" : "bottomRight",  "duration": 0},
-        {"name" : "topRight",  "duration": 0},
-        {"name" : "backFlip", "duration": 0},
-        {"name" : "fullScreen", "func" : "blackBoxes", "duration": 0},
-        {"name" : "frontFlip", "duration": 0},
-        {"name" : "shake", "duration": 0},
-        {"name" : "frontFlip", "duration": 0},
-        {"name" : "bottomLeft",  "duration": 1},
-        {"name" : "fullScreen",  "duration": 1},
-        {"name" : "bottomRight",  "duration": 1},
-        {"name" : "topRight",  "duration": 1},
-        {"name" : "frontFlipAborted", "duration": 1},
-        {"name" : "frontFlip", "duration": 1},
-        {"name" : "bottomLeft", "duration": 1},
-        {"name" : "bottomRight", "duration": 1},
-        {"name" : "frontFlip", "duration": 1},
-        {"name" : "backFlip", "duration": 1},
-        {"name" : "frontFlip", "duration": 1},
-        {"name" : "bottomLeft", "duration": 1},
-        {"name" : "bottomRight", "duration": 2},
-        {"name" : "frontFlipAborted", "duration": 2},
-        {"name" : "backFlip", "duration": 2},
-        {"name" : "frontFlip", "duration": 2},
-        {"name" : "shake", "duration": 2},
-  ],
-    "nightcore" : [
-        {"name" : "shake", "duration": 2},
-    ],
-};
+// Attributes:
+// Steps: Array, each element is a new animation
+// funcIn: Function to execute when entering this animation
+// funcOut: Function to execute when leaving this animation
+
+// Steps attributes:
+// name: Obligatory, refers to the class attached to wolfGirl
+// duration: Obligatory, duration of this animation, revers to the durationValues array
+// elems: Optional, animation duration is set for the elements with these IDs (this doesn't trigger the animation!)
+// func: Optional, function to execute before this animation plays. Receives the duration as parameter
+
+// See original.js for reference
+var animations = {};
 
 var anim = document.getElementById("wolfGirl");
 var img = document.getElementById("wolfImg");
-var box1 = document.getElementById("topBox");
-var box2 = document.getElementById("botBox");
-var wanText = document.getElementById("wanText");
+
+var setDurationOnElement = function(elem, duration) {
+    if (elem.style.animationDuration !== duration) {
+        elem.style.WebKitAnimationDuration = duration;
+        elem.style.animationDuration = duration;
+    }
+}
 
 // Called at the end of each animation
 var animHandler = function () {
-    if (post != null)
-    {
-        post();
-        post = null;
-    }
-    // if we're still on the previous animation, remove it
-    if ((aIndex != 0 && anim.classList.contains(currentAnimation[aIndex - 1].name)) ||
-        (aIndex === 0 && anim.classList.contains(currentAnimation[currentAnimation.length - 1].name)))
-    {
-        anim.classList.remove(aIndex === 0 ? currentAnimation[currentAnimation.length - 1].name
-                              : currentAnimation[aIndex - 1].name);
-    }
-    var cur = currentAnimation[aIndex];
+    // Currently unused since there are no func selectors
+    // if (post != null)
+    // {
+    //     post();
+    //     post = null;
+    // }
+
+    // Remove all classes off wolfGirl to clear any possible effects from past animations.
+    anim.className = "";
+    var cur = currentAnimation.steps[aIndex];
     if (cur.hasOwnProperty("func"))
         window[cur.func](durationValues[cur.duration]);
-    anim.style.WebKitAnimationDuration = durationValues[cur.duration];
-    anim.style.animationDuration = durationValues[cur.duration];
+    if (cur.hasOwnProperty("elems")) {
+        for (var id of cur.elems) {
+            setDurationOnElement(document.getElementById(id), durationValues[cur.duration]);
+        }
+    }
+    setDurationOnElement(anim, durationValues[cur.duration]);
     anim.classList.add(cur.name);
     aIndex++;
-    if (aIndex === currentAnimation.length)
+    if (aIndex === currentAnimation.steps.length)
         anim.classList.add("infiniteLoop");
-    else if (anim.classList.contains("infiniteLoop"))
-        anim.classList.remove("infiniteLoop");
-}
+};
+
+anim.addEventListener("webkitAnimationEnd", animHandler, false);
+anim.addEventListener("MSAnimationEnd", animHandler, false);
+anim.addEventListener("animationend", animHandler, false);
 
 function changeGirl(name) {
     if (wolves[name].hasOwnProperty("altFormat")) {    // If the girl has a non-png file
@@ -126,25 +119,8 @@ checkHash();
 window.addEventListener("hashchange", checkHash);
 
 function volumeChange(newvol) {
-    wanwan.volume(newvol);
+    currentSong.volume(newvol);
 }
-
-// Audio
-var wanwan =  new Howl({
-    src: ['res/wanwan.ogg', 'res/wanwan.mp3'],
-    format: ['webm', 'mp3'],
-    autoplay: false,
-    loop: true,
-    volume: parseFloat(document.getElementById("volSlider").value),
-    onplay : function() {
-        document.getElementById('loadingScreen').style.display = "none";
-        aIndex = 0;
-        animHandler();
-    },
-    onloaderror: function() {
-        alert("I can't play on your browser, sorry! :c Please go to About and contact my maker about this.");
-    },
-});
 
 window.onkeydown = function(e) {
     if (e.keyCode == 27) { // ESC
@@ -162,84 +138,19 @@ window.onkeydown = function(e) {
     }
 };
 
-function toggleNightcore() {
-    if (currentAnimation === animations["nightcore"]) {
-        currentAnimation = animations["original"];
-        wanwan.rate(1);
-    } else {
-        currentAnimation = animations["nightcore"];
-        wanwan.rate(1.55);
+// Handles changing animations.
+function changeAnimation(newState) {
+    if (!!currentAnimation) {
+        if (newState === currentAnimation.name) return;
+        // Call the current animation's funcOut if there is one
+        if (currentAnimation.hasOwnProperty('funcOut')) {
+            currentAnimation.funcOut();
+        }
     }
-    wanwan.seek(0);
-    aIndex = 0;
-    animHandler();
-}
-
-var resetBoxes = function() {
-    box1.style.display = "none";
-    box2.style.display = "none";
-    box1.style.animationName = "";
-    box2.style.animationName = "";
-}
-
-var blackBoxes = function(duration) {
-    box1.style.display = "inline";
-    box2.style.display = "inline";
-    box1.style.animationName = "boxTop";
-    box2.style.animationName = "boxBot";
-
-    box1.style.WebKitAnimationDuration = duration;
-    box1.style.animationDuration  = duration;
-
-    box2.style.WebKitAnimationDuration = duration;
-    box2.style.animationDuration  = duration;
-}
-
-var noText = function() {
-    wanText.style.display = "none";
-}
-
-var goLeft = function(duration) {
-    wanText.innerHTML = curGirl != null && curGirl.hasOwnProperty("text") ? curGirl.text[0] : "WAN~";
-    wanText.style.display = "block";
-
-    wanText.style.animationName = "rightText";
-    wanText.style.WebKitAnimationDuration = duration;
-    wanText.style.animationDuration  = duration;
-
-    post = noText;
-}
-
-var fromBRight = function(duration) {
-    wanText.innerHTML = curGirl != null && curGirl.hasOwnProperty("text") ? curGirl.text[1] : "~WAN";
-    wanText.style.display = "block";
-
-    wanText.style.animationName = "leftText";
-    wanText.style.WebKitAnimationDuration = duration;
-    wanText.style.animationDuration  = duration;
-    post = noText;
-}
-
-var topRight = function (duration) {
-    wanText.innerHTML = curGirl != null && curGirl.hasOwnProperty("text") ? curGirl.text[2] : "WAN!";
-    wanText.style.display = "block";
-    wanText.style.animationName = "stretchyWan";
-    wanText.style.WebKitAnimationDuration = duration;
-    wanText.style.animationDuration  = duration;
-    post = noText;
-}
-
-window.onload = function () {
-    anim.addEventListener("webkitAnimationEnd", animHandler, false);
-    anim.addEventListener("MSAnimationEnd", animHandler, false);
-    anim.addEventListener("animationend", animHandler, false);
-
-    box1.addEventListener("wekbkitAnimationEnd", resetBoxes, false);
-    box1.addEventListener("MSAnimationEnd", resetBoxes, false);
-    box1.addEventListener("animationend", resetBoxes, false);
-
-    currentAnimation = animations["original"];
-    wanwan.play();
+    currentAnimation = animations[newState];
+    if (animations[newState].hasOwnProperty('funcIn')) {
+        animations[newState].funcIn();
+    }
 }
 
 // If the page was hidden, then made visible again, we need to readjust our animation counter
@@ -253,14 +164,14 @@ document.addEventListener('visibilitychange', function () {
             var n = currentAnimation[index];
             // Add animation timing
             time += durationNumValues[n.duration];
-            if (time > wanwan.seek() * 1000 + 100) {
+            if (time > currentSong.seek() * 1000 + 100) {
                 // This animation is the next one that should be played in the song
                 // Create a closure with the index so it's not affected by the asynchronous nature of the operation, just in caaaase
                 (function(idx) {
                     setTimeout(function() {
                     aIndex = idx;
                     animHandler();
-                    }, time - wanwan.seek() * 1000);
+                    }, time - currentSong.seek() * 1000);
                 })(index);
                 return ;
             }
@@ -269,3 +180,8 @@ document.addEventListener('visibilitychange', function () {
         console.error("Animation offset correction failed. I really tried!");
     }
 });
+
+window.onload = function() {
+    document.getElementById('loadingScreen').style.display = "none";
+    changeAnimation("original");
+};
