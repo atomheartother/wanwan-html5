@@ -27,31 +27,41 @@
 
 /* Go right from the bottom left */
 .bottomLeft {
-    bottom: -20px;
-    left: 5%;
+    bottom: 0;
+    left: 0;
     -webkit-animation-name: bottomLeft;
     animation-name: bottomLeft;
 }
 
 /* Corresponding animation */
 @-webkit-keyframes bottomLeft {
-    0% {transform: translate3d(0, 0, 0);}
-    20% {transform: translate3d(8%, -20px, 0);}
-    100% {transform: translate3d(20%, 20px, 0);}
+    0% {transform: translate3d(20%, 5%, 0);}
+    20% {transform: translate3d(28%, 0, 0);}
+    100% {transform: translate3d(40%, 7%, 0);}
 }
 @keyframes bottomLeft {
-    0% {transform: translate3d(0, 0, 0);}
-    20% {transform: translate3d(8%, -20px, 0);}
-    100% {transform: translate3d(20%, 20px, 0);}
+    0% {transform: translate3d(20%, 5%, 0);}
+    20% {transform: translate3d(28%, 0, 0);}
+    100% {transform: translate3d(40%, 7%, 0);}
 }
 
 /*Text affected by that anim */
-.bottomLeftAnim + #wanText{
-
+.bottomLeft + #wanText {
+    left: 0;
+    bottom: 0;
+    display: block!important;
+    -webkit-animation-name: bLeftText;
+    animation-name: bLeftText;
 }
 
 /* Corresponding animation */
+@-webkit-keyframes bLeftText {
+    0% { transform: rotate(-25deg) translate3d(100%, 0%, 0); opacity: 1;}
+    100% { transform: rotate(-25deg) translate3d(100%, -60%, 0); opacity: 0;}
+}
 @keyframes bLeftText {
+    0% { transform: rotate(-25deg) translate3d(100%, 0%, 0); opacity: 1;}
+    100% { transform: rotate(-25deg) translate3d(100%, -60%, 0); opacity: 0;}
 }
 
 /* Mobile media queries for this specific animation */
@@ -61,131 +71,251 @@
 }
 
 .bottomRight {
-    bottom: -100px;
+    bottom: 0;
     right: 0;
     -webkit-animation-name: bottomRight;
     animation-name: bottomRight;
 }
 
 @-webkit-keyframes bottomRight {
-    0% {transform: scaleX(-1) translate3d(0, 0, 0);}
-    100% {transform: scaleX(-1) translate3d(30%, -100px, 0);}
+    0% {transform: scaleX(-1) translate3d(0, 50%, 0);}
+    100% {transform: scaleX(-1) translate3d(30%, 0, 0);}
 }
+
 @keyframes bottomRight {
-    0% {transform: scaleX(-1) translate3d(0, 0, 0);}
-    100% {transform: scaleX(-1) translate3d(30%, -100px, 0);}
+    0% {transform: scaleX(-1) translate3d(0, 50%, 0);}
+    100% {transform: scaleX(-1) translate3d(30%, 0, 0);}
 }
 
 .bottomRight + #wanText {
+    right: 0;
+    bottom: 0;
+    display: block!important;
+    -webkit-animation-name: bRightText;
+    animation-name: bRightText;
 }
 
+@-webkit-keyframes bRightText {
+    0% {transform: translate3d(-40%, -100%, 0) rotate(35deg) scale(0.5, 0.5);opacity: 1;}
+    100% {transform: translate3d(-70%, -100%, 0) rotate(35deg) scale(1, 1);opacity: 0;}
+}
 @keyframes bRightText {
+    0% {transform: translate3d(-40%, -100%, 0) rotate(35deg) scale(0.5, 0.5);opacity: 1;}
+    100% {transform: translate3d(-70%, -100%, 0) rotate(35deg) scale(1, 1);opacity: 0;}
 }
 
 @media screen and (max-width: 480px) {
 }
 
 .topRight {
-    right: -10%;
-    top: -20%;
+    right: 0;
+    top: 0;
     -webkit-animation-name: topRight;
     animation-name: topRight;
 }
 
 @-webkit-keyframes topRight {
-    0% {transform: rotate(-30deg) scaleX(-1) translate3d(0, 0, 0);}
-    100% {transform: rotate(-30deg) scaleX(-1) translate3d(80%, -40%, 0);}
+    0% {transform: rotate(-30deg) scaleX(-1) translate3d(-40%, -10%, 0);}
+    100% {transform: rotate(-30deg) scaleX(-1) translate3d(20%, -44%, 0);}
 }
 
 @keyframes topRight {
-    0% {transform: rotate(-30deg) scaleX(-1) translate3d(0, 0, 0);}
-    100% {transform: rotate(-30deg) scaleX(-1) translate3d(80%, -40%, 0);}
+    0% {transform: rotate(-30deg) scaleX(-1) translate3d(-40%, -10%, 0);}
+    100% {transform: rotate(-30deg) scaleX(-1) translate3d(20%, -44%, 0);}
 }
 
 .topRight + #wanText {
-    
+    left: 0;
+    top: 0;
+    display: block!important;
+    -webkit-animation-name: topRightText;
+    animation-name: topRightText;
 }
 
 @keyframes topRightText {
+    0% {transform: translate3d(80%, 250%, 0) scale(2, 0.5);}
+    50% {transform: translate3d(80%, 250%, 0) scale(2, 3);}
+    100% {transform: translate3d(80%, 250%, 0) scale(2, 3);}
 }
 
 @media screen and (max-width: 480px) {
 }
 
 .backFlip {
-    
+    right: 0;
+    top: 0;
+    -webkit-animation-name: backFlip;
+    animation-name: backFlip;
+}
+
+@-webkit-keyframes backFlip {
+    0% {transform: scaleX(1) scaleY(-1) translate3d(0, 0, 0);}
+    50% {transform: scaleX(-2) scaleY(-2) translate3d(30%, -25%, 0);}
+    100% {transform: scaleX(-2) scaleY(-2) translate3d(30%, -25%, 0);}
 }
 
 @keyframes backFlip {
+    0% {transform: scaleX(1) scaleY(-1) translate3d(0, 0, 0);}
+    50% {transform: scaleX(-2) scaleY(-2) translate3d(30%, -25%, 0);}
+    100% {transform: scaleX(-2) scaleY(-2) translate3d(30%, -25%, 0);}
 }
 
 @media screen and (max-width: 480px) {
 }
 
+.fullScreen {
+    right: 0;
+    top: 0;
+    -webkit-animation-name: fullScreen;
+    animation-name: fullScreen;
+    height: 100%!important;
+    width: auto!important;
+}
+
+.fullScreen img {
+    height: 100%!important;
+    width: auto!important;
+}
+
+.fullScreen + span + #topBox {
+    -webkit-animation-name: boxTop;
+    animation-name: boxTop;
+}
+
+.fullScreen + span + #topBox + #botBox {
+    -webkit-animation-name: boxBot;
+    animation-name: boxBot;
+}
+
+@-webkit-keyframes fullScreen {
+    0% {transform: scaleX(-1) translate3d(100%, 0, 0);}
+    30% {transform: scaleX(-1) translate3d(10%, 0, 0);}
+    100% {transform: scaleX(-1) translate3d(0, 0, 0);}
+}
+
 @keyframes fullScreen {
+    0% {transform: scaleX(-1) translate3d(100%, 0, 0);}
+    30% {transform: scaleX(-1) translate3d(10%, 0, 0);}
+    100% {transform: scaleX(-1) translate3d(0, 0, 0);}
 }
 
 @media screen and (max-width: 480px) {
 }
 
 /* Black bars */
+@-webkit-keyframes boxTop {
+    0% {transform: translate3d(0, 0, 0);}
+    80% {transform: translate3d(0, 100%, 0);}
+    100% {transform: translate3d(0, 100%, 0);}
+}
 @keyframes boxTop {
+    0% {transform: translate3d(0, 0, 0);}
+    80% {transform: translate3d(0, 100%, 0);}
+    100% {transform: translate3d(0, 100%, 0);}
 }
 
+@-webkit-keyframes boxBot {
+    0% {transform: translate3d(0, 0, 0);}
+    80% {transform: translate3d(0, -90%, 0);}
+    100% {transform: translate3d(0, -90%, 0);}
+}
 @keyframes boxBot {
+    0% {transform: translate3d(0, 0, 0);}
+    80% {transform: translate3d(0, -90%, 0);}
+    100% {transform: translate3d(0, -90%, 0);}
 }
 
+.frontFlip {
+    height: 150%!important;
+    width: auto!important;
+    bottom: 0;
+    left: 0;
+    -webkit-animation-name: frontFlip;
+    animation-name: frontFlip;
+}
 
+.frontFlip img {
+    height: 100%!important;
+    width: auto!important;
+}
+
+@-webkit-keyframes frontFlip {
+    0% {transform: scaleX(-1) scaleY(1);}
+    50% {transform: scaleX(0.4) scaleY(0.4) translate3d(-50%, 75%, 0);}
+    100% {transform: scaleX(0.4) scaleY(0.4) translate3d(-50%, 75%, 0);}
+}
 @keyframes frontFlip {
+    0% {transform: scaleX(-1) scaleY(1);}
+    50% {transform: scaleX(0.4) scaleY(0.4) translate3d(-50%, 75%, 0);}
+    100% {transform: scaleX(0.4) scaleY(0.4) translate3d(-50%, 75%, 0);}
 }
 
 @media screen and (max-width: 480px) {
+}
+
+.frontFlipAborted {
+    height: 150%!important;
+    width: auto!important;
+    bottom: 0;
+    left: 0;
+    -webkit-animation-name: frontFlipAborted;
+    animation-name: frontFlipAborted;
+}
+
+.frontFlipAborted img {
+    height: 100%!important;
+    width: auto!important;
+}
+
+@-webkit-keyframes frontFlipAborted {
+    0% {transform: scaleX(-1) scaleY(1);}
+    100% {transform: scaleX(0) scaleY(0.2) translate3d(-50%, 75%, 0);}
 }
 
 @keyframes frontFlipAborted {
+    0% {transform: scaleX(-1) scaleY(1);}
+    100% {transform: scaleX(-0.001) scaleY(0.4) translate3d(-2000%, 75%, 0);}
 }
 
 @media screen and (max-width: 480px) {
 }
 
+.shake {
+    -webkit-animation-timing-function: cubic-bezier(.36,.07,.19,.97)!important;
+    animation-timing-function: cubic-bezier(.36,.07,.19,.97)!important;
+    -webkit-animation-name: shake;
+    animation-name: shake;
+
+    bottom: 0;
+    left: 0;
+}
+
+@-webkit-keyframes shake {
+    10%, 90% {transform: translate3d(5%, 2%, 0);}
+    20%, 80% {transform: translate3d(-1%, 7%, 0);}
+    30%, 50%, 70% {transform: translate3d(3%, 0%, 0);}
+    40%, 60% {transform: translate3d(-6%, 4%, 0);}
+}
 @keyframes shake {
-}
-
-@media screen and (max-width: 480px) {
-}
-
-@keyframes cssload-motion {
-    0% {
-        transform: translateX(0) scale(1);
-    }
-    25% {
-        transform: translateX(-81px) scale(0.3);
-    }
-    50% {
-        transform: translateX(0) scale(1);
-    }
-    75% {
-        transform: translateX(81px) scale(0.3);
-    }
-    100% {
-        transform: translateX(0) scale(1);
-    }
+    10%, 90% {transform: translate3d(5%, 2%, 0);}
+    20%, 80% {transform: translate3d(-1%, 7%, 0);}
+    30%, 50%, 70% {transform: translate3d(3%, 0%, 0);}
+    40%, 60% {transform: translate3d(-6%, 4%, 0);}
 }
 
 @-webkit-keyframes cssload-motion {
-    0% {
-            -webkit-transform: translateX(0) scale(1);
-    }
-    25% {
-            -webkit-transform: translateX(-81px) scale(0.3);
-    }
-    50% {
-            -webkit-transform: translateX(0) scale(1);
-    }
-    75% {
-            -webkit-transform: translateX(81px) scale(0.3);
-    }
-    100% {
-            -webkit-transform: translateX(0) scale(1);
-    }
+    0% {-webkit-transform: translateX(0) scale(1);}
+    25% {-webkit-transform: translateX(-81px) scale(0.3);}
+    50% {-webkit-transform: translateX(0) scale(1);}
+    75% {-webkit-transform: translateX(81px) scale(0.3);}
+    100% {-webkit-transform: translateX(0) scale(1);}
 }
+
+@keyframes cssload-motion {
+    0% {transform: translateX(0) scale(1);}
+    25% {transform: translateX(-81px) scale(0.3);}
+    50% {transform: translateX(0) scale(1);}
+    75% {transform: translateX(81px) scale(0.3);}
+    100% {transform: translateX(0) scale(1);}
+}
+

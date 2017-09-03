@@ -75,21 +75,16 @@ body {
     font-family: 'BrushScriptStd';
     display: none;
     position: absolute;
-    font-size: 20vh;
+    font-size: 13vw;
     color: #4f2b2d;
     width: auto;
     z-index: 2;
     overflow: wrap;
-}
-
-@media screen and (max-width: 480px) {
-    #wanText {
-        font-size: 10vh;
-    }
+    -webkit-animation-timing-function: cubic-bezier(.47,.77,.43,.98);
+    animation-timing-function: cubic-bezier(.47,.77,.43,.98);
 }
 
 .box {
-    display: none;
     background-color: black;
     position: absolute;
     left: 0;
@@ -109,8 +104,9 @@ body {
 #wolfGirl {
     position: absolute;
     display: block;
-    width: 30%;
+    width: 35%;
     z-index: 1;
+    -webkit-animation-timing-function: cubic-bezier(.47,.77,.43,.98);
     animation-timing-function: cubic-bezier(.47,.77,.43,.98);
 }
 
@@ -118,11 +114,4 @@ body {
     display: block;
     width: 100%;
     height: auto;
-}
-
-@media screen and (max-width: 480px) {
-    #wolfGirl {
-        height: auto;
-        width: 60%;
-    }
 }
