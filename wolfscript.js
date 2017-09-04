@@ -54,9 +54,13 @@ var animHandler = function () {
     //     post = null;
     // }
 
-    // Remove all classes off wolfGirl to clear any possible effects from past animations.
     anim.className = "";
-    var cur = currentAnimation.steps[aIndex];
+    var cur = currentAnimation.steps[aIndex++];
+    if (!cur) { // aIndex isn't up to date for some reason, skip this and print errors
+        console.error("cur is undefined! aIndex = " + aIndex);
+        console.error(currentAnimation);
+        return ;
+    }
     if (cur.hasOwnProperty("func"))
         window[cur.func](durationValues[cur.duration]);
     if (cur.hasOwnProperty("elems")) {
@@ -66,7 +70,6 @@ var animHandler = function () {
     }
     setDurationOnElement(anim, durationValues[cur.duration]);
     anim.classList.add(cur.name);
-    aIndex++;
     if (aIndex === currentAnimation.steps.length)
         anim.classList.add("infiniteLoop");
 };
@@ -181,7 +184,15 @@ document.addEventListener('visibilitychange', function () {
     }
 });
 
+// Handle the window resizing to scale the bgColor element
+var resizeHandler = function() {
+    document.getElementById('bgColor').style.transform = "scale3d("+ window.innerWidth * 1.2 + ", " + window.innerHeight * 1.2 + ", 1) translate3d(48%, 48%, 0)";
+}
+
 window.onload = function() {
+    // remove loading screen
     document.getElementById('loadingScreen').style.display = "none";
+    // scale up the background color from 1x1px to whatever the screen size is
+    resizeHandler();
     changeAnimation("original");
 };
