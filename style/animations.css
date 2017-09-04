@@ -25,6 +25,17 @@
     -webkit-animation: cssload-motion 2.55s cubic-bezier(0.77, 0, 0.175, 1) infinite;
 }
 
+.colorCycleBg {
+    animation: colorCycleBg 2s linear infinite;
+}
+
+@keyframes colorCycleBg {
+    0% {background-color: #F99;}
+    33% {background-color: #9F9;}
+    67% {background-color: #99F;}
+    100% {background-color: #F99;}
+}
+
 /* Go right from the bottom left */
 .bottomLeft {
     bottom: 0;
