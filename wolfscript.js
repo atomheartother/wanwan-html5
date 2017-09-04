@@ -190,8 +190,6 @@ var resizeHandler = function() {
 }
 
 window.onload = function() {
-    // remove loading screen
-    document.getElementById('loadingScreen').style.display = "none";
     // scale up the background color from 1x1px to whatever the screen size is
     resizeHandler();
     changeAnimation("original");
