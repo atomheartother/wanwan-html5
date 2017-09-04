@@ -142,9 +142,9 @@
 }
 
 @keyframes topRightText {
-    0% {transform: translate3d(80%, 250%, 0) scale(2, 0.5);}
-    50% {transform: translate3d(80%, 250%, 0) scale(2, 3);}
-    100% {transform: translate3d(80%, 250%, 0) scale(2, 3);}
+    0% {transform: translate3d(80%, 250%, 0) scale3d(2, 0.5, 1);}
+    50% {transform: translate3d(80%, 250%, 0) scale3d(2, 3, 1);}
+    100% {transform: translate3d(80%, 250%, 0) scale3d(2, 3, 1);}
 }
 
 @media screen and (max-width: 480px) {
@@ -158,15 +158,15 @@
 }
 
 @-webkit-keyframes backFlip {
-    0% {transform: scaleX(1) scaleY(-1) translate3d(0, 0, 0);}
-    50% {transform: scaleX(-2) scaleY(-2) translate3d(30%, -25%, 0);}
-    100% {transform: scaleX(-2) scaleY(-2) translate3d(30%, -25%, 0);}
+    0% {transform: scale3d(1, -1, 1) translate3d(0, 0, 0);}
+    50% {transform: scale3d(-2, -2, 1) translate3d(30%, -25%, 0);}
+    100% {transform: scale3d(-2, -2, 1) translate3d(30%, -25%, 0);}
 }
 
 @keyframes backFlip {
-    0% {transform: scaleX(1) scaleY(-1) translate3d(0, 0, 0);}
-    50% {transform: scaleX(-2) scaleY(-2) translate3d(30%, -25%, 0);}
-    100% {transform: scaleX(-2) scaleY(-2) translate3d(30%, -25%, 0);}
+    0% {transform: scale3d(1, -1, 1) translate3d(0, 0, 0);}
+    50% {transform: scale3d(-2, -2, 1) translate3d(30%, -25%, 0);}
+    100% {transform: scale3d(-2, -2, 1) translate3d(30%, -25%, 0);}
 }
 
 @media screen and (max-width: 480px) {
@@ -249,14 +249,14 @@
 }
 
 @-webkit-keyframes frontFlip {
-    0% {transform: scaleX(-1) scaleY(1);}
-    50% {transform: scaleX(0.4) scaleY(0.4) translate3d(-50%, 75%, 0);}
-    100% {transform: scaleX(0.4) scaleY(0.4) translate3d(-50%, 75%, 0);}
+    0% {transform: scale3d(-1, 1, 1);}
+    50% {transform: scale3d(0.4, 0.4, 1) translate3d(-50%, 75%, 0);}
+    100% {transform: scale3d(0.4, 0.4, 1) translate3d(-50%, 75%, 0);}
 }
 @keyframes frontFlip {
-    0% {transform: scaleX(-1) scaleY(1);}
-    50% {transform: scaleX(0.4) scaleY(0.4) translate3d(-50%, 75%, 0);}
-    100% {transform: scaleX(0.4) scaleY(0.4) translate3d(-50%, 75%, 0);}
+    0% {transform: scale3d(-1, 1, 1);}
+    50% {transform: scale3d(0.4, 0.4, 1) translate3d(-50%, 75%, 0);}
+    100% {transform: scale3d(0.4, 0.4, 1) translate3d(-50%, 75%, 0);}
 }
 
 @media screen and (max-width: 480px) {
@@ -277,13 +277,13 @@
 }
 
 @-webkit-keyframes frontFlipAborted {
-    0% {transform: scaleX(-1) scaleY(1);}
-    100% {transform: scaleX(0) scaleY(0.2) translate3d(-50%, 75%, 0);}
+    0% {transform: scale3d(-1, 1, 1);}
+    100% {transform: scale3d(0, 0.2, 1) translate3d(-50%, 75%, 0);}
 }
 
 @keyframes frontFlipAborted {
-    0% {transform: scaleX(-1) scaleY(1);}
-    100% {transform: scaleX(-0.001) scaleY(0.4) translate3d(-2000%, 75%, 0);}
+    0% {transform: scale3d(-1, 1, 1);}
+    100% {transform: scale3d(0, 0.2, 1) translate3d(-50%, 75%, 0);}
 }
 
 @media screen and (max-width: 480px) {

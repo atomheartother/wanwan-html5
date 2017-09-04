@@ -114,6 +114,7 @@ body {
     height: auto;
 }
 
+/* Yes, the background color is 1x1px. Read about GPU acceleration if you think this makes no sense */
 #bgColor {
     width: 1px;
     height: 1px;
