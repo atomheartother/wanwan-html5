@@ -8,6 +8,9 @@ const wolves = {
     "Bayonetta" : {
         "tags" : ["Bayonetta", "Cereza"]
     },
+    "Cirno" : {
+        "tags" : ["Touhou", "Cirno"],
+    },
     "DJSona" : {
         "tags" : ["League of Legends", "DJ Sona"]
     },
