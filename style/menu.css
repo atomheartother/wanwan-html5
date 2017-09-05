@@ -190,13 +190,29 @@
     padding: 10px;
     color: white;
     font-weight: bold;
-    background-color: #F26D7A;
     cursor: pointer;
     border-radius: 3px;
+    opacity: 0.8;
 }
 
 .submitButton:hover {
-    background-color: #EB5757;
+    opacity: 1;
+}
+
+.redButton {
+    background-color: #F26D7A;
+}
+
+.greyButton {
+    background-color: #8C7E77;
+}
+
+.greenButton {
+    background-color: #77BF43;
+}
+
+.brownButton {
+    background-color: #BF8A71;
 }
 
 .volumeContainer {
@@ -308,10 +324,10 @@ input[type=range].styledSlider:focus::-ms-fill-upper {
   background: #ffffff;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 620px) {
     #menuContainer {
         left: 0;
-        width: 90%;
+        width: calc(100% - 17px);
         opacity: 0.7;
     }
 

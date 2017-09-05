@@ -53,7 +53,6 @@ var animHandler = function () {
     //     post();
     //     post = null;
     // }
-
     anim.className = "";
     var cur = currentAnimation.steps[aIndex++];
     if (!cur) { // aIndex isn't up to date for some reason, skip this and print errors
@@ -150,7 +149,7 @@ function changeAnimation(newState) {
             currentAnimation.funcOut();
         }
     }
-    currentAnimation = animations[newState];
+    // Important: currentanimation MUST be set in funcin(). Funcin() takes care of ALL the initialization.
     if (animations[newState].hasOwnProperty('funcIn')) {
         animations[newState].funcIn();
     }
@@ -162,13 +161,11 @@ function changeAnimation(newState) {
 document.addEventListener('visibilitychange', function () {
     if (!document.hidden) {
         var time = 0;
-        var index = 0;
-        while (index < currentAnimation.length) {
+        for (var index in currentAnimation) {
             var n = currentAnimation[index];
             // Add animation timing
             time += durationNumValues[n.duration];
-            if (time > currentSong.seek() * 1000 + 100) {
-                // This animation is the next one that should be played in the song
+            if (time > currentSong.seek() * 1000 + 100) { // This animation is the next one that should be played in the song
                 // Create a closure with the index so it's not affected by the asynchronous nature of the operation, just in caaaase
                 (function(idx) {
                     setTimeout(function() {
@@ -178,7 +175,6 @@ document.addEventListener('visibilitychange', function () {
                 })(index);
                 return ;
             }
-            index++;
         }
         console.error("Animation offset correction failed. I really tried!");
     }
