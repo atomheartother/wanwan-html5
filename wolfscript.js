@@ -2,6 +2,11 @@
 
 // This keeps track of which animation we're playing
 var currentAnimation;
+
+// This variable temporarily stores the next animation
+// This is just a temp fix until I get around to making the whole animation change objectified
+var nextAnimation = null;
+
 // Animation index, keeps track of which index we're at.
 var aIndex = 0;
 
@@ -149,7 +154,7 @@ function changeAnimation(newState) {
             currentAnimation.funcOut();
         }
     }
-    // Important: currentanimation MUST be set in funcin(). Funcin() takes care of ALL the initialization.
+    nextAnimation = animations[newState];
     if (animations[newState].hasOwnProperty('funcIn')) {
         animations[newState].funcIn();
     }
