@@ -74,9 +74,14 @@ var animHandler = function () {
     }
     setDurationOnElement(anim, durationValues[cur.duration]);
     anim.classList.add(cur.name);
+    // If we've reached the end of the animations, we loop infinitely until the animation is changed or the song loops
     if (aIndex === currentAnimation.steps.length)
         anim.classList.add("infiniteLoop");
 };
+// Call animHandler everytime the current animation ends
+anim.addEventListener("webkitAnimationEnd", animHandler, false);
+anim.addEventListener("MSAnimationEnd", animHandler, false);
+anim.addEventListener("animationend", animHandler, false);
 
 // Never call animHandler directly, to start a new animation, call this function instead which will call it
 var startNewAnimation = function() {
@@ -87,10 +92,6 @@ var startNewAnimation = function() {
     aIndex = 0;
     animHandler();
 }
-
-anim.addEventListener("webkitAnimationEnd", animHandler, false);
-anim.addEventListener("MSAnimationEnd", animHandler, false);
-anim.addEventListener("animationend", animHandler, false);
 
 function changeGirl(name) {
     if (wolves[name].hasOwnProperty("altFormat")) {    // If the girl has a non-png file
@@ -156,6 +157,7 @@ window.onkeydown = function(e) {
 };
 
 // Handles changing animations.
+// For synchronisation purposes, we can't call startNewAnimation() here, each animation needs to call it in funcIn() when it is appropriate
 function changeAnimation(newState) {
     if (!!currentAnimation) {
         if (newState === currentAnimation.name) return;

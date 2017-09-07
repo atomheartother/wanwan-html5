@@ -1,8 +1,10 @@
 ![Wan~](
 https://wanwan-html5.moe/girls/Momiji.png
 )
+[![Built with VanillaJS](http://vanilla-js.com/assets/button.png)](http://vanilla-js.com/)
+
 # wanwan-html5
-This is an HTML5 version of the flash animation "WAN WAN INTENSIFIES.sfw". CSS animations controlled by Javascript for very fluid wolf girl.
+This is an HTML5 version of the flash animation "WAN WAN INTENSIFIES.sfw". CSS animations controlled by pure Javascript for very fluid wolf girl.
 
 # Why?
 Wan not?
