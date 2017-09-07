@@ -26,7 +26,7 @@ var curGirl = null;
 var currentSong;
 
 // The animations variable contains animation instructions, and allows us to add more animations in the future
-// Attributes:
+// Attributes (all obligatory):
 // Steps: Array, each element is a new animation
 // funcIn: Function to execute when entering this animation
 // funcOut: Function to execute when leaving this animation
@@ -77,6 +77,16 @@ var animHandler = function () {
     if (aIndex === currentAnimation.steps.length)
         anim.classList.add("infiniteLoop");
 };
+
+// Never call animHandler directly, to start a new animation, call this function instead which will call it
+var startNewAnimation = function() {
+    if (nextAnimation !== null) {
+        currentAnimation = nextAnimation;
+        nextAnimation = null;
+    }
+    aIndex = 0;
+    animHandler();
+}
 
 anim.addEventListener("webkitAnimationEnd", animHandler, false);
 anim.addEventListener("MSAnimationEnd", animHandler, false);
