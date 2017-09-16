@@ -1,97 +1,11 @@
-// This script is the "engine" of sorts of the website. It's fairly generic.
-
-// This keeps track of which animation we're playing
-var currentAnimation;
-
-// This variable temporarily stores the next animation
-// This is just a temp fix until I get around to making the whole animation change objectified
-var nextAnimation = null;
-
-// Animation index, keeps track of which index we're at.
-var aIndex = 0;
-
-// The durationValues tab is so we don't have to re-write times every time
-const durationValues = ["500ms", "250ms", "125ms"];
-// The above but with numbers. I know, I know, but I'm not going to parse a string every 0.5s.
-const durationNumValues = [500, 250, 125];
-
-// Post holds a function to execute after an animation has ended and before the next one starts
-// Nothing happens if it is null
-var post = null;
+// This file is our 'main'. It handles everything specific to wanwan.moe
+// Everything related to the animation is in lib/wanimation.js
 
 // Holds the current wolfgirl
 var curGirl = null;
 
-// Holds the current song. Must be a Howl object.
-var currentSong;
-
-// The animations variable contains animation instructions, and allows us to add more animations in the future
-// Attributes (all obligatory):
-// Steps: Array, each element is a new animation
-// funcIn: Function to execute when entering this animation
-// funcOut: Function to execute when leaving this animation
-
-// Steps attributes:
-// name: Obligatory, refers to the class attached to wolfGirl
-// duration: Obligatory, duration of this animation, revers to the durationValues array
-// elems: Optional, animation duration is set for the elements with these IDs (this doesn't trigger the animation!)
-// func: Optional, function to execute before this animation plays. Receives the duration as parameter
-
-// See original.js for reference
-var animations = {};
-
-var anim = document.getElementById("wolfGirl");
+// Holds the image
 var img = document.getElementById("wolfImg");
-
-var setDurationOnElement = function(elem, duration) {
-    if (elem.style.animationDuration !== duration) {
-        elem.style.WebKitAnimationDuration = duration;
-        elem.style.animationDuration = duration;
-    }
-}
-
-// Called at the end of each animation
-var animHandler = function () {
-    // Currently unused since there are no func selectors
-    // if (post != null)
-    // {
-    //     post();
-    //     post = null;
-    // }
-    anim.className = "";
-    var cur = currentAnimation.steps[aIndex++];
-    if (!cur) { // aIndex isn't up to date for some reason, skip this and print errors
-        console.error("cur is undefined! aIndex = " + aIndex);
-        console.error(currentAnimation);
-        return ;
-    }
-    if (cur.hasOwnProperty("func"))
-        window[cur.func](durationValues[cur.duration]);
-    if (cur.hasOwnProperty("elems")) {
-        for (var id of cur.elems) {
-            setDurationOnElement(document.getElementById(id), durationValues[cur.duration]);
-        }
-    }
-    setDurationOnElement(anim, durationValues[cur.duration]);
-    anim.classList.add(cur.name);
-    // If we've reached the end of the animations, we loop infinitely until the animation is changed or the song loops
-    if (aIndex === currentAnimation.steps.length)
-        anim.classList.add("infiniteLoop");
-};
-// Call animHandler everytime the current animation ends
-anim.addEventListener("webkitAnimationEnd", animHandler, false);
-anim.addEventListener("MSAnimationEnd", animHandler, false);
-anim.addEventListener("animationend", animHandler, false);
-
-// Never call animHandler directly, to start a new animation, call this function instead which will call it
-var startNewAnimation = function() {
-    if (nextAnimation !== null) {
-        currentAnimation = nextAnimation;
-        nextAnimation = null;
-    }
-    aIndex = 0;
-    animHandler();
-}
 
 function changeGirl(name) {
     if (wolves[name].hasOwnProperty("altFormat")) {    // If the girl has a non-png file
@@ -99,8 +13,7 @@ function changeGirl(name) {
         img.onerror = function() {
             img.src = "girls/" + name + ".png";
         }
-    }
-    else {
+    } else {
         img.src = "girls/" + name + ".png";
     }
     curGirl = wolves[name];
@@ -136,10 +49,6 @@ function checkHash() {
 checkHash();
 window.addEventListener("hashchange", checkHash);
 
-function volumeChange(newvol) {
-    currentSong.volume(newvol);
-}
-
 window.onkeydown = function(e) {
     if (e.keyCode == 27) { // ESC
         // leave menu
@@ -156,47 +65,6 @@ window.onkeydown = function(e) {
     }
 };
 
-// Handles changing animations.
-// For synchronisation purposes, we can't call startNewAnimation() here, each animation needs to call it in funcIn() when it is appropriate
-function changeAnimation(newState) {
-    if (!!currentAnimation) {
-        if (newState === currentAnimation.name) return;
-        // Call the current animation's funcOut if there is one
-        if (currentAnimation.hasOwnProperty('funcOut')) {
-            currentAnimation.funcOut();
-        }
-    }
-    nextAnimation = animations[newState];
-    if (animations[newState].hasOwnProperty('funcIn')) {
-        animations[newState].funcIn();
-    }
-}
-
-// If the page was hidden, then made visible again, we need to readjust our animation counter
-// Because the browser changed the framerate while the user wasn't looking
-// All time values in ms
-document.addEventListener('visibilitychange', function () {
-    if (!document.hidden) {
-        var time = 0;
-        for (var index in currentAnimation) {
-            var n = currentAnimation[index];
-            // Add animation timing
-            time += durationNumValues[n.duration];
-            if (time > currentSong.seek() * 1000 + 100) { // This animation is the next one that should be played in the song
-                // Create a closure with the index so it's not affected by the asynchronous nature of the operation, just in caaaase
-                (function(idx) {
-                    setTimeout(function() {
-                    aIndex = idx;
-                    animHandler();
-                    }, time - currentSong.seek() * 1000);
-                })(index);
-                return ;
-            }
-        }
-        console.error("Animation offset correction failed. I really tried!");
-    }
-});
-
 // Handle the window resizing to scale the bgColor element
 var resizeHandler = function() {
     document.getElementById('bgColor').style.transform = "scale3d("+ window.innerWidth * 1.2 + ", " + window.innerHeight * 1.2 + ", 1) translate3d(48%, 48%, 0)";
@@ -205,5 +73,6 @@ var resizeHandler = function() {
 window.onload = function() {
     // scale up the background color from 1x1px to whatever the screen size is
     resizeHandler();
+    registerAnimatedElement(document.getElementById("wolfGirl"));
     changeAnimation("original");
 };
