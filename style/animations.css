@@ -174,10 +174,10 @@
 
 .fullScreen {
     right: 0;
-    top: 30%;
+    top: 45%;
     -webkit-animation-name: fullScreen;
     animation-name: fullScreen;
-    height: 40%!important;
+    height: 10%!important;
     width: auto!important;
 }
 
@@ -192,15 +192,15 @@
 }
 
 @-webkit-keyframes fullScreen {
-    0% {transform: scale3d(-2.5, 2.5, 1) translate3d(100%, 0, 0);}
-    30% {transform: scale3d(-2.5, 2.5, 1) translate3d(10%, 0, 0);}
-    100% {transform: scale3d(-2.5, 2.5, 1) translate3d(0, 0, 0);}
+    0% {transform: scale3d(-10, 10, 1) translate3d(100%, 0, 0);}
+    50% {transform: scale3d(-10, 10, 1) translate3d(35%, 0, 0);}
+    100% {transform: scale3d(-10, 10, 1) translate3d(30%, 0, 0);}
 }
 
 @keyframes fullScreen {
-    0% {transform: scale3d(-2.5, 2.5, 1) translate3d(100%, 0, 0);}
-    30% {transform: scale3d(-2.5, 2.5, 1) translate3d(10%, 0, 0);}
-    100% {transform: scale3d(-2.5, 2.5, 1) translate3d(0, 0, 0);}
+    0% {transform: scale3d(-10, 10, 1) translate3d(100%, 0, 0);}
+    50% {transform: scale3d(-10, 10, 1) translate3d(35%, 0, 0);}
+    100% {transform: scale3d(-10, 10, 1) translate3d(30%, 0, 0);}
 }
 
 @media screen and (max-width: 480px) {
@@ -208,14 +208,14 @@
 
 /* Black bars */
 @-webkit-keyframes boxAnim {
-    0% {transform: scale3d(105, 1, 1);}
-    60% {transform: scale3d(105, 70, 1);}
-    100% {transform: scale3d(105, 70, 1);}
+    0% {transform: scale3d(1050, 1, 1);}
+    60% {transform: scale3d(1050, 700, 1);}
+    100% {transform: scale3d(1050, 700, 1);}
 }
 @keyframes boxAnim {
-    0% {transform: scale3d(105, 1, 1);}
-    60% {transform: scale3d(105, 70, 1);}
-    100% {transform: scale3d(105, 70, 1);}
+    0% {transform: scale3d(1050, 1, 1);}
+    60% {transform: scale3d(1050, 700, 1);}
+    100% {transform: scale3d(1050, 700, 1);}
 }
 
 .frontFlip {
