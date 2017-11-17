@@ -86,17 +86,17 @@ body {
     background-color: black;
     position: absolute;
     left: 50%;
-    height: 1%;
-    width: 1%;
+    height: 0.1%;
+    width: 0.1%;
     z-index: 5;
 }
 
 #topBox {
-    top: -1%;
+    top: -0.1%;
 }
 
 #botBox {
-    bottom: -1%;
+    bottom: -0.1%;
 }
 
 #wolfGirl {
