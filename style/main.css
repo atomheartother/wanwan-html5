@@ -85,18 +85,18 @@ body {
 .box {
     background-color: black;
     position: absolute;
-    left: 0;
-    height: 40%;
-    width: 100%;
+    left: 50%;
+    height: 1%;
+    width: 1%;
     z-index: 5;
 }
 
 #topBox {
-    top: -40%;
+    top: -1%;
 }
 
 #botBox {
-    bottom: -40%;
+    bottom: -1%;
 }
 
 #wolfGirl {
