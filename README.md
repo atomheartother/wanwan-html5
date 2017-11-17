@@ -31,7 +31,7 @@ Wan not?
 - Vectors for all girls: 2/29 done
 - ~~Let people use custom url for wolf girl image~~
 - ~~Customize volume slider so it's consistent across platforms~~
-- Crazier Nightcore mode
+- Crazier Nightcore mode. I want to add more stuff but the problem here is mobile support - some mobile devices are already struggling to run the animation as is. I have to run some pretty strong optimization before I add *any* more stuff!
 - [Get Down Nitori](https://www.youtube.com/watch?v=FkQaQZCzjic) mode
 - ~~Replace wan images by text so we can write different stuff~~
 - ~~Fix the animation unsync when page isn't visible~~
