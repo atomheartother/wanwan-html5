@@ -24,7 +24,7 @@ function checkHash() {
     var newHash = location.hash.substring(1);
 
     for (var name in wolves) {
-        if (newHash.toUpperCase() === name.toUpperCase()) {
+        if (newHash.toUpperCase() == name.toUpperCase()) {
             changeGirl(name);
             return ;
         }
