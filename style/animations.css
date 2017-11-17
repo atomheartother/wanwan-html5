@@ -174,10 +174,10 @@
 
 .fullScreen {
     right: 0;
-    top: 10%;
+    top: 30%;
     -webkit-animation-name: fullScreen;
     animation-name: fullScreen;
-    height: 80%!important;
+    height: 40%!important;
     width: auto!important;
 }
 
@@ -186,52 +186,36 @@
     width: auto!important;
 }
 
-.fullScreen + span + #topBox {
-    -webkit-animation-name: boxTop;
-    animation-name: boxTop;
-}
-
-.fullScreen + span + #topBox + #botBox {
-    -webkit-animation-name: boxBot;
-    animation-name: boxBot;
+.fullScreen + span + #topBox, .fullScreen + span + #topBox + #botBox {
+    -webkit-animation-name: boxAnim;
+    animation-name: boxAnim;
 }
 
 @-webkit-keyframes fullScreen {
-    0% {transform: scaleX(-1) translate3d(100%, 0, 0);}
-    30% {transform: scaleX(-1) translate3d(10%, 0, 0);}
-    100% {transform: scaleX(-1) translate3d(0, 0, 0);}
+    0% {transform: scale3d(-2.5, 2.5, 1) translate3d(100%, 0, 0);}
+    30% {transform: scale3d(-2.5, 2.5, 1) translate3d(10%, 0, 0);}
+    100% {transform: scale3d(-2.5, 2.5, 1) translate3d(0, 0, 0);}
 }
 
 @keyframes fullScreen {
-    0% {transform: scaleX(-1) translate3d(100%, 0, 0);}
-    30% {transform: scaleX(-1) translate3d(10%, 0, 0);}
-    100% {transform: scaleX(-1) translate3d(0, 0, 0);}
+    0% {transform: scale3d(-2.5, 2.5, 1) translate3d(100%, 0, 0);}
+    30% {transform: scale3d(-2.5, 2.5, 1) translate3d(10%, 0, 0);}
+    100% {transform: scale3d(-2.5, 2.5, 1) translate3d(0, 0, 0);}
 }
 
 @media screen and (max-width: 480px) {
 }
 
 /* Black bars */
-@-webkit-keyframes boxTop {
-    0% {transform: translate3d(0, 0, 0);}
-    80% {transform: translate3d(0, 100%, 0);}
-    100% {transform: translate3d(0, 100%, 0);}
+@-webkit-keyframes boxAnim {
+    0% {transform: scale3d(100, 1, 1);}
+    60% {transform: scale3d(100, 70, 1);}
+    100% {transform: scale3d(100, 70, 1);}
 }
-@keyframes boxTop {
-    0% {transform: translate3d(0, 0, 0);}
-    80% {transform: translate3d(0, 100%, 0);}
-    100% {transform: translate3d(0, 100%, 0);}
-}
-
-@-webkit-keyframes boxBot {
-    0% {transform: translate3d(0, 0, 0);}
-    80% {transform: translate3d(0, -90%, 0);}
-    100% {transform: translate3d(0, -90%, 0);}
-}
-@keyframes boxBot {
-    0% {transform: translate3d(0, 0, 0);}
-    80% {transform: translate3d(0, -90%, 0);}
-    100% {transform: translate3d(0, -90%, 0);}
+@keyframes boxAnim {
+    0% {transform: scale3d(100, 1, 1);}
+    60% {transform: scale3d(100, 70, 1);}
+    100% {transform: scale3d(100, 70, 1);}
 }
 
 .frontFlip {
