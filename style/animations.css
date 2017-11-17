@@ -174,10 +174,10 @@
 
 .fullScreen {
     right: 0;
-    top: 0;
+    top: 10%;
     -webkit-animation-name: fullScreen;
     animation-name: fullScreen;
-    height: 100%!important;
+    height: 80%!important;
     width: auto!important;
 }
 
