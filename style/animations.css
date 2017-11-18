@@ -219,7 +219,7 @@
 }
 
 .frontFlip {
-    height: 150%!important;
+    height: 60%!important;
     width: auto!important;
     bottom: 0;
     left: 0;
@@ -233,21 +233,21 @@
 }
 
 @-webkit-keyframes frontFlip {
-    0% {transform: scale3d(-1, 1, 1);}
-    50% {transform: scale3d(0.4, 0.4, 1) translate3d(-50%, 75%, 0);}
-    100% {transform: scale3d(0.4, 0.4, 1) translate3d(-50%, 75%, 0);}
+    0% {transform: scale3d(-2.5, 2.5, 1) translate3d(-25%, -25%, 0);}
+    50% {transform: scale3d(1, 1, 1);}
+    100% {transform: scale3d(1, 1, 1);}
 }
 @keyframes frontFlip {
-    0% {transform: scale3d(-1, 1, 1);}
-    50% {transform: scale3d(0.4, 0.4, 1) translate3d(-50%, 75%, 0);}
-    100% {transform: scale3d(0.4, 0.4, 1) translate3d(-50%, 75%, 0);}
+    0% {transform: scale3d(-2.5, 2.5, 1) translate3d(-25%, -25%, 0);}
+    50% {transform: scale3d(1, 1, 1);}
+    100% {transform: scale3d(1, 1, 1);}
 }
 
 @media screen and (max-width: 480px) {
 }
 
 .frontFlipAborted {
-    height: 150%!important;
+    height: 60%!important;
     width: auto!important;
     bottom: 0;
     left: 0;
@@ -261,13 +261,11 @@
 }
 
 @-webkit-keyframes frontFlipAborted {
-    0% {transform: scale3d(-1, 1, 1);}
-    100% {transform: scale3d(0, 0.2, 1) translate3d(-50%, 75%, 0);}
 }
 
 @keyframes frontFlipAborted {
-    0% {transform: scale3d(-1, 1, 1);}
-    100% {transform: scale3d(0, 0.2, 1) translate3d(-50%, 75%, 0);}
+    0% {transform: scale3d(-2.5, 2.5, 1) translate3d(-25%, -25%, 0);}
+    100% {transform: scale3d(-0.001, 1, 1);}
 }
 
 @media screen and (max-width: 480px) {
