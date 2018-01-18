@@ -113,6 +113,9 @@ const wolves = {
     "Satsuki" : {
         "tags" : ["Kill La Kill", "Satsuki Kiryuin"]
     },
+    "Shinobu" : {
+        "tags" : ["Shinobu Oshino", "Bakemonogatari"]
+    },
     "Sylphyn" : {
         "tags" : ["Sylphynford Tachibana", "Himouto! Umaru-chan"]
     },
