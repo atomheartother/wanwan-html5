@@ -81,13 +81,16 @@ const wolves = {
         "tags" : ["Undertale", "Ahuhuhu~"]
     },
     "Neptune" : {
-	"tags" : ["Neptune", "Hyperdimension Neptunia", "Purple Head"]
+        "tags" : ["Neptune", "Hyperdimension Neptunia", "Purple Head"]
     },
     "Nico" : {
         "tags" : ["Yazawa Nico", "Love Live! School Idol Project"]
     },
     "Nozomi" : {
         "tags" : ["Toujou Nozomi", "Love Live! School Idol Project"]
+    },
+    "ObiWan" : {
+        "tags" : ["Obi Wan Kenobi", "Star Wars", "High Ground"]
     },
     "Papi" : {
         "tags" : ["Monster Musume", "Bird Girl"]
