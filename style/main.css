@@ -85,17 +85,19 @@ body {
 .box {
     background-color: black;
     position: absolute;
-    left: 50%;
+    left: 0;
     height: 0.1%;
     width: 0.1%;
     z-index: 5;
 }
 
 #topBox {
+    transform-origin: top left;
     top: -0.1%;
 }
 
 #botBox {
+    transform-origin: bottom left;
     bottom: -0.1%;
 }
 

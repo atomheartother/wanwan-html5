@@ -208,14 +208,14 @@
 
 /* Black bars */
 @-webkit-keyframes boxAnim {
-    0% {transform: scale3d(1050, 1, 1);}
-    60% {transform: scale3d(1050, 700, 1);}
-    100% {transform: scale3d(1050, 700, 1);}
+    0% {transform: scale3d(1080, 1, 1);}
+    60% {transform: scale3d(1080, 350, 1);}
+    100% {transform: scale3d(1080, 350, 1);}
 }
 @keyframes boxAnim {
-    0% {transform: scale3d(1050, 1, 1);}
-    60% {transform: scale3d(1050, 700, 1);}
-    100% {transform: scale3d(1050, 700, 1);}
+    0% {transform: scale3d(1080, 1, 1);}
+    60% {transform: scale3d(1080, 350, 1);}
+    100% {transform: scale3d(1080, 350, 1);}
 }
 
 .frontFlip {
