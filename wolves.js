@@ -99,10 +99,10 @@ const wolves = {
         "tags" : ["Undertale", "Nyeh nyeh nyeh"]
     },
     "Reimu" : {
-	"tags" : ["Reimu Hakurei", "Touhou"]
+	      "tags" : ["Reimu Hakurei", "Touhou"]
     },
     "Rem" : {
-	"tags" : ["Rem", "Remu", "Re:Zero"]
+	      "tags" : ["Rem", "Remu", "Re:Zero"]
     },
     "Renge" : {
         "tags" : ["Non Non Biyori", "Renge Miyauchi", "Ren-Chon"]
@@ -130,6 +130,9 @@ const wolves = {
     },
     "Tracer" : {
         "tags" : ["Overwatch", "Lena Oxton"]
+    },
+    "Tsubasa" : {
+        "tags" : ["Hanekawa Tsubasa", "Monogatari", "Bakemonogatari"]
     },
     "Umi" : {
         "tags" : ["Sonoda Umi", "Love Live! School Idol Project"]
