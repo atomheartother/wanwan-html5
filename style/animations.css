@@ -181,18 +181,8 @@
     width: auto!important;
 }
 
-.fullScreen img {
-    height: 100%!important;
-    width: auto!important;
-}
-
-.fullScreen + span + #topBox, .fullScreen + span + #topBox + #botBox {
-    -webkit-animation-name: boxAnim;
-    animation-name: boxAnim;
-}
-
 @-webkit-keyframes fullScreen {
-    0% {transform: scale3d(-10, 10, 1) translate3d(100%, 0, 0);}
+   0% {transform: scale3d(-10, 10, 1) translate3d(100%, 0, 0);}
     50% {transform: scale3d(-10, 10, 1) translate3d(35%, 0, 0);}
     100% {transform: scale3d(-10, 10, 1) translate3d(30%, 0, 0);}
 }
@@ -203,7 +193,23 @@
     100% {transform: scale3d(-10, 10, 1) translate3d(30%, 0, 0);}
 }
 
+.fullScreen img {
+    height: 100%!important;
+    width: auto!important;
+}
+
+.fullScreen + span + #topBox, .fullScreen + span + #topBox + #botBox {
+    -webkit-animation-name: boxAnim;
+    animation-name: boxAnim;
+}
+
 @media screen and (max-width: 480px) {
+    /* Mobile devices struggle with the black bars moving. We just leave them static */
+    .fullScreen + span + #topBox, .fullScreen + span + #topBox + #botBox {
+        -webkit-animation: none !important;
+        animation: none !important;
+        transform: scale3d(1080, 350, 1);
+    }
 }
 
 /* Black bars */
