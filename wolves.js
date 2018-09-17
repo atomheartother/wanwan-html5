@@ -80,6 +80,10 @@ const wolves = {
         "altFormat" : "svg",
         "tags" : ["Undertale", "Ahuhuhu~"]
     },
+    "Nanachi" : {
+        "text" : ["Naaa~", "~Naaa", "Naaa"],
+        "tags" : ["Nanachi", "Made In Abyss"]
+    },
     "Neptune" : {
         "tags" : ["Neptune", "Hyperdimension Neptunia", "Purple Head"]
     },
