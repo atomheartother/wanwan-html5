@@ -41,6 +41,10 @@ const wolves = {
     "Karen" : {
         "tags" : ["Kiniro Mosaic", "Karen Kujou", "Ookami to Koushinryou"]
     },
+    "KizunaAI" : {
+        "tags" : ["Kizuna AI", "YouTube"],
+        "text" : ["Fukyou!", "Fukyou!", "Fukyou!"]
+    },
     "Kotori" : {
         "tags" : ["Minami Kotori", "Love Live! School Idol Project"]
     },
@@ -67,6 +71,9 @@ const wolves = {
     },
     "Miia" : {
         "tags" : ["Monster Musume", "Snake Girl"]
+    },
+    "Miku" : {
+        "tags" : ["Hatsune Miku", "Vocaloid"]
     },
     "Mimi" : {
         "tags" : ["Mimi Pearlbaton", "Re:Zero kara Hajimeru Isekai Seikatsu"]
