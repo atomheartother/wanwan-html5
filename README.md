@@ -57,7 +57,8 @@ I try to find the artists whose art I use, if you made one of these faces and wa
 
 - Link, DJSona, Papi, Tracer, Tamamo, D.Va, Kanna, Bayonetta, Miia: [Kirbmaster](http://kirbmaster.deviantart.com/)
 - Ryuko, Satsuki: Tetra (Couldn't find their contact info/website)
-- Nico, Umi, Hanayo, Honoka, Kotori, Eli, Umi, Rin by [kurisu004](https://twitter.com/kurisu004/) (I think, haven't contacted them yet)
+- Nico, Umi, Hanayo, Honoka, Kotori, Eli, Umi, Rin by [kurisu004](https://twitter.com/kurisu004/) (I think, they don't answer to tweets)
+- Bowsette by [JustFream](http://justfream.com)
 
 # Contact
 Have a suggestion, a complaint, a compatibility issue with your browser? Drop an issue on here!
