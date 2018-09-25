@@ -8,6 +8,12 @@ const wolves = {
     "Bayonetta" : {
         "tags" : ["Bayonetta", "Cereza"]
     },
+    "Bowsette" : {
+    	"tags" : ["Bowsette", "Princess Bowser", "Blonde", "Mario"]
+    },
+    "Bowsette2" : {
+    	"tags" : ["Bowsette", "Princess Bowser", "Redhead", "Mario"]
+    },
     "Cirno" : {
         "tags" : ["Touhou", "Cirno"],
     },
