@@ -1,4 +1,7 @@
 const wolves = {
+    "2B" : {
+        "tags" : ["YoRHa No.2 Type B", "NieR Automata"]
+    },
     "Asriel" : {
         "tags" : ["Undertale", "Asriel Dreemurr"]
     },
@@ -20,11 +23,17 @@ const wolves = {
     "DJSona" : {
         "tags" : ["League of Legends", "DJ Sona"]
     },
+    "Dorothy" : {
+        "tags" : ["Dorothy Haze", "VA-11 Hall-A", "Valhalla"]
+    },
     "DVa" : {
         "tags" : ["Overwatch", "D.Va", "Hana Song"]
     },
     "Eli" : {
         "tags" : ["Ayase Eli", "Love Live! School Idol Project"]
+    },
+    "Hakase" : {
+        "tags" : ["Hakase Shinonome", "Nichijou", "Sakamoto"]
     },
     "Hanayo" : {
         "tags" : ["Koizumi Hanayo", "Love Live! School Idol Project"]
