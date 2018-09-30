@@ -50,7 +50,7 @@ I try to find the artists whose art I use, if you made one of these faces and wa
 - Ryuko, Satsuki: Tetra (Couldn't find their contact info/website)
 - Nico, Umi, Hanayo, Honoka, Kotori, Eli, Umi, Rin by [kurisu004](https://twitter.com/kurisu004/) (I think, they don't answer to tweets)
 - Bowsette by [JustFream](http://justfream.com)
-- Hakase, Bowsette2, Ahri, Kizuna AI, Miku and more by [대해원](https://www.pixiv.net/member.php?id=12902343) (I think, they post all this to a pixiv account, and I don't speak japanese)
+- Hakase, Bowsette2, Ahri, Kizuna AI, Miku, Nanachi, 2B, Holo, Chompette: [대해원](https://www.pixiv.net/member.php?id=12902343)
 
 # Contact
 Have a suggestion, a complaint, a compatibility issue with your browser? Drop an issue on here!

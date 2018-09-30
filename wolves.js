@@ -17,6 +17,9 @@ const wolves = {
     "Bowsette2" : {
     	"tags" : ["Bowsette", "Princess Bowser", "Redhead", "Mario"]
     },
+    "Chompette" : {
+        "tags" : ["Chompette", "Princess Chomp", "Mario"],
+    },
     "Cirno" : {
         "tags" : ["Touhou", "Cirno"],
     },
