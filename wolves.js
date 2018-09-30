@@ -106,6 +106,9 @@ const wolves = {
         "text" : ["Naaa~", "~Naaa", "Naaa"],
         "tags" : ["Nanachi", "Made In Abyss"]
     },
+    "Natsuki" : {
+        "tags" : ["Natsuki", "DDLC", "Doki Doki Literature Club"],
+    },
     "Neptune" : {
         "tags" : ["Neptune", "Hyperdimension Neptunia", "Purple Head"]
     },
