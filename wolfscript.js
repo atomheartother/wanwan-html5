@@ -67,7 +67,7 @@ window.onkeydown = function(e) {
 
 // Handle the window resizing to scale the bgColor element
 var resizeHandler = function() {
-    document.getElementById('bgColor').style.transform = "scale3d("+ window.innerWidth * 1.2 + ", " + window.innerHeight * 1.2 + ", 1) translate3d(48%, 48%, 0)";
+    document.getElementById('bgColor').style.transform = "scale3d("+ window.innerWidth + ", " + window.innerHeight + ", 1)";
 }
 
 window.onload = function() {

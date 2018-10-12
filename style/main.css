@@ -7,6 +7,7 @@
 body {
     overflow: hidden;
     background-color: white;
+    margin: 0;
 }
 
 #loadingScreen {
@@ -116,8 +117,11 @@ body {
     height: auto;
 }
 
-/* Yes, the background color is 1x1px. Read about GPU acceleration if you think this makes no sense */
+/* Yes, the background color is 1x1px. It's scaled dynamically for good gpu acceleration */
 #bgColor {
+    top: 0;
+    left: 0;
+    transform-origin: top left;
     width: 1px;
     height: 1px;
 }
