@@ -75,10 +75,6 @@
     100% { transform: rotate(-25deg) translate3d(100%, -60%, 0); opacity: 0;}
 }
 
-/* Mobile media queries for this specific animation */
-@media screen and (max-width: 480px) {
-}
-
 .bottomRight {
     bottom: 0;
     right: 0;
@@ -113,9 +109,6 @@
     100% {transform: translate3d(-70%, -100%, 0) rotate(35deg) scale(1, 1);opacity: 0;}
 }
 
-@media screen and (max-width: 480px) {
-}
-
 .topRight {
     right: 0;
     top: 0;
@@ -141,13 +134,17 @@
     animation-name: topRightText;
 }
 
-@keyframes topRightText {
+@-webkit-keyframes topRightText {
     0% {transform: translate3d(80%, 250%, 0) scale3d(2, 0.5, 1);}
     50% {transform: translate3d(80%, 250%, 0) scale3d(2, 3, 1);}
     100% {transform: translate3d(80%, 250%, 0) scale3d(2, 3, 1);}
 }
 
-@media screen and (max-width: 480px) {
+
+@keyframes topRightText {
+    0% {transform: translate3d(80%, 250%, 0) scale3d(2, 0.5, 1);}
+    50% {transform: translate3d(80%, 250%, 0) scale3d(2, 3, 1);}
+    100% {transform: translate3d(80%, 250%, 0) scale3d(2, 3, 1);}
 }
 
 .backFlip {
@@ -169,10 +166,8 @@
     100% {transform: scale3d(-2, -2, 1) translate3d(30%, -25%, 0);}
 }
 
-@media screen and (max-width: 480px) {
-}
-
 .fullScreen {
+    backface-visibility: none;
     right: 0;
     top: 45%;
     -webkit-animation-name: fullScreen;
@@ -182,7 +177,7 @@
 }
 
 @-webkit-keyframes fullScreen {
-   0% {transform: scale3d(-10, 10, 1) translate3d(100%, 0, 0);}
+    0% {transform: scale3d(-10, 10, 1) translate3d(100%, 0, 0);}
     50% {transform: scale3d(-10, 10, 1) translate3d(35%, 0, 0);}
     100% {transform: scale3d(-10, 10, 1) translate3d(30%, 0, 0);}
 }
@@ -198,17 +193,16 @@
     width: auto!important;
 }
 
+/* Mobile devices struggle with the black bars moving. We just leave them static */
 .fullScreen + span + #topBox, .fullScreen + span + #topBox + #botBox {
-    -webkit-animation-name: boxAnim;
-    animation-name: boxAnim;
+    display: initial;
+    transform: scale3d(1080, 350, 1);
 }
 
-@media screen and (max-width: 480px) {
-    /* Mobile devices struggle with the black bars moving. We just leave them static */
+@media screen and (min-width: 481px) {
     .fullScreen + span + #topBox, .fullScreen + span + #topBox + #botBox {
-        -webkit-animation: none !important;
-        animation: none !important;
-        transform: scale3d(1080, 350, 1);
+        -webkit-animation-name: boxAnim;
+        animation-name: boxAnim;
     }
 }
 
@@ -249,9 +243,6 @@
     100% {transform: scale3d(1, 1, 1);}
 }
 
-@media screen and (max-width: 480px) {
-}
-
 .frontFlipAborted {
     height: 60%!important;
     width: auto!important;
@@ -272,9 +263,6 @@
 @keyframes frontFlipAborted {
     0% {transform: scale3d(-2.5, 2.5, 1) translate3d(-25%, -25%, 0);}
     100% {transform: scale3d(-0.001, 1, 1);}
-}
-
-@media screen and (max-width: 480px) {
 }
 
 .shake {
