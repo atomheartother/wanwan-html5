@@ -43,6 +43,9 @@ I hate bloated pages and believe in pure html/css/js to run a vast majority of w
 
 Currently, the only library I use is the awesome [howler.js](https://howlerjs.com/), for the gapless audio loop, and do so out of absolute necessity.
 
+# I'm having X problem
+PLEASE PLEASE post an issue on GitHub if you encounter a bug, the site works 100% fine on all my devices and browsers but *this isn't my job*, I can't be spending my life testig the site on every device with every browser, and **I can't know about bugs if you don't report them**!
+
 # Credit
 I try to find the artists whose art I use, if you made one of these faces and want credit, contact me about it!
 
