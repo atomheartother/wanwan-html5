@@ -84,6 +84,7 @@ body {
 }
 
 .box {
+    display: none;
     background-color: black;
     position: absolute;
     left: 0;
@@ -94,12 +95,12 @@ body {
 
 #topBox {
     transform-origin: top left;
-    top: -0.1%;
+    top: -1px;
 }
 
 #botBox {
     transform-origin: bottom left;
-    bottom: -0.1%;
+    bottom: -1px;
 }
 
 #wolfGirl {

@@ -67,11 +67,11 @@ window.onkeydown = function(e) {
 
 // Handle the window resizing to scale the bgColor element
 var resizeHandler = function() {
+    // scale up the background color from 1x1px to whatever the screen size is
     document.getElementById('bgColor').style.transform = "scale3d("+ window.innerWidth + ", " + window.innerHeight + ", 1)";
 }
 
 window.onload = function() {
-    // scale up the background color from 1x1px to whatever the screen size is
     resizeHandler();
     registerAnimatedElement(document.getElementById("wolfGirl"));
     changeAnimation("original");
