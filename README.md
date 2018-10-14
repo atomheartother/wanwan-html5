@@ -35,7 +35,10 @@ Wan not?
 - [Get Down Nitori](https://www.youtube.com/watch?v=FkQaQZCzjic) mode
 - ~~Replace wan images by text so we can write different stuff~~
 - ~~Fix the animation unsync when page isn't visible~~
-- ~~Rewrite of animation code, more below~~
+- ~~Rewrite of animation code~~
+- ~~Fix Chrome bug where going back to Original from Nightcore breaks things~~
+- Fix Chrome mobile bug where black bars aren't visible
+- Change twitter card thumbnail depending on url
 - Awoo maybe.
 
 # Philosophy
