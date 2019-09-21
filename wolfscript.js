@@ -78,6 +78,8 @@ window.onload = function() {
   resizeHandler();
   registerAnimatedElement(document.getElementById("wolfGirl"));
   changeAnimation("original");
-  this.document.getElementById("loadingText").innerText =
-    "Your browser doesn't autoplay sound. Click anywhere to start.";
+  this.setTimeout(function() {
+    this.document.getElementById("loadingText").innerText =
+      "Your browser doesn't autoplay sound. Click anywhere to start.";
+  }, 1000);
 };
