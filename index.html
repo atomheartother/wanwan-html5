@@ -1,90 +1,138 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Wan!~</title>
-        <meta name="description" content="WAN WAN INTENSIFIES - html5 version of wanwan.moe">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wan!~</title>
+    <meta
+      name="description"
+      content="WAN WAN INTENSIFIES - html5 version of wanwan.moe"
+    />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="https://wanwan-html5.moe/">
-        <meta name="twitter:title" content="Wan~" />
-        <meta name="twitter:description" content="Sexy single wolf girls in your area!" />
-        <meta name="twitter:image" content="https://wanwan-html5.moe/girls/Momiji.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="https://wanwan-html5.moe/" />
+    <meta name="twitter:title" content="Wan~" />
+    <meta
+      name="twitter:description"
+      content="Sexy single wolf girls in your area!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://wanwan-html5.moe/girls/Momiji.png"
+    />
 
-        <link rel="stylesheet" href="style/main.css">
-        <link rel="stylesheet" href="style/animations.css">
-        <link rel="stylesheet" href="style/menu.css">
-        <link rel="icon" type="image/png" href="/res/icons/favicon-16x16.png" sizes="16x16">
-        <link rel="icon" type="image/png" href="/res/icons/favicon-32x32.png" sizes="32x32">
-    </head>
-    <body onresize="resizeHandler()">
-        <div id="bgColor"></div>
-        <div id="loadingScreen">
-            <div class="cssload-loader">
-                <div class="cssload-ball"></div>
-            </div>
-            <div class="loadingText">Acquiring wolves...</div>
+    <link rel="stylesheet" href="style/main.css" />
+    <link rel="stylesheet" href="style/animations.css" />
+    <link rel="stylesheet" href="style/menu.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/res/icons/favicon-16x16.png"
+      sizes="16x16"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/res/icons/favicon-32x32.png"
+      sizes="32x32"
+    />
+  </head>
+  <body onresize="resizeHandler()">
+    <div id="bgColor"></div>
+    <div id="loadingScreen">
+      <div class="cssload-loader">
+        <div class="cssload-ball"></div>
+      </div>
+      <div id="loadingText">Acquiring wolves...</div>
+    </div>
+
+    <div id="wolfGirl">
+      <!-- The image starts out as a 1x1px image, the girl will be loaded with javascript -->
+      <img
+        alt="Awoo~"
+        id="wolfImg"
+        src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+      />
+    </div>
+    <span id="wanText"></span>
+    <div id="topBox" class="box"></div>
+    <div id="botBox" class="box"></div>
+
+    <!-- Menu -->
+    <div id="menuButton" onclick="showMenu()"></div>
+    <div id="menuContainer" class="menu-hidden">
+      <div class="menuHeader">
+        <div id="menuQuit" onclick="hideMenu()"></div>
+        <input
+          type="text"
+          placeholder="Search... ex: Love Live"
+          id="wolfSearch"
+          onkeyup="filterFunction()"
+        />
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Tags</th>
+          </tr>
+        </thead>
+        <tbody id="wolfTable"></tbody>
+      </table>
+      <p>Or use a custom image URL:</p>
+      <div id="customUrlContainer">
+        <input
+          type="text"
+          placeholder="https://my-waifu.io/best-girl.png"
+          id="customUrl"
+        />
+        <div class="submitButton redButton" onclick="customGirl()">Submit</div>
+      </div>
+      <div class="menuRow">
+        <div
+          class="submitButton redButton"
+          onclick="toggleNightcore()"
+          id="nightcoreButton"
+        >
+          Nightcore
         </div>
-
-        <div id="wolfGirl">
-            <!-- The image starts out as a 1x1px image, the girl will be loaded with javascript -->
-            <img alt="Awoo~" id="wolfImg" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">
+        <div class="volumeContainer">
+          <input
+            type="range"
+            id="volSlider"
+            value="0.2"
+            min="0"
+            max="1"
+            step="0.05"
+            oninput="volumeChange(this.value)"
+            onchange="volumeChange(this.value)"
+            class="styledSlider"
+          />
         </div>
-        <span id="wanText"></span>
-        <div id="topBox" class="box"></div>
-        <div id="botBox" class="box"></div>
-
-        <!-- Menu -->
-        <div id="menuButton" onclick="showMenu()"></div>
-        <div id="menuContainer" class="menu-hidden">
-            <div class="menuHeader">
-                <div id="menuQuit" onclick="hideMenu()"></div>
-                <input type="text" placeholder="Search... ex: Love Live" id="wolfSearch" onkeyup="filterFunction()"/>
-            </div>
-            <table>
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Tags</th>
-                </tr>
-                </thead>
-                <tbody id="wolfTable">
-                </tbody>
-            </table>
-            <p>Or use a custom image URL:</p>
-            <div id="customUrlContainer">
-                <input type="text" placeholder="https://my-waifu.io/best-girl.png" id="customUrl"/>
-                <div class="submitButton redButton" onclick="customGirl()">Submit</div>
-            </div>
-            <div class="menuRow">
-                <div class="submitButton redButton" onclick="toggleNightcore()" id="nightcoreButton">Nightcore</div>
-                <div class="volumeContainer">
-                    <input type="range" id="volSlider" value="0.2" min="0" max="1" step="0.05" oninput="volumeChange(this.value)" onchange="volumeChange(this.value)" class="styledSlider">
-                </div>
-                <div id="socialContainer">
-                    <a target="_blank" href="https://twitter.com/atomheartother" id="twitterSocial"><img src="style/svg/twitter.svg"/></a>
-                    <a target="_blank" href="https://github.com/atomheartother/wanwan-html5" id="githubSocial"><img src="style/svg/github.svg"/></a>
-                </div>
-            </div>
+        <div id="socialContainer">
+          <a
+            target="_blank"
+            href="https://twitter.com/atomheartother"
+            id="twitterSocial"
+            ><img src="style/svg/twitter.svg"
+          /></a>
+          <a
+            target="_blank"
+            href="https://github.com/atomheartother/wanwan-html5"
+            id="githubSocial"
+            ><img src="style/svg/github.svg"
+          /></a>
         </div>
+      </div>
+    </div>
 
-        <!-- We use howler.js for the gapless audio loop -->
-        <script src="lib/howler.core.min.js"></script>
-        <script src="lib/wanimation.js"></script>
-        <script src="wolves.js"></script>
-        <script src="menu.js"></script>
-        <script src="wolfscript.js"></script>
-        <script src="lib/original.js"></script>
-        <script src="lib/nightcore.js"></script>
-
-        <script>
-         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-         ga('create', 'UA-101424168-1', 'auto');
-         ga('send', 'pageview');
-        </script>
-    </body>
+    <!-- We use howler.js for the gapless audio loop -->
+    <script src="lib/howler.js"></script>
+    <script src="lib/wanimation.js"></script>
+    <script src="wolves.js"></script>
+    <script src="menu.js"></script>
+    <script src="wolfscript.js"></script>
+    <script src="lib/original.js"></script>
+    <script src="lib/nightcore.js"></script>
+  </body>
 </html>
