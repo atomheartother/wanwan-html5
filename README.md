@@ -5,7 +5,7 @@ https://wanwan-html5.moe/girls/Momiji.png
 )
 
 # wanwan-html5
-This is an HTML5 version of the flash animation "WAN WAN INTENSIFIES.sfw". CSS animations controlled by pure Javascript for very fluid wolf girl.
+This is an HTML5 version of the flash animation "WAN WAN INTENSIFIES.swf". CSS animations controlled by pure Javascript for very fluid wolf girl.
 
 # Why?
 Wan not?
