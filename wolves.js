@@ -8,6 +8,9 @@ const wolves = {
     "Ahri" : {
         "tags" : ["League of Legends", "Ahri"]
     },
+    "Astolfo" : {
+        "tags" : ["Astolfo", "Fate Grand Order"]
+    },
     "Bayonetta" : {
         "tags" : ["Bayonetta", "Cereza"]
     },
@@ -106,7 +109,7 @@ const wolves = {
         "tags" : ["Undertale", "Ahuhuhu~"]
     },
     "Nanachi" : {
-        "text" : ["Naaa~", "~Naaa", "Naaa"],
+        "text" : ["Nnaaa~", "~Nnaaa", "Nnaaa~~"],
         "tags" : ["Nanachi", "Made In Abyss"]
     },
     "Natsuki" : {
