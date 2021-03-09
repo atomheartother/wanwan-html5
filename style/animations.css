@@ -196,7 +196,7 @@
 /* Mobile devices struggle with the black bars moving. We just leave them static */
 .fullScreen + span + #topBox, .fullScreen + span + #topBox + #botBox {
     display: initial;
-    transform: scale3d(1080, 350, 1);
+    transform: scale3d(10000, 350, 1);
 }
 
 @media screen and (min-width: 481px) {
@@ -208,14 +208,14 @@
 
 /* Black bars */
 @-webkit-keyframes boxAnim {
-    0% {transform: scale3d(1080, 1, 1);}
-    60% {transform: scale3d(1080, 350, 1);}
-    100% {transform: scale3d(1080, 350, 1);}
+    0% {transform: scale3d(10000, 1, 1);}
+    60% {transform: scale3d(10000, 350, 1);}
+    100% {transform: scale3d(10000, 350, 1);}
 }
 @keyframes boxAnim {
-    0% {transform: scale3d(1080, 1, 1);}
-    60% {transform: scale3d(1080, 350, 1);}
-    100% {transform: scale3d(1080, 350, 1);}
+    0% {transform: scale3d(10000, 1, 1);}
+    60% {transform: scale3d(10000, 350, 1);}
+    100% {transform: scale3d(10000, 350, 1);}
 }
 
 .frontFlip {
