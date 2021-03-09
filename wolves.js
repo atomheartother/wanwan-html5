@@ -26,6 +26,9 @@ const wolves = {
     "Cirno" : {
         "tags" : ["Touhou", "Cirno"],
     },
+    "Deadpool" : {
+        "tags" : ["Deadpool"]
+    },
     "DJSona" : {
         "tags" : ["League of Legends", "DJ Sona"]
     },
