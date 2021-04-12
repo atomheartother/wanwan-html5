@@ -151,6 +151,9 @@ const wolves = {
     "Ryuko" : {
         "tags" : ["Kill La Kill", "Ryuko Matoi"]
     },
+    "Satania" : {
+        "tags" : ["Satanichia Kurumizawa McDowell", "Gabriel DropOut"]
+    },
     "Satsuki" : {
         "tags" : ["Kill La Kill", "Satsuki Kiryuin"]
     },
