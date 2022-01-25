@@ -3,28 +3,6 @@
     animation-iteration-count: infinite!important;
 }
 
-.cssload-loader {
-    width: 60%;
-    height: 20%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    text-align: center;
-}
-
-.cssload-loader .cssload-ball {
-    width: 33px;
-    height: 33px;
-    background-color: rgb(214,81,88);
-    border-radius: 50%;
-    display: inline-block;
-    animation: cssload-motion 2.55s cubic-bezier(0.77, 0, 0.175, 1) infinite;
-    -webkit-animation: cssload-motion 2.55s cubic-bezier(0.77, 0, 0.175, 1) infinite;
-}
-
 .colorCycleBg {
     animation: colorCycleBg 2s linear infinite;
 }
