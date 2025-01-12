@@ -2,7 +2,7 @@
 types {
     text/html                                        html htm shtml;
     text/css                                         css;
-    text/xml                                         xml;
+    application/xml                                  xml;
     image/gif                                        gif;
     image/jpeg                                       jpeg jpg;
     application/javascript                           js;
