@@ -1,7 +1,7 @@
 [![Built with VanillaJS](http://vanilla-js.com/assets/button.png)](http://vanilla-js.com/)
 
 ![Wan~](
-https://wanwan-html5.moe/girls/Momiji.png
+https://www.wanwan.moe/girls/Momiji.png
 )
 
 # wanwan-html5
