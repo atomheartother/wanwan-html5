@@ -38,8 +38,12 @@ body {
 }
 
 #loadingText {
-  margin-top: 5px;
-  color: rgb(214, 81, 88);
+  margin-top: -1px;
+  background-color: rgb(214, 81, 88);
+  color: white;
+  padding: 10px;
+  font-size: 2em;
+  border-radius: 10px;
   font-size: 1.5em;
   font-weight: bold;
 }

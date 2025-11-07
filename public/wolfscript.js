@@ -80,6 +80,6 @@ window.onload = function() {
   changeAnimation("original");
   this.setTimeout(function() {
     this.document.getElementById("loadingText").innerText =
-      "Your browser doesn't autoplay sound. Click anywhere to start.";
-  }, 1000);
+      "Click to start";
+  }, 700);
 };
